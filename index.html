@@ -122,6 +122,26 @@ display: flex;
       padding: 22px;
       font-size: 14px;
     }
+ .card ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 15px;
+}
+
+.card ul li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.card ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #0b7285;
+  font-weight: bold;
+}
   </style>
 </head>
 
@@ -154,7 +174,6 @@ display: flex;
     RB Business Insights helps organisations improve leadership, employee engagement, culture and business performance through practical, evidence-based consultancy and support.
     </p>
   </section>
-
   <section id="services">
     <h2>Services</h2>
 
@@ -327,7 +346,8 @@ Facilitation of leadership away days and strategy retreats
       </p>
       <p>
         richard@rb-businessinsights.co.uk
-          07773 335735
+         <p>  
+        07773 335735
         </a>
       </p>
     </div>
