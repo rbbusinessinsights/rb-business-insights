@@ -145,6 +145,52 @@ display: flex;
   color: #0b7285;
   font-weight: bold;
 }
+.logo-slider {
+  overflow: hidden;
+  background: white;
+  padding: 30px 0;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.logo-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: scrollLogos 35s linear infinite;
+}
+
+.logo-track img {
+  height: 65px;
+  width: auto;
+  max-width: 180px;
+  margin: 0 35px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.75;
+  transition: all 0.3s ease;
+}
+
+.logo-track img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.logo-slider:hover .logo-track {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLogos {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+} 
   </style>
 </head>
 
@@ -177,6 +223,41 @@ display: flex;
     RB Business Insights helps organisations improve leadership, employee engagement, culture and business performance through practical, evidence-based consultancy and support.
     </p>
   </section>
+<section id="working-with">
+
+  <h2>Working With</h2>
+
+  <p class="intro">
+    Proud to support organisations across the public, private and not-for-profit sectors.
+  </p>
+
+  <div class="logo-slider">
+    <div class="logo-track">
+
+      images/logos/ACS.png
+      images/logos/BAR.png
+      images/logos/Citisense.png
+      images/logos/allday.png
+      images/logos/borras.png
+      images/logos/carbon%20rewind.png
+      images/logos/coram.png
+      images/logos/id905K9udI_logos.png
+
+      <!-- Duplicated logos for smooth continuous scrolling -->
+
+      images/logos/ACS.png
+      images/logos/BAR.png
+      images/logos/Citisense.png
+      images/logos/allday.png
+      images/logos/borras.png
+      images/logos/carbon%20rewind.png
+      images/logos/coram.png
+      images/logos/id905K9udI_logos.png
+
+    </div>
+  </div>
+
+</section>
   <section id="services">
     <h2>Services</h2>
 
