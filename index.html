@@ -191,10 +191,64 @@ logo-track img:hover {
     transform: translateX(-50%);
   }
 } 
-navbar {
+.navbar {
   background: #031b34;
   color: white;
-  padding: 
+  padding: 14px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.nav-container {
+  max-width: 1150px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.nav-brand {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.nav-links a:hover {
+  color: #9ff3f0;
+}
+
+@media (max-width: 700px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+}
 
   </style>
 </head>
