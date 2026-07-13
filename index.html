@@ -418,6 +418,69 @@
     .consultation-button:hover {
       background: #095d6d;
     }
+
+    /* Mobile responsiveness for team section */
+    @media (max-width: 768px) {
+      .team-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .team-photo {
+        width: 150px;
+        max-width: 150px;
+      }
+
+      .team-content {
+        width: 100%;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      .intro {
+        font-size: 16px;
+      }
+
+      iframe {
+        height: 1600px;
+      }
+
+      .consultation-button {
+        padding: 12px 20px;
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      section {
+        padding: 15px 10px;
+      }
+
+      h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .team-photo {
+        width: 120px;
+        max-width: 120px;
+      }
+
+      .testimonial-card {
+        padding: 20px;
+      }
+
+      iframe {
+        height: 1400px;
+      }
+    }
   </style>
 </head>
 
