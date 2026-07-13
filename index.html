@@ -269,6 +269,51 @@ logo-track img:hover {
   margin-top: 0;
   margin-bottom: 10px;
 }
+.team-card {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.team-photo {
+  width: 180px;
+  height: auto;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.team-content {
+  flex: 1;
+}
+
+.team-role {
+  color: #0b7285;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.specialisms {
+  list-style: none;
+  padding-left: 0;
+}
+
+.specialisms li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+}
+
+.specialisms li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #0b7285;
+  font-weight: bold;
+}
   </style>
 </head>
 
@@ -537,16 +582,19 @@ Services include:
   </p>
 
  
-<div class="team-card">
 
-  <img src="headshot.jpg" "Richard Budd" style="width:150px; height:auto; border-radius:12px;">
+div class="team-card">
+
+  headshot.jpg
 
   <div class="team-content">
 
+    <h3>Meet Richard</h3>
 
     <p class="team-role">
-      Richard Budd — Founder & Senior Consultant
+      Founder &amp; Senior Consultant
     </p>
+
 
     <p>
       Richard is an experienced organisational development consultant specialising in
@@ -561,6 +609,21 @@ Services include:
       combines strategic consultancy with hands-on operational leadership, giving him a practical
       understanding of how organisations can improve performance through their people.
     </p>
+
+<h4>Specialisms</h4>
+
+    <ul class="specialisms">
+      <li>Investors in People</li>
+      <li>Employee Engagement</li>
+      <li>Leadership Development</li>
+      <li>Business Improvement &amp; Strategy</li>
+    </ul>
+
+    #contactContact Richard</a>
+
+  </div>
+
+</div>
 
 
   </div>
