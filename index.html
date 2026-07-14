@@ -229,6 +229,20 @@
       font-weight: bold;
     }
 
+    .contact-fallback {
+      margin-top: 18px;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-note {
+      margin-top: 14px;
+      font-size: 14px;
+      color: #dbe8ff;
+    }
+
     footer {
       background: #031b34;
       color: white;
@@ -481,6 +495,8 @@
       height: auto;
       border-radius: 12px;
       flex-shrink: 0;
+      background: #eef2f7;
+      object-fit: cover;
     }
 
     .team-content {
@@ -574,6 +590,7 @@
       height: 0;
       overflow: hidden;
       border-radius: 12px;
+      background: #f0f2f5;
     }
 
     .iframe-container iframe {
@@ -879,22 +896,22 @@
     function setupMobileMenu() {
       const toggle = document.querySelector('.nav-toggle');
       const links = document.querySelector('.nav-links');
-      
-      if (toggle) {
+
+      if (toggle && links) {
         toggle.addEventListener('click', () => {
-          links.classList.toggle('open');
+          const isOpen = links.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', String(isOpen));
         });
 
-        // Close menu when a link is clicked
         links.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', () => {
             links.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
           });
         });
       }
     }
 
-    // Initialize when DOM is ready
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', setupMobileMenu);
     } else {
@@ -924,8 +941,8 @@
 </nav>
 
 <header>
-  <img 
-    src="rb-business-insights-consulting-banner.png" 
+  <img
+    src="rb-business-insights-consulting-banner.png"
     alt="RB Business Insights Consulting Banner - Business Improvement, Leadership Development, Employee Engagement"
   >
 
@@ -935,7 +952,7 @@
   </p>
 
   <div class="hero-cta">
-    <a href='https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled' class="btn">Book a Free Consultation</a>
+    <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="btn">Book a Free Consultation</a>
     <a href="#services" class="btn">Explore Services</a>
   </div>
 </header>
@@ -1070,7 +1087,7 @@
       Book a no-obligation consultation to discuss your challenges,
       priorities and opportunities.
     </p>
-    <a href='https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled' class="consultation-button">Schedule online</a>
+    <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="consultation-button">Schedule online</a>
   </div>
 </section>
 
@@ -1121,10 +1138,25 @@
     <p>
       <strong>Or use the form below to get in touch:</strong>
     </p>
+
+    <div class="contact-fallback">
+      <a class="consultation-button" href="mailto:richard@rb-businessinsights.co.uk?subject=Website%20enquiry%20-%20RB%20Business%20Insights">Email us now</a>
+      <a class="consultation-button" href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled">Book a consultation</a>
+    </div>
+    <p class="contact-note">If the embedded form does not load, please use one of the buttons above.</p>
   </div>
 
   <div class="iframe-container" style="margin-top: 30px;">
-    <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yUIEArXyVU0W4BWk2RJfBAtQjYX_Xj0itUMEJWR0ZFTDIzTzVCSjJVTTc0RUoxUDNCMS4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%;"></iframe>
+    <iframe
+      title="RB Business Insights contact form"
+      src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yUIEArXyVU0W4BWk2RJfBAtQjYX_Xj0itUMEJWR0ZFTDIzTzVCSjJVTTc0RUoxUDNCMS4u&embed=true"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      frameborder="0"
+      marginwidth="0"
+      marginheight="0"
+      style="border: none; max-width:100%;"
+    ></iframe>
   </div>
 </section>
 
@@ -1136,7 +1168,12 @@
   </p>
 
   <div class="team-card">
-    <img src="images/richard.jpg" alt="Richard B" class="team-photo">
+    <img
+      src="images/richard.jpg"
+      alt="Richard B"
+      class="team-photo"
+      onerror="this.onerror=null;this.src='https://via.placeholder.com/180x180?text=RB';"
+    >
     <div class="team-content">
       <h3>Richard B</h3>
       <div class="team-role">Founder & Principal Consultant</div>
@@ -1150,13 +1187,13 @@
         <li>Employee engagement and culture work</li>
       </ul>
       <div class="linkedin-link">
-        <a href="https://www.linkedin.com/in/richardb" target="_blank">View LinkedIn Profile</a>
+        <a href="https://www.linkedin.com/in/richardb" target="_blank" rel="noopener noreferrer">View LinkedIn Profile</a>
       </div>
     </div>
   </div>
 </section>
 
-<section>
+<section id="testimonials">
   <h2>What Clients Say</h2>
 
   <p class="intro">
