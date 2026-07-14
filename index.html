@@ -100,6 +100,70 @@
       color: #062b55;
     }
 
+    .accordion-trigger {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: #0b7285;
+      transition: color 0.3s ease;
+    }
+
+    .accordion-trigger:hover {
+      color: #062b55;
+    }
+
+    .accordion-trigger::after {
+      content: "▼";
+      display: inline-block;
+      transition: transform 0.3s ease;
+      margin-left: 10px;
+      font-size: 12px;
+    }
+
+    .accordion-trigger.active::after {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      margin-top: 0;
+    }
+
+    .accordion-content.active {
+      max-height: 1200px;
+      margin-top: 15px;
+    }
+
+    .accordion-content ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .accordion-content ul li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .accordion-content ul li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #0b7285;
+      font-weight: bold;
+    }
+
     .highlight {
       background: white;
       border-radius: 14px;
@@ -463,6 +527,10 @@
         padding: 12px 20px;
         font-size: 14px;
       }
+
+      .accordion-content.active {
+        max-height: 1500px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -490,6 +558,14 @@
 
       iframe {
         height: 1400px;
+      }
+
+      .accordion-trigger {
+        font-size: 14px;
+      }
+
+      .accordion-content.active {
+        max-height: 1800px;
       }
     }
   </style>
@@ -628,21 +704,22 @@
         <p>
           Whether you're beginning your Investors in People journey or looking to build on an existing accreditation, we provide expert guidance, challenge and support every step of the way.
         </p>
-        <p>
-          Services include:
-        </p>
-        <ul>
-          <li>Investors in People readiness reviews</li>
-          <li>Accreditation preparation and support</li>
-          <li>Internal gap analysis against the IIP framework</li>
-          <li>Employee focus groups and listening sessions</li>
-          <li>Leadership and management reviews</li>
-          <li>Action planning and implementation support</li>
-          <li>Continuous improvement programmes</li>
-          <li>Wellbeing and People Impact support</li>
-          <li>Reaccreditation planning and preparation</li>
-          <li>Independent advisory support and critical friend reviews</li>
-        </ul>
+
+        <button class="accordion-trigger" onclick="toggleAccordion(this)">Services include:</button>
+        <div class="accordion-content">
+          <ul>
+            <li>Investors in People readiness reviews</li>
+            <li>Accreditation preparation and support</li>
+            <li>Internal gap analysis against the IIP framework</li>
+            <li>Employee focus groups and listening sessions</li>
+            <li>Leadership and management reviews</li>
+            <li>Action planning and implementation support</li>
+            <li>Continuous improvement programmes</li>
+            <li>Wellbeing and People Impact support</li>
+            <li>Reaccreditation planning and preparation</li>
+            <li>Independent advisory support and critical friend reviews</li>
+          </ul>
+        </div>
       </div>
 
       <div class="card">
@@ -657,20 +734,21 @@
           We help organisations understand what their people are thinking and, more importantly, what to do about it.
         </p>
 
-        <p><strong>Services include:</strong></p>
-
-        <ul>
-          <li>Employee engagement surveys</li>
-          <li>Pulse surveys</li>
-          <li>Employee voice programmes</li>
-          <li>Listening groups and focus groups</li>
-          <li>Culture diagnostics</li>
-          <li>Employee experience reviews</li>
-          <li>Wellbeing assessments</li>
-          <li>Exit interview analysis</li>
-          <li>Action planning workshops</li>
-          <li>Engagement strategy development</li>
-        </ul>
+        <button class="accordion-trigger" onclick="toggleAccordion(this)">Services include:</button>
+        <div class="accordion-content">
+          <ul>
+            <li>Employee engagement surveys</li>
+            <li>Pulse surveys</li>
+            <li>Employee voice programmes</li>
+            <li>Listening groups and focus groups</li>
+            <li>Culture diagnostics</li>
+            <li>Employee experience reviews</li>
+            <li>Wellbeing assessments</li>
+            <li>Exit interview analysis</li>
+            <li>Action planning workshops</li>
+            <li>Engagement strategy development</li>
+          </ul>
+        </div>
       </div>
 
       <div class="card">
@@ -685,20 +763,21 @@
           strengthen their capabilities and create environments where people perform at their best.
         </p>
 
-        <p><strong>Services include:</strong></p>
-
-        <ul>
-          <li>Leadership capability reviews</li>
-          <li>Management effectiveness assessments</li>
-          <li>Leadership workshops</li>
-          <li>Team development programmes</li>
-          <li>Senior leadership facilitation</li>
-          <li>Executive coaching</li>
-          <li>Leadership feedback sessions</li>
-          <li>Building high-performing teams</li>
-          <li>Communication and engagement skills</li>
-          <li>Change leadership support</li>
-        </ul>
+        <button class="accordion-trigger" onclick="toggleAccordion(this)">Services include:</button>
+        <div class="accordion-content">
+          <ul>
+            <li>Leadership capability reviews</li>
+            <li>Management effectiveness assessments</li>
+            <li>Leadership workshops</li>
+            <li>Team development programmes</li>
+            <li>Senior leadership facilitation</li>
+            <li>Executive coaching</li>
+            <li>Leadership feedback sessions</li>
+            <li>Building high-performing teams</li>
+            <li>Communication and engagement skills</li>
+            <li>Change leadership support</li>
+          </ul>
+        </div>
       </div>
 
       <div class="card">
@@ -719,25 +798,26 @@
           accountability, we provide practical frameworks and expert facilitation to help turn ideas into action.
         </p>
 
-        <p><strong>Services include:</strong></p>
-
-        <ul>
-          <li>Strategic planning and strategy development</li>
-          <li>Strategy facilitation workshops</li>
-          <li>Vision, mission and values development</li>
-          <li>Organisational reviews and business health checks</li>
-          <li>Growth planning and scaling support</li>
-          <li>Strategic objective setting and prioritisation</li>
-          <li>OKR design and implementation</li>
-          <li>Entrepreneurial Operating System / EOS implementation support</li>
-          <li>Leadership team alignment and accountability frameworks</li>
-          <li>Operational improvement reviews</li>
-          <li>Cultural transformation programmes</li>
-          <li>Change management and business transformation</li>
-          <li>Customer experience reviews</li>
-          <li>Performance improvement initiatives</li>
-          <li>Facilitation of leadership away days and strategy retreats</li>
-        </ul>
+        <button class="accordion-trigger" onclick="toggleAccordion(this)">Services include:</button>
+        <div class="accordion-content">
+          <ul>
+            <li>Strategic planning and strategy development</li>
+            <li>Strategy facilitation workshops</li>
+            <li>Vision, mission and values development</li>
+            <li>Organisational reviews and business health checks</li>
+            <li>Growth planning and scaling support</li>
+            <li>Strategic objective setting and prioritisation</li>
+            <li>OKR design and implementation</li>
+            <li>Entrepreneurial Operating System / EOS implementation support</li>
+            <li>Leadership team alignment and accountability frameworks</li>
+            <li>Operational improvement reviews</li>
+            <li>Cultural transformation programmes</li>
+            <li>Change management and business transformation</li>
+            <li>Customer experience reviews</li>
+            <li>Performance improvement initiatives</li>
+            <li>Facilitation of leadership away days and strategy retreats</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -813,7 +893,7 @@
     <div class="testimonial-grid">
       <div class="testimonial-card">
         <p>
-          "I met Richard in 2015 when we first decided to work towards Investors in People accreditation. Richard's broad knowledge and insights on both Leadership and Company Culture have been instru[...]
+          "I met Richard in 2015 when we first decided to work towards Investors in People accreditation. Richard's broad knowledge and insights on both Leadership and Company Culture have been i[...]
         </p>
         <p class="testimonial-source">
           CEO, SWR Group
@@ -822,7 +902,7 @@
 
       <div class="testimonial-card">
         <p>
-          "I have now worked with Richard over the last 2 years as our IIP Assessor and throughout have found that Richard has provided first class information, advice and guidance. Richard is a colla[...]
+          "I have now worked with Richard over the last 2 years as our IIP Assessor and throughout have found that Richard has provided first class information, advice and guidance. Richard is a [...]
         </p>
         <p class="testimonial-source">
           Head of People, Salts
@@ -831,7 +911,7 @@
 
       <div class="testimonial-card">
         <p>
-          "Richard has been a critical friend of our business for the past four years, asking deep and searching questions to help us find our own ways of improving the workplace and the employee expe[...]
+          "Richard has been a critical friend of our business for the past four years, asking deep and searching questions to help us find our own ways of improving the workplace and the employee[...]
         </p>
         <p class="testimonial-source">
           Managing Director, Pearson UK
@@ -840,7 +920,7 @@
 
       <div class="testimonial-card">
         <p>
-          "Richard is highly client-focused, with a genuine desire to support the customer in the best possible way. He has a 'can do' approach, seeking to address problems through the most effective [...]
+          "Richard is highly client-focused, with a genuine desire to support the customer in the best possible way. He has a 'can do' approach, seeking to address problems through the most effec[...]
         </p>
         <p class="testimonial-source">
           Director, Business Growth Services
@@ -849,7 +929,7 @@
 
       <div class="testimonial-card">
         <p>
-          "I worked with Richard over the past year with the Business Growth Services. His support was tremendous. A great strategist who can help you look at a situation from different angles, and pr[...]
+          "I worked with Richard over the past year with the Business Growth Services. His support was tremendous. A great strategist who can help you look at a situation from different angles, a[...]
         </p>
         <p class="testimonial-source">
           Founder, Growth-Focused Organisation
@@ -904,6 +984,14 @@
       </p>
     </div>
   </footer>
+
+  <script>
+    function toggleAccordion(button) {
+      const content = button.nextElementSibling;
+      button.classList.toggle('active');
+      content.classList.toggle('active');
+    }
+  </script>
 
 </body>
 </html>
