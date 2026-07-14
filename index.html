@@ -22,7 +22,7 @@
     header {
       background: linear-gradient(135deg, #062b55, #0b7285);
       color: white;
-      padding: 40px 20px;
+      padding: 30px 20px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -33,8 +33,10 @@
     header img {
       display: block;
       margin: 0 auto 20px;
-      max-width: 100%;
+      max-width: 85%;
       height: auto;
+      max-height: 200px;
+      object-fit: contain;
     }
 
     header h1 {
@@ -649,7 +651,12 @@
     /* Tablet responsiveness (768px and below) */
     @media (max-width: 768px) {
       header {
-        padding: 30px 20px;
+        padding: 25px 20px;
+      }
+
+      header img {
+        max-width: 80%;
+        max-height: 160px;
       }
 
       header h1 {
@@ -716,7 +723,12 @@
     /* Mobile responsiveness (480px and below) */
     @media (max-width: 480px) {
       header {
-        padding: 24px 16px;
+        padding: 20px 16px;
+      }
+
+      header img {
+        max-width: 85%;
+        max-height: 120px;
       }
 
       header h1 {
@@ -775,10 +787,6 @@
         max-height: 3000px;
       }
 
-      header img {
-        max-width: 90%;
-      }
-
       .nav-brand {
         font-size: 16px;
       }
@@ -830,6 +838,14 @@
 
     /* Small phone (under 360px) */
     @media (max-width: 360px) {
+      header {
+        padding: 16px 12px;
+      }
+
+      header img {
+        max-height: 100px;
+      }
+
       header h1 {
         font-size: 24px;
       }
@@ -997,311 +1013,3 @@
       <img src="images/logos/carbon%20rewind.png" alt="Carbon Rewind">
       <img src="images/logos/coram.png" alt="Coram">
       <img src="images/logos/id905K9udI_logos.png" alt="Partner Company">
-
-      <!-- Duplicate logos for smooth continuous scrolling -->
-      <img src="images/logos/ACS.png" alt="ACS">
-      <img src="images/logos/BAR.png" alt="BAR">
-      <img src="images/logos/Citisense.png" alt="Citisense">
-      <img src="images/logos/allday.png" alt="AllDay">
-      <img src="images/logos/borras.png" alt="Borras">
-      <img src="images/logos/carbon%20rewind.png" alt="Carbon Rewind">
-      <img src="images/logos/coram.png" alt="Coram">
-      <img src="images/logos/id905K9udI_logos.png" alt="Partner Company">
-    </div>
-  </div>
-</section>
-
-<section id="services">
-  <h2>Services</h2>
-
-  <div class="services">
-    <div class="card">
-      <h3>Investors in People Support</h3>
-      <p>
-        Helping organisations achieve, maintain and maximise the value of Investors in People accreditation.
-      </p>
-      <p>
-        Whether you're beginning your Investors in People journey or looking to build on an existing accreditation, we provide expert guidance, challenge and support every step of the way.
-      </p>
-
-      <button class="accordion-trigger" onclick="toggleAccordion(this)">Services include:</button>
-      <div class="accordion-content">
-        <ul>
-          <li>Investors in People readiness reviews</li>
-          <li>Accreditation preparation and support</li>
-          <li>Internal gap analysis against the IIP framework</li>
-          <li>Employee focus groups and listening sessions</li>
-          <li>Leadership and management reviews</li>
-          <li>Action planning and implementation support</li>
-          <li>Continuous improvement programmes</li>
-          <li>Wellbeing and People Impact support</li>
-          <li>Reaccreditation planning and preparation</li>
-          <li>Independent advisory support and critical friend reviews</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Employee Engagement</h3>
-
-      <p>
-        Turning employee feedback into meaningful action.
-      </p>
-
-      <p>
-        Highly engaged employees drive better customer experiences, stronger retention and improved business performance.
-        We help organisations understand what their people are thinking and, more importantly, what to do about it.
-      </p>
-
-      <button class="accordion-trigger" onclick="toggleAccordion(this)">Services include:</button>
-      <div class="accordion-content">
-        <ul>
-          <li>Employee engagement surveys</li>
-          <li>Pulse surveys</li>
-          <li>Employee voice programmes</li>
-          <li>Listening groups and focus groups</li>
-          <li>Culture diagnostics</li>
-          <li>Employee experience reviews</li>
-          <li>Wellbeing assessments</li>
-          <li>Exit interview analysis</li>
-          <li>Action planning workshops</li>
-          <li>Engagement strategy development</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Leadership Development</h3>
-
-      <p>
-        Developing confident, effective leaders who inspire performance.
-      </p>
-
-      <p>
-        Strong leadership is at the heart of every successful organisation. We help leaders understand their impact,
-        strengthen their capabilities and create environments where people perform at their best.
-      </p>
-
-      <button class="accordion-trigger" onclick="toggleAccordion(this)">Services include:</button>
-      <div class="accordion-content">
-        <ul>
-          <li>Leadership capability reviews</li>
-          <li>Management effectiveness assessments</li>
-          <li>Leadership workshops</li>
-          <li>Team development programmes</li>
-          <li>Senior leadership facilitation</li>
-          <li>Executive coaching</li>
-          <li>Leadership feedback sessions</li>
-          <li>Building high-performing teams</li>
-          <li>Communication and engagement skills</li>
-          <li>Change leadership support</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Business Improvement &amp; Strategy</h3>
-
-      <p>
-        Helping organisations move from aspiration to action.
-      </p>
-
-      <p>
-        Many organisations know where they want to go but struggle to translate ambition into practical delivery.
-        We work with leadership teams to create clear strategic direction, align people and processes, and implement
-        sustainable improvements that deliver measurable results.
-      </p>
-
-      <p>
-        Whether you're creating a new strategy, refreshing an existing plan, or looking to improve execution and
-        accountability, we provide practical frameworks and expert facilitation to help turn ideas into action.
-      </p>
-
-      <button class="accordion-trigger" onclick="toggleAccordion(this)">Services include:</button>
-      <div class="accordion-content">
-        <ul>
-          <li>Strategic planning and strategy development</li>
-          <li>Strategy facilitation workshops</li>
-          <li>Vision, mission and values development</li>
-          <li>Organisational reviews and business health checks</li>
-          <li>Growth planning and scaling support</li>
-          <li>Strategic objective setting and prioritisation</li>
-          <li>OKR design and implementation</li>
-          <li>Entrepreneurial Operating System / EOS implementation support</li>
-          <li>Leadership team alignment and accountability frameworks</li>
-          <li>Operational improvement reviews</li>
-          <li>Cultural transformation programmes</li>
-          <li>Change management and business transformation</li>
-          <li>Customer experience reviews</li>
-          <li>Performance improvement initiatives</li>
-          <li>Facilitation of leadership away days and strategy retreats</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="highlight">
-    <h2>About RB Business Insights</h2>
-    <p>
-      Established in 2016, RB Business Insights provides independent, evidence-based consultancy for organisations that want
-      to improve how they lead, engage and support their people.
-    </p>
-    <p>
-      The approach is practical, straightforward and focused on helping organisations make improvements
-      that are realistic, meaningful and sustainable.
-    </p>
-  </div>
-</section>
-
-<section id="team">
-  <h2>Meet The Team</h2>
-
-  <p class="intro">
-    RB Business Insights works with a trusted network of experienced consultants and associates,
-    bringing together specialist expertise to support organisations across leadership, people,
-    culture and business improvement.
-  </p>
-
-  <div class="team-card">
-    <img src="headshot.jpg" alt="Richard Budd" class="team-photo">
-
-    <div class="team-content">
-      <h3>Meet Richard</h3>
-
-      <p class="team-role">
-        Founder &amp; Senior Consultant
-      </p>
-
-      <p>
-        Richard is an experienced organisational development consultant specialising in
-        Investors in People, employee engagement, leadership development and business improvement.
-        With more than 17 years' experience supporting organisations across a wide range of sectors,
-        Richard helps clients turn insight into practical action and sustainable improvement.
-      </p>
-
-      <p>
-        Before launching RB Business Insights, Richard held senior leadership and business development
-        roles with organisations including Grant Thornton, Exemplas, Sainsbury's, Hollywood Bowl, and Tenpin. His background
-        combines strategic consultancy with hands-on operational leadership, giving him a practical
-        understanding of how organisations can improve performance through their people.
-      </p>
-
-      <h4>Specialisms</h4>
-
-      <ul class="specialisms">
-        <li>Investors in People</li>
-        <li>Employee Engagement</li>
-        <li>Leadership Development</li>
-        <li>Business Improvement &amp; Strategy</li>
-      </ul>
-
-      <p class="linkedin-link">
-        <a href="https://www.linkedin.com/in/richardbudd1" target="_blank" rel="noopener noreferrer">
-          Connect with Richard on LinkedIn →
-        </a>
-      </p>
-    </div>
-  </div>
-</section>
-
-<section id="feedback">
-  <h2>Client Feedback</h2>
-
-  <div class="testimonial-grid">
-    <div class="testimonial-card">
-      <p>
-        "I met Richard in 2015 when we first decided to work towards Investors in People accreditation. Richard's broad knowledge and insights on both Leadership and Company Culture have been i[...]
-      </p>
-      <p class="testimonial-source">
-        CEO, SWR Group
-      </p>
-    </div>
-
-    <div class="testimonial-card">
-      <p>
-        "I have now worked with Richard over the last 2 years as our IIP Assessor and throughout have found that Richard has provided first class information, advice and guidance. Richard is a [...]
-      </p>
-      <p class="testimonial-source">
-        Head of People, Salts
-      </p>
-    </div>
-
-    <div class="testimonial-card">
-      <p>
-        "Richard has been a critical friend of our business for the past four years, asking deep and searching questions to help us find our own ways of improving the workplace and the employee[...]
-      </p>
-      <p class="testimonial-source">
-        Managing Director, Pearson UK
-      </p>
-    </div>
-
-    <div class="testimonial-card">
-      <p>
-        "Richard is highly client-focused, with a genuine desire to support the customer in the best possible way. He has a 'can do' approach, seeking to address problems through the most effec[...]
-      </p>
-      <p class="testimonial-source">
-        Director, Business Growth Services
-      </p>
-    </div>
-
-    <div class="testimonial-card">
-      <p>
-        "I worked with Richard over the past year with the Business Growth Services. His support was tremendous. A great strategist who can help you look at a situation from different angles, a[...]
-      </p>
-      <p class="testimonial-source">
-        Founder, Growth-Focused Organisation
-      </p>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Let's Start a Conversation</h2>
-
-  <p>
-    Whether you're exploring Investors in People, employee engagement,
-    leadership development or business improvement, we'd be delighted
-    to discuss how RB Business Insights can help.
-  </p>
-
-  <p>
-    Your details will only be used to respond to your enquiry and will never be shared with third parties.
-  </p>
-
-  <div class="iframe-container">
-    <iframe
-      src="https://forms.office.com/Pages/ResponsePage.aspx?id=NS26w6O8qEu9JsCDGp_otn2PFdqcjz1ClNK3FPIASFBUQjU3REhFUUI2UE5RU0I4NDhSRUI1RDhUUC4u&embed=true"
-      frameborder="0"
-      marginwidth="0"
-      marginheight="0"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <p>
-    Prefer email? <a href="mailto:richard@rb-businessinsights.co.uk">richard@rb-businessinsights.co.uk</a>
-  </p>
-</section>
-
-<footer>
-  <div class="footer-content">
-    <h3>RB Business Insights</h3>
-
-    <p>
-      People. Performance. Progress.
-    </p>
-
-    <p>
-      📧 richard@rb-businessinsights.co.uk
-    </p>
-
-    <p>
-      © 2026 RB Business Insights. All rights reserved.
-    </p>
-  </div>
-</footer>
-
-</body>
-</html>
