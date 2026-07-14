@@ -427,34 +427,36 @@
     }
 
     /* Mobile navigation */
-    @media (max-width: 768px) {
-      .nav-toggle {
-        display: flex;
-      }
+   @media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
 
-      .nav-links {
-        position: absolute;
-        top: 56px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background: #031b34;
-        padding: 20px;
-        gap: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-      }
+  .nav-links {
+    display: none;              /* hide by default on mobile */
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: #031b34;
+    padding: 20px;
+    gap: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
 
-      .nav-links.open {
-        max-height: 500px;
-      }
+  .nav-links.open {
+    display: flex;              /* show when hamburger is clicked */
+    max-height: 500px;
+  }
 
-      .nav-links a {
-        justify-content: flex-start;
-      }
-    }
+  .nav-links a {
+    justify-content: flex-start;
+  }
+}
 
     .why-grid {
       max-width: 1150px;
