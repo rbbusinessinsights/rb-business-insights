@@ -20,6 +20,17 @@
       color: white;
       padding: 40px 20px;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header img {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 100%;
+      height: auto;
     }
 
     header h1 {
@@ -567,6 +578,10 @@
       .accordion-content.active {
         max-height: 1800px;
       }
+
+      header img {
+        max-width: 90%;
+      }
     }
   </style>
 </head>
@@ -589,10 +604,9 @@
 
   <header>
     <img 
-    src="rb-business-insights-consulting-banner.png" 
-    style="max-width:700px; width:80%; height:auto;"
-    alt="RB Business Insights Consulting Banner - Business Improvement, Leadership Development, Employee Engagement"
-  >
+      src="rb-business-insights-consulting-banner.png" 
+      alt="RB Business Insights Consulting Banner - Business Improvement, Leadership Development, Employee Engagement"
+    >
 
     <p>
       Helping organisations turn people insight into practical improvement through Investors in People support,
