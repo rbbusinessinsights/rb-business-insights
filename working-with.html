@@ -1,9 +1,1331 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Working With | RB Business Insights</title><link rel="stylesheet" href="styles.css"></head><body>
-<nav class="navbar"><div class="nav-container"><a href="index.html" class="nav-brand">RB Business Insights</a><div class="nav-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="working-with.html" class="active">Working With</a><a href="team.html">Team</a><a href="news-resources.html">News & Resources</a><a href="contact.html">Contact</a></div></div></nav>
-<header><h1>Who We Work With</h1></header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">  
+<title>RB Business Insights | People, Culture & Business Improvement Consultancy</title>
+
+<meta name="description" content="Helping organisations improve culture, performance and engagement through Investors in People support, leadership development, employee listening, organisational reviews and business improvement consultancy.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f4f7fb;
+      color: #1f2933;
+    }
+
+    header {
+      background: linear-gradient(135deg, #062b55, #0b7285);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header img {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 85%;
+      height: auto;
+      max-height: 200px;
+      object-fit: contain;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin: 10px 0;
+    }
+
+    header p {
+      font-size: 21px;
+      max-width: 850px;
+      margin: 0 auto 30px auto;
+    }
+
+    .tagline {
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: bold;
+      color: #9ff3f0;
+    }
+
+    .btn {
+      display: inline-block;
+      background: white;
+      color: #062b55;
+      padding: 13px 26px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      margin: 6px;
+      min-height: 44px;
+      min-width: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #f0f0f0;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .btn:focus {
+      outline: 2px solid #0b7285;
+      outline-offset: 2px;
+    }
+
+    .hero-cta {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 25px 20px;
+    }
+
+    h2 {
+      font-size: 32px;
+      color: #062b55;
+      margin-bottom: 20px;
+    }
+
+    .intro {
+      font-size: 19px;
+      max-width: 900px;
+    }
+
+    .services {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border-left: 6px solid #0b7285;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #062b55;
+    }
+
+    .accordion-trigger {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px;
+      margin: -12px -12px 0 -12px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #0b7285;
+      transition: color 0.3s ease;
+      min-height: 44px;
+      border-radius: 6px;
+    }
+
+    .accordion-trigger:hover {
+      color: #062b55;
+      background: #f4f7fb;
+    }
+
+    .accordion-trigger:focus {
+      outline: 2px solid #0b7285;
+      outline-offset: 2px;
+    }
+
+    .accordion-trigger::after {
+       content: "\25BE";
+      display: inline-block;
+      transition: transform 0.3s ease;
+      margin-left: 10px;
+      font-size: 12px;
+    }
+
+    .accordion-trigger.active::after {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      margin-top: 0;
+    }
+
+    .accordion-content.active {
+      max-height: 2000px;
+      margin-top: 15px;
+    }
+
+    .accordion-content ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .accordion-content ul li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .accordion-content ul li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      color: #0b7285;
+      font-weight: bold;
+    }
+
+    .highlight {
+      background: white;
+      border-radius: 14px;
+      padding: 35px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .contact-box {
+      background: #062b55;
+      color: white;
+      border-radius: 14px;
+      padding: 35px;
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      color: white;
+    }
+
+    .contact-box a {
+      color: white;
+      font-weight: bold;
+    }
+
+    .contact-fallback {
+      margin-top: 18px;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-note {
+      margin-top: 14px;
+      font-size: 14px;
+      color: #dbe8ff;
+    }
+
+    footer {
+      background: #031b34;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 15px;
+    }
+
+    .card ul li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .card ul li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      color: #0b7285;
+      font-weight: bold;
+    }
+
+    .logo-slider {
+      overflow: hidden;
+      background: white;
+      padding: 30px 0;
+      border-radius: 12px;
+      margin-top: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .logo-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      animation: scrollLogos 35s linear infinite;
+    }
+
+    .logo-track img {
+      height: 65px;
+      width: auto;
+      max-width: 180px;
+      margin: 0 35px;
+      object-fit: contain;
+      opacity: 1;
+      transition: all 0.3s ease;
+    }
+
+    .logo-track img:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    .logo-slider:hover .logo-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes scrollLogos {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .navbar {
+      background: #031b34;
+      color: white;
+      padding: 14px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .nav-container {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .nav-brand {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0.3px;
+      padding: 8px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .nav-brand:focus {
+      outline: 2px solid #9ff3f0;
+      outline-offset: 2px;
+    }
+
+    .nav-brand:hover {
+      background: rgba(159, 243, 240, 0.1);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+      min-height: 44px;
+      min-width: 44px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-toggle:focus {
+      outline: 2px solid #9ff3f0;
+      outline-offset: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a:focus {
+      outline: 2px solid #9ff3f0;
+      outline-offset: 2px;
+    }
+
+    .nav-links a:hover {
+      color: #9ff3f0;
+      background: rgba(159, 243, 240, 0.1);
+    }
+
+    .nav-links a.consultation-link {
+      background: #d4a017;
+      color: white !important;
+      font-weight: 700 !important;
+      padding: 10px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+    }
+
+    .consultation-link:hover {
+      background: #c89510;
+      color: white !important;
+    }
+
+    .consultation-link:focus {
+      outline: 2px solid white;
+      outline-offset: 2px;
+    }
+
+    /* Mobile navigation */
+   @media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;              /* hide by default on mobile */
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: #031b34;
+    padding: 20px;
+    gap: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-links.open {
+    display: flex;              /* show when hamburger is clicked */
+    max-height: 500px;
+  }
+
+  .nav-links a {
+    justify-content: flex-start;
+  }
+}
+
+    .why-grid {
+      max-width: 1150px;
+      margin: 25px auto 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .why-card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border-top: 5px solid #0b7285;
+    }
+
+    .why-card h3 {
+      color: #062b55;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .team-card {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .team-photo {
+      width: 180px;
+      max-width: 180px;
+      height: auto;
+      border-radius: 12px;
+      flex-shrink: 0;
+      background: #eef2f7;
+      object-fit: cover;
+    }
+
+    .team-content {
+      flex: 1;
+    }
+
+    .team-role {
+      color: #0b7285;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .specialisms {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .specialisms li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 8px;
+    }
+
+    .specialisms li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      color: #0b7285;
+      font-weight: bold;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      margin-top: 25px;
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border-left: 5px solid #0b7285;
+      font-style: italic;
+    }
+
+    .testimonial-source {
+      margin-top: 18px;
+      font-style: normal;
+      font-weight: bold;
+      color: #062b55;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .footer-content h3 {
+      margin-top: 0;
+      color: white;
+    }
+
+    .footer-content p {
+      margin: 10px 0;
+    }
+
+    .footer-content a {
+      color: #9ff3f0;
+      text-decoration: none;
+      padding: 2px 4px;
+      border-radius: 3px;
+      transition: background 0.3s ease;
+    }
+
+    .footer-content a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-content a:focus {
+      outline: 2px solid #9ff3f0;
+      outline-offset: 2px;
+    }
+
+    /* Responsive iframe using aspect-ratio */
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 110%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #f0f2f5;
+    }
+
+    .iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 12px;
+    }
+
+    .linkedin-link {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .linkedin-link a {
+      color: #0077b5;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+      display: inline-block;
+      min-height: 44px;
+      min-width: 44px;
+      display: flex;
+      align-items: center;
+    }
+
+    .linkedin-link a:hover {
+      text-decoration: underline;
+      background: rgba(0, 119, 181, 0.1);
+    }
+
+    .linkedin-link a:focus {
+      outline: 2px solid #0077b5;
+      outline-offset: 2px;
+    }
+
+    .content-container {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .consultation-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #0b7285;
+      color: white;
+      padding: 14px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      cursor: pointer;
+      border: none;
+      transition: background 0.3s ease;
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    .consultation-button:hover {
+      background: #095d6d;
+    }
+
+    .consultation-button:focus {
+      outline: 2px solid #062b55;
+      outline-offset: 2px;
+    }
+
+    /* Tablet responsiveness (768px and below) */
+    @media (max-width: 768px) {
+      header {
+        padding: 25px 20px;
+      }
+
+      header img {
+        max-width: 80%;
+        max-height: 160px;
+      }
+
+      header h1 {
+        font-size: 36px;
+      }
+
+      header p {
+        font-size: 18px;
+      }
+
+      section {
+        padding: 20px 16px;
+      }
+
+      h2 {
+        font-size: 26px;
+        margin-bottom: 16px;
+      }
+
+      .intro {
+        font-size: 16px;
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      .team-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 24px;
+      }
+
+      .team-photo {
+        width: 150px;
+        max-width: 150px;
+      }
+
+      .team-content {
+        width: 100%;
+      }
+
+      .consultation-button {
+        padding: 12px 20px;
+        font-size: 14px;
+      }
+
+      .accordion-content.active {
+        max-height: 2500px;
+      }
+
+      .logo-slider {
+        padding: 20px 0;
+      }
+
+      .logo-track img {
+        height: 55px;
+        margin: 0 25px;
+        max-width: 150px;
+      }
+    }
+
+    /* Mobile responsiveness (480px and below) */
+    @media (max-width: 480px) {
+      header {
+        padding: 20px 16px;
+      }
+
+      header img {
+        max-width: 85%;
+        max-height: 120px;
+      }
+
+      header h1 {
+        font-size: 28px;
+        margin: 8px 0;
+      }
+
+      header p {
+        font-size: 16px;
+        margin: 0 auto 20px auto;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      section {
+        padding: 16px 12px;
+      }
+
+      h2 {
+        font-size: 22px;
+        margin-bottom: 12px;
+      }
+
+      .intro {
+        font-size: 15px;
+      }
+
+      .card {
+        padding: 16px;
+        border-left-width: 4px;
+      }
+
+      .team-photo {
+        width: 120px;
+        max-width: 120px;
+      }
+
+      .testimonial-card {
+        padding: 16px;
+      }
+
+      .accordion-trigger {
+        font-size: 15px;
+        padding: 10px;
+        margin: -10px -10px 0 -10px;
+      }
+
+      .accordion-content.active {
+        max-height: 3000px;
+      }
+
+      .nav-brand {
+        font-size: 16px;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+        padding: 6px 8px;
+      }
+
+      .why-grid {
+        gap: 16px;
+        padding: 0 12px;
+      }
+
+      .why-card {
+        padding: 16px;
+      }
+
+      .testimonial-grid {
+        gap: 16px;
+      }
+
+      .logo-slider {
+        padding: 16px 0;
+      }
+
+      .logo-track img {
+        height: 45px;
+        margin: 0 20px;
+        max-width: 120px;
+      }
+
+      .highlight {
+        padding: 20px;
+      }
+
+      .contact-box {
+        padding: 20px;
+      }
+
+      footer {
+        padding: 24px 16px;
+      }
+
+      .footer-content h3 {
+        font-size: 18px;
+      }
+    }
+
+    /* Small phone (under 360px) */
+    @media (max-width: 360px) {
+      header {
+        padding: 16px 12px;
+      }
+
+      header img {
+        max-height: 100px;
+      }
+
+      header h1 {
+        font-size: 24px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      .nav-brand {
+        font-size: 14px;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+      }
+
+      .btn {
+        font-size: 14px;
+        padding: 11px 20px;
+      }
+    }
+  </style>
+
+  <script>
+    function toggleAccordion(button) {
+      const content = button.nextElementSibling;
+      button.classList.toggle('active');
+      content.classList.toggle('active');
+    }
+
+    function setupMobileMenu() {
+      const toggle = document.querySelector('.nav-toggle');
+      const links = document.querySelector('.nav-links');
+
+      if (toggle && links) {
+        toggle.addEventListener('click', () => {
+          const isOpen = links.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        links.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            links.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setupMobileMenu);
+    } else {
+      setupMobileMenu();
+    }
+  </script>
+</head>
+
+<body id="top">
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="#top" class="nav-brand">RB Business Insights</a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      ☰
+    </button>
+
+    <div class="nav-links">
+      <a href="#services">Explore Services</a>
+      <a href="#working-with">Working With</a>
+      <a href="#contact">Contact</a>
+      <a href="#team">Meet the Team</a>
+      <a href="#consultation" class="consultation-link">Book a Free Consultation</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <img
+    src="rb-business-insights-consulting-banner.png"
+    alt="RB Business Insights Consulting Banner - Business Improvement, Leadership Development, Employee Engagement"
+  >
+
+  <p>
+    Helping organisations turn people insight into practical improvement through Investors in People support,
+    employee voice, leadership reviews and organisational development.
+  </p>
+
+  <div class="hero-cta">
+    <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="btn">Book a Free Consultation</a>
+    <a href="#services" class="btn">Explore Services</a>
+  </div>
+</header>
+
 <section>
-<div class="panel"><h2>Trusted across sectors</h2><p>We support organisations of different sizes and sectors, including private, public and third sector teams.</p></div>
-<div class="panel"><h2>How we work</h2><p>Our approach is practical, collaborative and evidence-based.</p></div>
-<div class="panel"><h2>Engagement options</h2><p>From one-off reviews to longer-term support programmes, we tailor our work to your goals.</p></div>
+  <h2>Practical support for better organisations</h2>
+
+  <p class="intro">
+    We help organisations improve leadership, employee engagement, culture and business performance through practical, evidence-based consultancy and support
+  </p>
 </section>
-<footer><p>© RB Business Insights</p></footer><script src="script.js"></script></body></html>
+
+<div class="why-grid">
+  <div class="why-card">
+    <h3>People</h3>
+    <p>
+      Creating workplaces where people can thrive and perform at their best.
+    </p>
+  </div>
+
+  <div class="why-card">
+    <h3>Leadership</h3>
+    <p>
+      Developing confident leaders who inspire trust, engagement and accountability.
+    </p>
+  </div>
+
+  <div class="why-card">
+    <h3>Performance</h3>
+    <p>
+      Turning feedback and insight into measurable organisational improvement.
+    </p>
+  </div>
+
+  <div class="why-card">
+    <h3>Partnership</h3>
+    <p>
+      Providing practical support, challenge and expertise every step of the journey.
+    </p>
+  </div>
+</div>
+
+<section id="services">
+  <h2>Our Services</h2>
+
+  <p class="intro">
+    Comprehensive solutions tailored to your organisation's needs
+  </p>
+
+  <div class="services">
+    <div class="card">
+      <button class="accordion-trigger" onclick="toggleAccordion(this)">
+        <h3>Investors in People</h3>
+      </button>
+      <div class="accordion-content">
+        <p>
+         Whether you're beginning your Investors in People journey or looking to build on an existing accreditation, we provide expert guidance, challenge and support every step of the way.
+        </p>
+        <ul>
+  <li>Investors in People readiness reviews</li>
+  <li>Accreditation preparation and support</li>
+  <li>Internal gap analysis against the IIP framework</li>
+  <li>Employee focus groups and listening sessions</li>
+  <li>Leadership and management reviews</li>
+  <li>Action planning and implementation support</li>
+  <li>Continuous improvement programmes</li>
+  <li>Wellbeing and People Impact support</li>
+  <li>Reaccreditation planning and preparation</li>
+  <li>Independent advisory support and critical friend reviews</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="accordion-trigger" onclick="toggleAccordion(this)">
+        <h3>Employee Voice & Engagement</h3>
+      </button>
+      <div class="accordion-content">
+        <p>
+          Highly engaged employees drive better customer experiences, stronger retention and improved business performance. We help organisations understand what their people are thinking and, more importantly, what to do about it.
+        </p>
+
+        <ul>
+         <li>Employee engagement surveys</li>
+    <li>Pulse surveys</li>
+    <li>Employee voice programmes</li>
+    <li>Listening groups and focus groups</li>
+    <li>Culture diagnostics</li>
+    <li>Employee experience reviews</li>
+    <li>Wellbeing assessments</li>
+    <li>Exit interview analysis</li>
+    <li>Action planning workshops</li>
+    <li>Engagement strategy development</li>
+
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="accordion-trigger" onclick="toggleAccordion(this)">
+        <h3>Leadership Development</h3>
+      </button>
+      <div class="accordion-content">
+        <p>
+         Strong leadership is at the heart of every successful organisation. We help leaders understand their impact,
+    strengthen their capabilities and create environments where people perform at their best.
+
+        </p>
+        <ul>
+          <li>Leadership capability reviews</li>
+    <li>Management effectiveness assessments</li>
+    <li>Leadership workshops</li>
+    <li>Team development programmes</li>
+    <li>Senior leadership facilitation</li>
+    <li>Executive coaching</li>
+    <li>Leadership feedback sessions</li>
+    <li>Building high-performing teams</li>
+    <li>Communication and engagement skills</li>
+    <li>Change leadership support</li>
+
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="accordion-trigger" onclick="toggleAccordion(this)">
+        <h3>Organisational Development</h3>
+      </button>
+      <div class="accordion-content">
+        <p>
+          Whether you're creating a new strategy, refreshing an existing plan, or looking to improve execution and
+    accountability, we provide practical frameworks and expert facilitation to help turn ideas into action.
+
+        </p>
+        <ul>
+          <li>Strategic planning and strategy development</li>
+    <li>Strategy facilitation workshops</li>
+    <li>Vision, mission and values development</li>
+    <li>Organisational reviews and business health checks</li>
+    <li>Growth planning and scaling support</li>
+    <li>Strategic objective setting and prioritisation</li>
+    <li>OKR design and implementation</li>
+    <li>Entrepreneurial Operating System / EOS implementation support</li>
+    <li>Leadership team alignment and accountability frameworks</li>
+    <li>Operational improvement reviews</li>
+    <li>Cultural transformation programmes</li>
+    <li>Change management and business transformation</li>
+    <li>Customer experience reviews</li>
+    <li>Performance improvement initiatives</li>
+    <li>Facilitation of leadership away days and strategy retreats</li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="consultation">
+  <div class="highlight">
+    <h2>Book a Free Consultation</h2>
+
+    <p>
+      Whether you're exploring Investors in People, employee engagement,
+      leadership development or wider organisational improvement, an initial
+      conversation can help identify the right next steps.
+    </p>
+
+    <p>
+      Book a no-obligation consultation to discuss your challenges,
+      priorities and opportunities.
+    </p>
+    <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="consultation-button">Schedule online</a>
+  </div>
+</section>
+
+<section id="working-with">
+  <h2>Working With</h2>
+
+  <p class="intro">
+    Proud to support organisations across the public, private and not-for-profit sectors.
+  </p>
+
+  <div class="logo-slider">
+    <div class="logo-track">
+      <img src="images/logos/ACS.png" alt="ACS">
+      <img src="images/logos/BAR.png" alt="BAR">
+      <img src="images/logos/Citisense.png" alt="Citisense">
+      <img src="images/logos/allday.png" alt="AllDay">
+      <img src="images/logos/borras.png" alt="Borras">
+      <img src="images/logos/carbon%20rewind.png" alt="Carbon Rewind">
+      <img src="images/logos/coram.png" alt="Coram">
+      <img src="images/logos/id905K9udI_logos.png" alt="Partner Company">
+      <img src="images/logos/ACS.png" alt="ACS">
+      <img src="images/logos/BAR.png" alt="BAR">
+      <img src="images/logos/Citisense.png" alt="Citisense">
+      <img src="images/logos/allday.png" alt="AllDay">
+      <img src="images/logos/borras.png" alt="Borras">
+      <img src="images/logos/carbon%20rewind.png" alt="Carbon Rewind">
+      <img src="images/logos/coram.png" alt="Coram">
+      <img src="images/logos/id905K9udI_logos.png" alt="Partner Company">
+    </div>
+  </div>
+</section>
+
+
+<section id="team">
+  <h2>Meet the Team</h2>
+
+  <p class="intro">
+    Our experienced team brings together a wealth of expertise in people development and organisational change.
+  </p>
+
+  <div class="team-card">
+    <img
+      src="headshot.jpg"
+      alt="Richard B"
+      class="team-photo"
+      onerror="this.onerror=null;this.src='https://via.placeholder.com/180x180?text=RB';"
+    >
+    <div class="team-content">
+      <h3>Richard B</h3>
+      <div class="team-role">Founder & Principal Consultant</div>
+      <p>
+        <p>
+      Richard is a highly experienced organisational development consultant specialising in
+      Investors in People, employee engagement, leadership development and business improvement.
+      With more than 17 years’ experience supporting organisations across a wide range of sectors,
+      Richard helps clients turn insight into practical action and sustainable improvement.
+    </p>
+
+    <p>
+      Before launching RB Business Insights, Richard held senior leadership and business development
+      roles with organisations including Grant Thornton, Exemplas, Sainsbury’s, Hollywood Bowl, and Tenpin. His background
+      combines strategic consultancy with hands-on operational leadership, giving him a practical
+      understanding of how organisations can improve performance through their people.
+    </p>
+
+      <ul class="specialisms">
+        <li>Investors in People assessments and support</li>
+        <li>Organisational development and change management</li>
+        <li>Leadership development and coaching</li>
+        <li>Employee engagement and culture work</li>
+      </ul>
+      <div class="linkedin-link">
+        <a href="https://www.linkedin.com/in/richardbudd1" target="_blank" rel="noopener noreferrer">View LinkedIn Profile</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <h2>What Clients Say</h2>
+
+  <p class="intro">
+    Don't just take our word for it – hear from our clients about their experience working with us.
+  </p>
+
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <p>
+        "Over the last 5 years Richard’s broad knowledge and insights on both Leadership and Company Culture have been invaluable in improving SWR as a workplace, improving employee engagement and ultimately achieving IIP Gold."
+      </p>
+      <div class="testimonial-source">
+        Jason, CEO
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p>
+        "Richard is a consummate professional and brings a wealth of experience from previous projects and interaction with other organisations, this in turn has helped support and develop the ideas, planning and implementation of key company initiatives"
+      </p>
+      <div class="testimonial-source">
+        Lee, Head of Talent
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p>
+        "Richard has been a critical friend of our business for the past four years, asking deep and searching questions to help us find our own ways of improving the workplace and the employee experience. "
+      </p>
+      <div class="testimonial-source">
+        Pearson Education
+      </div>
+    </div>
+  
+   <div class="testimonial-card">
+      <p>
+        "I can thoroughly recommend Richard, he has a professional and dynamic approach to any situation he encounters and he is great at finding solutions. He is incredibly pragmatic and has lots of experience in a range of organisations and businesses."
+      </p>
+      <div class="testimonial-source">
+        Carolyn, Non Exec Director
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p>
+        "A great strategist who can help you look at a situation from different angles, a great listener with patience and one who could see through problems giving confidence, great integrity and knew how to balance situations and  wonderful confidence boaster when you thought things would not work out"
+      </p>
+      <div class="testimonial-source">
+        Tasneem, EI Specialist
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p>
+        "The every best things about working with Richard were that that he absolutely zoned into the clients issues identifying the problems and then formulated the solution with great skill. His fixes were as needed - .often creative , visionary yet combined with the right amount of process."
+      </p>
+      <div class="testimonial-source">
+        Zarina, Director
+      </div>
+    </div>
+    
+</section>
+
+  <section id="contact">
+  <h2>Get in Touch</h2>
+
+  <p class="intro">
+    Have questions or ready to get started? We'd love to hear from you.
+  </p>
+
+  <div class="contact-box">
+    <h3>Contact us directly</h3>
+    <p>
+      <strong>Email:</strong> <a href="mailto:richard@rb-businessinsights.co.uk">richard@rb-businessinsights.co.uk</a>
+    </p>
+    <p>
+      <strong>Phone:</strong> 07773 335735
+    </p>
+    <p>
+      <strong>Or use the form below to get in touch:</strong>
+    </p>
+
+    <div class="contact-fallback">
+      <a class="consultation-button" href="mailto:richard@rb-businessinsights.co.uk?subject=Website%20enquiry%20-%20RB%20Business%20Insights">Email us now</a>
+      <a class="consultation-button" href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled">Book a consultation</a>
+    </div>
+    
+  </div>
+
+  <div class="iframe-container" style="margin-top: 30px;">
+    <iframe
+      title="RB Business Insights contact form"
+      src="https://forms.office.com/Pages/ResponsePage.aspx?id=NS26w6O8qEu9JsCDGp_otn2PFdqcjz1ClNK3FPIASFBUQjU3REhFUUI2UE5RU0I4NDhSRUI1RDhUUC4u&embed=true"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      frameborder="0"
+      marginwidth="0"
+      marginheight="0"
+      style="border: none; max-width:100%;"
+    ></iframe>
+  </div>
+</section>
+
+  
+<footer>
+  <div class="footer-content">
+    <h3>RB Business Insights</h3>
+    <p>
+      Helping organisations turn people insight into practical improvement through Investors in People support,
+      employee voice, leadership reviews and organisational development.
+    </p>
+    <p>
+      <strong>Email:</strong> <a href="mailto:richard@rb-businessinsights.co.uk">richard@rb-businessinsights.co.uk</a>
+    </p>
+    <p style="margin-top: 30px; font-size: 14px; color: #9ff3f0;">
+      © 2024 RB Business Insights. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
