@@ -466,14 +466,15 @@
     }
 
     .team-photo {
-      width: 180px;
-      max-width: 180px;
-      height: auto;
-      border-radius: 12px;
-      flex-shrink: 0;
-      background: #eef2f7;
-      object-fit: cover;
-    }
+  width: 180px;
+  height: 180px;      /* force square */
+  border-radius: 12px;
+  object-fit: cover;  /* crop to fill square */
+  object-position: center;
+  flex-shrink: 0;
+  background: #eef2f7;
+  border: 1px solid #d9e2ec;
+}
 
     .team-content { flex: 1; }
     .team-role { color: #0b7285; font-weight: bold; margin-bottom: 15px; }
