@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About RB Business Insights | RB Business Insights</title>
+  <meta name="description" content="About RB Business Insights - practical consultancy supporting leadership, culture, employee engagement, Investors in People and organisational improvement.">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f4f7fb;
+      color: #1f2933;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background: #031b34;
+      color: white;
+      padding: 14px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav-brand {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.3px;
+      padding: 8px 6px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-right: 12px;
+    }
+
+    .nav-brand:hover { background: rgba(159, 243, 240, 0.1); }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+      min-height: 44px;
+      min-width: 44px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: nowrap;
+      margin-left: auto;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 8px 10px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: #9ff3f0;
+      background: rgba(159, 243, 240, 0.1);
+    }
+
+    .nav-links a.consultation-link {
+      background: #d4a017;
+      color: white !important;
+      font-weight: 700 !important;
+      padding: 10px 16px;
+      border-radius: 6px;
+      margin-left: 12px;
+    }
+
+    .consultation-link:hover { background: #c89510; color: white !important; }
+
+    .nav-dropdown {
+      position: relative;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .nav-dropbtn {
+      background: none;
+      border: none;
+      color: white;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 8px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .nav-dropbtn:hover {
+      color: #9ff3f0;
+      background: rgba(159, 243, 240, 0.1);
+    }
+
+    .nav-dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 300px;
+      background: #031b34;
+      border-radius: 6px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      z-index: 1200;
+      padding: 8px;
+    }
+
+    .nav-dropdown-content a {
+      display: flex;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 4px;
+      min-height: 44px;
+    }
+
+    .nav-dropdown-content a:hover {
+      background: rgba(159, 243, 240, 0.15);
+      color: #9ff3f0;
+    }
+
+    .nav-dropdown.open .nav-dropdown-content { display: block; }
+
+    /* PAGE HERO */
+    header {
+      background: linear-gradient(135deg, #062b55, #0b7285);
+      color: white;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 10px 0;
+      font-size: 40px;
+    }
+
+    header p {
+      margin: 0 auto;
+      max-width: 900px;
+      font-size: 20px;
+    }
+
+    section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 25px 20px;
+    }
+
+    h2 {
+      font-size: 32px;
+      color: #062b55;
+      margin-bottom: 16px;
+    }
+
+    .intro {
+      font-size: 19px;
+      max-width: 950px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .info-card {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border-left: 5px solid #0b7285;
+    }
+
+    .info-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #062b55;
+    }
+
+    .highlight {
+      background: white;
+      border-radius: 14px;
+      padding: 35px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      margin-top: 12px;
+    }
+
+    .consultation-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #0b7285;
+      color: white;
+      padding: 14px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      min-height: 44px;
+      min-width: 44px;
+      transition: background 0.3s ease;
+    }
+
+    .consultation-button:hover { background: #095d6d; }
+
+    footer {
+      background: #031b34;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 20px;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .footer-content a {
+      color: #9ff3f0;
+      text-decoration: none;
+    }
+
+    .footer-content a:hover { text-decoration: underline; }
+
+    @media (max-width: 1250px) {
+      .nav-brand { font-size: 14px; }
+      .nav-links a, .nav-dropbtn { font-size: 14px; padding: 8px; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: #031b34;
+        padding: 20px;
+        gap: 10px;
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-dropdown { width: 100%; }
+      .nav-dropbtn { width: 100%; text-align: left; justify-content: flex-start; }
+
+      .nav-dropdown-content {
+        position: static;
+        min-width: 100%;
+        box-shadow: none;
+        margin-top: 6px;
+        background: rgba(255,255,255,0.04);
+      }
+
+      header h1 { font-size: 32px; }
+      header p { font-size: 17px; }
+
+      section { padding: 20px 16px; }
+      h2 { font-size: 26px; }
+      .intro { font-size: 16px; }
+
+      .highlight { padding: 24px; }
+    }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 28px; }
+      .consultation-button { width: 100%; }
+      .nav-brand { font-size: 13px; }
+    }
+  </style>
+
+  <script>
+    function setupMobileMenu() {
+      const toggle = document.querySelector('.nav-toggle');
+      const links = document.querySelector('.nav-links');
+
+      if (toggle && links) {
+        toggle.addEventListener('click', () => {
+          const isOpen = links.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        links.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            links.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    }
+
+    function setupDropdownMenu() {
+      const dropdowns = document.querySelectorAll('.nav-dropdown');
+
+      dropdowns.forEach((dropdown) => {
+        const button = dropdown.querySelector('.nav-dropbtn');
+        if (!button) return;
+
+        button.addEventListener('click', (e) => {
+          e.stopPropagation();
+
+          dropdowns.forEach((d) => {
+            if (d !== dropdown) {
+              d.classList.remove('open');
+              const b = d.querySelector('.nav-dropbtn');
+              if (b) b.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          const isOpen = dropdown.classList.toggle('open');
+          button.setAttribute('aria-expanded', String(isOpen));
+        });
+      });
+
+      document.addEventListener('click', (e) => {
+        dropdowns.forEach((dropdown) => {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+            const button = dropdown.querySelector('.nav-dropbtn');
+            if (button) button.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      setupMobileMenu();
+      setupDropdownMenu();
+    });
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">RB Business Insights</a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        ☰
+      </button>
+
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button class="nav-dropbtn" aria-expanded="false" aria-haspopup="true">
+            Explore Services ▾
+          </button>
+          <div class="nav-dropdown-content">
+            <a href="services.html">All Services</a>
+            <a href="investors-in-people.html">Investors in People</a>
+            <a href="employee-voice-engagement.html">Employee Voice & Engagement</a>
+            <a href="leadership-development.html">Leadership Development</a>
+            <a href="organisational-development.html">Organisational Development</a>
+          </div>
+        </div>
+
+        <a href="index.html#working-with">Working With</a>
+        <a href="index.html#contact">Contact</a>
+
+        <div class="nav-dropdown">
+          <button class="nav-dropbtn" aria-expanded="false" aria-haspopup="true">
+            About Us ▾
+          </button>
+          <div class="nav-dropdown-content">
+            <a href="about-rb-business-insights.html">About RB Business Insights</a>
+            <a href="meet-the-team.html">Meet the Team</a>
+          </div>
+        </div>
+
+        <a href="resources-articles.html">Resources / Articles</a>
+        <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="consultation-link">Book a Free Consultation</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>About RB Business Insights</h1>
+    <p>Practical, people-focused consultancy helping organisations improve culture, leadership, engagement and performance.</p>
+  </header>
+
+  <section>
+    <h2>Who we are</h2>
+    <p class="intro">
+      RB Business Insights supports organisations to turn people insight into practical action. We work with leaders and teams to strengthen culture, improve engagement and deliver measurable business improvement through clear, evidence-based approaches.
+    </p>
+  </section>
+
+  <section>
+    <div class="content-grid">
+      <div class="info-card">
+        <h3>Our focus</h3>
+        <p>
+          We specialise in Investors in People support, employee voice and engagement, leadership development and organisational improvement.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <h3>Our approach</h3>
+        <p>
+          We combine challenge and support, helping organisations identify what matters most, prioritise effectively, and implement practical changes that stick.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <h3>Our impact</h3>
+        <p>
+          From accreditation readiness to leadership capability and culture improvement, our work is designed to create stronger workplaces and better outcomes for people and performance.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="consultation">
+    <div class="highlight">
+      <h2>Book a Free Consultation</h2>
+      <p>
+        Whether you're exploring Investors in People, employee engagement,
+        leadership development or wider organisational improvement, an initial
+        conversation can help identify the right next steps.
+      </p>
+      <p>
+        Book a no-obligation consultation to discuss your challenges,
+        priorities and opportunities.
+      </p>
+      <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="consultation-button">Schedule online</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <h3>RB Business Insights</h3>
+      <p>
+        Helping organisations turn people insight into practical improvement through Investors in People support,
+        employee voice, leadership reviews and organisational development.
+      </p>
+      <p><strong>Email:</strong> <a href="mailto:richard@rb-businessinsights.co.uk">richard@rb-businessinsights.co.uk</a></p>
+      <p style="margin-top: 30px; font-size: 14px; color: #9ff3f0;">© 2024 RB Business Insights. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
