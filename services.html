@@ -3,551 +3,486 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services | RB Business Insights</title>
+<title>Our Services | RB Business Insights</title>
 
-<meta name="description" content="Explore RB Business Insights services including Investors in People support, employee voice and engagement, leadership development, and organisational development.">
+<meta name="description" content="Explore RB Business Insights services: Investors in People, Employee Voice & Engagement, Leadership Development, and Organisational Development.">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+  * { box-sizing: border-box; }
 
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background: #f4f7fb;
-      color: #1f2933;
-    }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: #f4f7fb;
+    color: #1f2933;
+  }
 
-    header {
-      background: linear-gradient(135deg, #062b55, #0b7285);
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-      display: flex;
+  .navbar {
+    background: #031b34;
+    color: white;
+    padding: 14px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+
+  .nav-container {
+    max-width: 1150px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .nav-brand {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.3px;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+
+  .nav-brand:hover {
+    background: rgba(159, 243, 240, 0.1);
+  }
+
+  .nav-brand:focus {
+    outline: 2px solid #9ff3f0;
+    outline-offset: 2px;
+  }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    min-height: 44px;
+    min-width: 44px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-toggle:focus {
+    outline: 2px solid #9ff3f0;
+    outline-offset: 2px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-links a:hover {
+    color: #9ff3f0;
+    background: rgba(159, 243, 240, 0.1);
+  }
+
+  .nav-links a:focus {
+    outline: 2px solid #9ff3f0;
+    outline-offset: 2px;
+  }
+
+  .nav-links a.consultation-link {
+    background: #d4a017;
+    color: white !important;
+    font-weight: 700 !important;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .consultation-link:hover {
+    background: #c89510;
+    color: white !important;
+  }
+
+  .consultation-link:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }
+
+  .nav-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .nav-dropbtn {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .nav-dropbtn:hover,
+  .nav-dropbtn:focus {
+    color: #9ff3f0;
+    background: rgba(159, 243, 240, 0.1);
+    outline: none;
+  }
+
+  .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 300px;
+    background: #031b34;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    z-index: 1200;
+    padding: 8px;
+  }
+
+  .nav-dropdown-content a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 4px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-dropdown-content a:hover,
+  .nav-dropdown-content a:focus {
+    background: rgba(159, 243, 240, 0.15);
+    color: #9ff3f0;
+  }
+
+  .nav-dropdown.open .nav-dropdown-content {
+    display: block;
+  }
+
+  header {
+    background: linear-gradient(135deg, #062b55, #0b7285);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header img {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 85%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+  }
+
+  header h1 {
+    font-size: 40px;
+    margin: 10px 0 6px;
+  }
+
+  header p {
+    font-size: 21px;
+    max-width: 850px;
+    margin: 0 auto 10px auto;
+  }
+
+  section {
+    max-width: 1150px;
+    margin: auto;
+    padding: 25px 20px;
+  }
+
+  h2 {
+    font-size: 32px;
+    color: #062b55;
+    margin-bottom: 20px;
+  }
+
+  .intro {
+    font-size: 19px;
+    max-width: 900px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+  }
+
+  .service-card {
+    background: white;
+    padding: 26px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-top: 5px solid #0b7285;
+  }
+
+  .service-card h3 {
+    color: #062b55;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .service-card p {
+    margin-bottom: 18px;
+  }
+
+  .service-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #0b7285;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    min-height: 44px;
+  }
+
+  .service-link:hover {
+    background: #095d6d;
+  }
+
+  .service-link:focus {
+    outline: 2px solid #062b55;
+    outline-offset: 2px;
+  }
+
+  .highlight {
+    background: white;
+    border-radius: 14px;
+    padding: 35px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-top: 10px;
+  }
+
+  .consultation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #0b7285;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease;
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .consultation-button:hover {
+    background: #095d6d;
+  }
+
+  .consultation-button:focus {
+    outline: 2px solid #062b55;
+    outline-offset: 2px;
+  }
+
+  footer {
+    background: #031b34;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 20px;
+  }
+
+  .footer-content {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .footer-content h3 {
+    margin-top: 0;
+    color: white;
+  }
+
+  .footer-content p {
+    margin: 10px 0;
+  }
+
+  .footer-content a {
+    color: #9ff3f0;
+    text-decoration: none;
+    padding: 2px 4px;
+    border-radius: 3px;
+    transition: background 0.3s ease;
+  }
+
+  .footer-content a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-content a:focus {
+    outline: 2px solid #9ff3f0;
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .nav-toggle { display: flex; }
+
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 56px;
+      left: 0;
+      right: 0;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    header img {
-      display: block;
-      margin: 0 auto 20px;
-      max-width: 85%;
-      height: auto;
-      max-height: 200px;
-      object-fit: contain;
-    }
-
-    header p {
-      font-size: 21px;
-      max-width: 850px;
-      margin: 0 auto 30px auto;
-    }
-
-    .btn {
-      display: inline-block;
-      background: white;
-      color: #062b55;
-      padding: 13px 26px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      margin: 6px;
-      min-height: 44px;
-      min-width: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #f0f0f0;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    .btn:focus {
-      outline: 2px solid #0b7285;
-      outline-offset: 2px;
-    }
-
-    .hero-cta {
-      margin-top: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      background: #031b34;
+      padding: 20px;
       gap: 10px;
-    }
-
-    section {
-      max-width: 1150px;
-      margin: auto;
-      padding: 25px 20px;
-    }
-
-    h2 {
-      font-size: 32px;
-      color: #062b55;
-      margin-bottom: 20px;
-    }
-
-    .intro {
-      font-size: 19px;
-      max-width: 900px;
-    }
-
-    .services {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      margin-top: 30px;
-    }
-
-    .card {
-      background: white;
-      padding: 32px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      border-left: 6px solid #0b7285;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: #062b55;
-    }
-
-    .accordion-trigger {
-      background: none;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      width: 100%;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px;
-      margin: -12px -12px 0 -12px;
-      font-size: 16px;
-      font-weight: 600;
-      color: #0b7285;
-      transition: color 0.3s ease;
-      min-height: 44px;
-      border-radius: 6px;
-    }
-
-    .accordion-trigger:hover {
-      color: #062b55;
-      background: #f4f7fb;
-    }
-
-    .accordion-trigger:focus {
-      outline: 2px solid #0b7285;
-      outline-offset: 2px;
-    }
-
-    .accordion-trigger::after {
-      content: "\25BE";
-      display: inline-block;
-      transition: transform 0.3s ease;
-      margin-left: 10px;
-      font-size: 12px;
-    }
-
-    .accordion-trigger.active::after {
-      transform: rotate(180deg);
-    }
-
-    .accordion-content {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease;
-      margin-top: 0;
     }
 
-    .accordion-content.active {
-      max-height: 2000px;
-      margin-top: 15px;
-    }
-
-    .accordion-content ul {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-    }
-
-    .accordion-content ul li {
-      position: relative;
-      padding-left: 28px;
-      margin-bottom: 10px;
-      line-height: 1.5;
-    }
-
-    .accordion-content ul li::before {
-      content: "\2713";
-      position: absolute;
-      left: 0;
-      color: #0b7285;
-      font-weight: bold;
-    }
-
-    .highlight {
-      background: white;
-      border-radius: 14px;
-      padding: 35px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    }
-
-    footer {
-      background: #031b34;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .footer-content {
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .footer-content h3 {
-      margin-top: 0;
-      color: white;
-    }
-
-    .footer-content p {
-      margin: 10px 0;
-    }
-
-    .footer-content a {
-      color: #9ff3f0;
-      text-decoration: none;
-      padding: 2px 4px;
-      border-radius: 3px;
-      transition: background 0.3s ease;
-    }
-
-    .footer-content a:hover {
-      text-decoration: underline;
-    }
-
-    .footer-content a:focus {
-      outline: 2px solid #9ff3f0;
-      outline-offset: 2px;
-    }
-
-    .navbar {
-      background: #031b34;
-      color: white;
-      padding: 14px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-
-    .nav-container {
-      max-width: 1150px;
-      margin: auto;
+    .nav-links.open {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .nav-brand {
-      color: white;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 18px;
-      letter-spacing: 0.3px;
-      padding: 8px;
-      border-radius: 4px;
-      transition: background 0.3s ease;
-    }
-
-    .nav-brand:focus {
-      outline: 2px solid #9ff3f0;
-      outline-offset: 2px;
-    }
-
-    .nav-brand:hover {
-      background: rgba(159, 243, 240, 0.1);
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 24px;
-      cursor: pointer;
-      padding: 8px;
-      min-height: 44px;
-      min-width: 44px;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .nav-toggle:focus {
-      outline: 2px solid #9ff3f0;
-      outline-offset: 2px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+      max-height: 900px;
     }
 
     .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 15px;
-      padding: 8px 12px;
-      border-radius: 4px;
-      transition: background 0.3s ease;
-      min-height: 44px;
-      display: flex;
-      align-items: center;
+      justify-content: flex-start;
     }
 
-    .nav-links a:focus {
-      outline: 2px solid #9ff3f0;
-      outline-offset: 2px;
+    .nav-dropdown {
+      width: 100%;
     }
 
-    .nav-links a:hover {
-      color: #9ff3f0;
-      background: rgba(159, 243, 240, 0.1);
+    .nav-dropbtn {
+      width: 100%;
+      text-align: left;
+      justify-content: flex-start;
     }
 
-    .nav-links a.consultation-link {
-      background: #d4a017;
-      color: white !important;
-      font-weight: 700 !important;
-      padding: 10px 16px;
-      border-radius: 6px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      min-height: 44px;
+    .nav-dropdown-content {
+      position: static;
+      min-width: 100%;
+      box-shadow: none;
+      margin-top: 6px;
+      background: rgba(255,255,255,0.04);
     }
 
-    .consultation-link:hover {
-      background: #c89510;
-      color: white !important;
-    }
+    header h1 { font-size: 32px; }
+    header p { font-size: 18px; }
+    section { padding: 20px 16px; }
+    h2 { font-size: 26px; margin-bottom: 16px; }
+    .intro { font-size: 16px; }
+    .highlight { padding: 24px; }
+  }
 
-    .consultation-link:focus {
-      outline: 2px solid white;
-      outline-offset: 2px;
-    }
+  @media (max-width: 480px) {
+    header { padding: 20px 16px; }
+    header img { max-width: 85%; max-height: 120px; }
+    header h1 { font-size: 28px; }
+    header p { font-size: 16px; }
 
-    @media (max-width: 768px) {
-      .nav-toggle {
-        display: flex;
-      }
+    section { padding: 16px 12px; }
+    h2 { font-size: 22px; margin-bottom: 12px; }
+    .intro { font-size: 15px; }
 
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 56px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background: #031b34;
-        padding: 20px;
-        gap: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-      }
+    .nav-brand { font-size: 16px; }
+    .nav-links a { font-size: 14px; padding: 6px 8px; }
 
-      .nav-links.open {
-        display: flex;
-        max-height: 500px;
-      }
+    .service-card { padding: 18px; }
+    .highlight { padding: 20px; }
 
-      .nav-links a {
-        justify-content: flex-start;
-      }
+    footer { padding: 24px 16px; }
+    .footer-content h3 { font-size: 18px; }
+  }
+</style>
 
-      header {
-        padding: 25px 20px;
-      }
+<script>
+  function setupMobileMenu() {
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
 
-      header img {
-        max-width: 80%;
-        max-height: 160px;
-      }
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        const isOpen = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
 
-      header p {
-        font-size: 18px;
-      }
-
-      section {
-        padding: 20px 16px;
-      }
-
-      h2 {
-        font-size: 26px;
-        margin-bottom: 16px;
-      }
-
-      .intro {
-        font-size: 16px;
-      }
-
-      .card {
-        padding: 24px;
-      }
-
-      .accordion-content.active {
-        max-height: 2500px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header {
-        padding: 20px 16px;
-      }
-
-      header img {
-        max-width: 85%;
-        max-height: 120px;
-      }
-
-      header p {
-        font-size: 16px;
-        margin: 0 auto 20px auto;
-      }
-
-      .hero-cta {
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      section {
-        padding: 16px 12px;
-      }
-
-      h2 {
-        font-size: 22px;
-        margin-bottom: 12px;
-      }
-
-      .intro {
-        font-size: 15px;
-      }
-
-      .card {
-        padding: 16px;
-        border-left-width: 4px;
-      }
-
-      .accordion-trigger {
-        font-size: 15px;
-        padding: 10px;
-        margin: -10px -10px 0 -10px;
-      }
-
-      .accordion-content.active {
-        max-height: 3000px;
-      }
-
-      .nav-brand {
-        font-size: 16px;
-      }
-
-      .nav-links a {
-        font-size: 14px;
-        padding: 6px 8px;
-      }
-
-      .highlight {
-        padding: 20px;
-      }
-
-      footer {
-        padding: 24px 16px;
-      }
-
-      .footer-content h3 {
-        font-size: 18px;
-      }
-    }
-
-    @media (max-width: 360px) {
-      header {
-        padding: 16px 12px;
-      }
-
-      header img {
-        max-height: 100px;
-      }
-
-      h2 {
-        font-size: 20px;
-      }
-
-      .nav-brand {
-        font-size: 14px;
-      }
-
-      .hero-cta {
-        flex-direction: column;
-      }
-
-      .btn {
-        font-size: 14px;
-        padding: 11px 20px;
-      }
-    }
-  </style>
-
-  <script>
-    function toggleAccordion(button) {
-      const content = button.nextElementSibling;
-      button.classList.toggle('active');
-      content.classList.toggle('active');
-    }
-
-    function setupMobileMenu() {
-      const toggle = document.querySelector('.nav-toggle');
-      const links = document.querySelector('.nav-links');
-
-      if (toggle && links) {
-        toggle.addEventListener('click', () => {
-          const isOpen = links.classList.toggle('open');
-          toggle.setAttribute('aria-expanded', String(isOpen));
+      links.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          links.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
         });
-
-        links.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            links.classList.remove('open');
-            toggle.setAttribute('aria-expanded', 'false');
-          });
-        });
-      }
+      });
     }
+  }
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', setupMobileMenu);
-    } else {
+  function setupDropdownMenu() {
+    const dropdown = document.querySelector('.nav-dropdown');
+    const button = dropdown?.querySelector('.nav-dropbtn');
+
+    if (!dropdown || !button) return;
+
+    button.addEventListener('click', () => {
+      const isOpen = dropdown.classList.toggle('open');
+      button.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('open');
+        button.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
       setupMobileMenu();
-    }
-  </script>
+      setupDropdownMenu();
+    });
+  } else {
+    setupMobileMenu();
+    setupDropdownMenu();
+  }
+</script>
 </head>
 
 <body id="top">
@@ -561,7 +496,16 @@
     </button>
 
     <div class="nav-links">
-      <a href="services.html">Explore Services</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropbtn" aria-expanded="false" aria-haspopup="true">Explore Services ▾</button>
+        <div class="nav-dropdown-content">
+          <a href="investors-in-people.html">Investors in People</a>
+          <a href="employee-voice-engagement.html">Employee Voice & Engagement</a>
+          <a href="leadership-development.html">Leadership Development</a>
+          <a href="organisational-development.html">Organisational Development</a>
+        </div>
+      </div>
+
       <a href="working-with.html">Working With</a>
       <a href="contact.html">Contact</a>
       <a href="team.html">Meet the Team</a>
@@ -575,125 +519,41 @@
     src="rb-business-insights-consulting-banner.png"
     alt="RB Business Insights Consulting Banner - Business Improvement, Leadership Development, Employee Engagement"
   >
-
-  <p>
-    Helping organisations turn people insight into practical improvement through Investors in People support,
-    employee voice, leadership reviews and organisational development.
-  </p>
-
-  <div class="hero-cta">
-    <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="btn">Book a Free Consultation</a>
-    <a href="#services" class="btn">Explore Services</a>
-  </div>
+  <h1>Our Services</h1>
+  <p>Comprehensive support tailored to your organisation’s needs.</p>
 </header>
 
-<section id="services">
-  <h2>Our Services</h2>
+<section>
+  <h2>Explore Services</h2>
 
   <p class="intro">
-    Comprehensive solutions tailored to your organisation's needs
+    Choose a service area below to see detailed support options and how we can help.
   </p>
 
-  <div class="services">
-    <div class="card">
-      <button class="accordion-trigger" onclick="toggleAccordion(this)">
-        <h3>Investors in People</h3>
-      </button>
-      <div class="accordion-content">
-        <p>
-         Whether you're beginning your Investors in People journey or looking to build on an existing accreditation, we provide expert guidance, challenge and support every step of the way.
-        </p>
-        <ul>
-          <li>Investors in People readiness reviews</li>
-          <li>Accreditation preparation and support</li>
-          <li>Internal gap analysis against the IIP framework</li>
-          <li>Employee focus groups and listening sessions</li>
-          <li>Leadership and management reviews</li>
-          <li>Action planning and implementation support</li>
-          <li>Continuous improvement programmes</li>
-          <li>Wellbeing and People Impact support</li>
-          <li>Reaccreditation planning and preparation</li>
-          <li>Independent advisory support and critical friend reviews</li>
-        </ul>
-      </div>
-    </div>
+  <div class="services-grid">
+    <article class="service-card">
+      <h3>Investors in People</h3>
+      <p>Guidance, challenge and practical support from readiness through accreditation and continuous improvement.</p>
+      <a class="service-link" href="investors-in-people.html">View service</a>
+    </article>
 
-    <div class="card">
-      <button class="accordion-trigger" onclick="toggleAccordion(this)">
-        <h3>Employee Voice & Engagement</h3>
-      </button>
-      <div class="accordion-content">
-        <p>
-          Highly engaged employees drive better customer experiences, stronger retention and improved business performance. We help organisations understand what their people are thinking and, more importantly, what to do about it.
-        </p>
+    <article class="service-card">
+      <h3>Employee Voice & Engagement</h3>
+      <p>Understand what your people are thinking and turn employee insight into practical action.</p>
+      <a class="service-link" href="employee-voice-engagement.html">View service</a>
+    </article>
 
-        <ul>
-          <li>Employee engagement surveys</li>
-          <li>Pulse surveys</li>
-          <li>Employee voice programmes</li>
-          <li>Listening groups and focus groups</li>
-          <li>Culture diagnostics</li>
-          <li>Employee experience reviews</li>
-          <li>Wellbeing assessments</li>
-          <li>Exit interview analysis</li>
-          <li>Action planning workshops</li>
-          <li>Engagement strategy development</li>
-        </ul>
-      </div>
-    </div>
+    <article class="service-card">
+      <h3>Leadership Development</h3>
+      <p>Build leadership capability, strengthen management effectiveness, and improve team performance.</p>
+      <a class="service-link" href="leadership-development.html">View service</a>
+    </article>
 
-    <div class="card">
-      <button class="accordion-trigger" onclick="toggleAccordion(this)">
-        <h3>Leadership Development</h3>
-      </button>
-      <div class="accordion-content">
-        <p>
-         Strong leadership is at the heart of every successful organisation. We help leaders understand their impact,
-         strengthen their capabilities and create environments where people perform at their best.
-        </p>
-        <ul>
-          <li>Leadership capability reviews</li>
-          <li>Management effectiveness assessments</li>
-          <li>Leadership workshops</li>
-          <li>Team development programmes</li>
-          <li>Senior leadership facilitation</li>
-          <li>Executive coaching</li>
-          <li>Leadership feedback sessions</li>
-          <li>Building high-performing teams</li>
-          <li>Communication and engagement skills</li>
-          <li>Change leadership support</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="card">
-      <button class="accordion-trigger" onclick="toggleAccordion(this)">
-        <h3>Organisational Development</h3>
-      </button>
-      <div class="accordion-content">
-        <p>
-          Whether you're creating a new strategy, refreshing an existing plan, or looking to improve execution and
-          accountability, we provide practical frameworks and expert facilitation to help turn ideas into action.
-        </p>
-        <ul>
-          <li>Strategic planning and strategy development</li>
-          <li>Strategy facilitation workshops</li>
-          <li>Vision, mission and values development</li>
-          <li>Organisational reviews and business health checks</li>
-          <li>Growth planning and scaling support</li>
-          <li>Strategic objective setting and prioritisation</li>
-          <li>OKR design and implementation</li>
-          <li>Entrepreneurial Operating System / EOS implementation support</li>
-          <li>Leadership team alignment and accountability frameworks</li>
-          <li>Operational improvement reviews</li>
-          <li>Cultural transformation programmes</li>
-          <li>Change management and business transformation</li>
-          <li>Customer experience reviews</li>
-          <li>Performance improvement initiatives</li>
-          <li>Facilitation of leadership away days and strategy retreats</li>
-        </ul>
-      </div>
-    </div>
+    <article class="service-card">
+      <h3>Organisational Development</h3>
+      <p>From strategy and facilitation to operational and cultural improvement support.</p>
+      <a class="service-link" href="organisational-development.html">View service</a>
+    </article>
   </div>
 </section>
 
