@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RB Business Insights | People, Culture & Business Improvement Consultancy</title>
-
   <meta name="description" content="Helping organisations improve culture, performance and engagement through Investors in People support, leadership development, employee listening, organisational reviews and business improvement consultancy.">
 
   <style>
@@ -23,7 +22,7 @@
     .navbar {
       background: #031b34;
       color: white;
-      padding: 14px 20px;
+      padding: 14px 10px;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -32,7 +31,9 @@
 
     .nav-container {
       max-width: 1400px;
-      margin: auto;
+      margin: 0 auto;
+      padding-left: 0;
+      padding-right: 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -40,18 +41,18 @@
     }
 
     .nav-brand {
-  color: white;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 15px;   /* same size as menu links */
-  letter-spacing: 0.3px;
-  padding: 8px 6px;  /* slightly tighter */
-  border-radius: 4px;
-  transition: background 0.3s ease;
-  white-space: nowrap;
-  flex-shrink: 0;
-  margin-right: 12px; /* less gap so it sits more left */
-}
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.3px;
+      padding: 8px 6px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-right: 12px;
+    }
 
     .nav-brand:hover { background: rgba(159, 243, 240, 0.1); }
     .nav-brand:focus { outline: 2px solid #9ff3f0; outline-offset: 2px; }
@@ -286,88 +287,26 @@
       border-left: 6px solid #0b7285;
     }
 
-    .card h3 { margin-top: 0; color: #062b55; }
-.service-link {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  color: #062b55;
-  font-size: 30px;
-  font-weight: 900;   /* bolder */
-  line-height: 1.2;
-  margin-bottom: 12px;
-}
-
-    
-    .accordion-trigger {
-      background: none;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      width: 100%;
+    .service-link {
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 12px;
-      margin: -12px -12px 0 -12px;
-      font-size: 16px;
-      font-weight: 600;
+      text-decoration: none;
+      color: #062b55;
+      font-size: 30px;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .service-link:hover {
       color: #0b7285;
-      transition: color 0.3s ease;
-      min-height: 44px;
-      border-radius: 6px;
-      text-align: left;
+      text-decoration: underline;
     }
 
-    .accordion-trigger:hover { color: #062b55; background: #f4f7fb; }
-    .accordion-trigger:focus { outline: 2px solid #0b7285; outline-offset: 2px; }
-
-    .accordion-trigger::after {
-      content: "\25BE";
-      display: inline-block;
-      transition: transform 0.3s ease;
-      margin-left: 10px;
-      font-size: 12px;
-    }
-
-    .accordion-trigger.active::after { transform: rotate(180deg); }
-
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      margin-top: 0;
-    }
-
-    .accordion-content.active {
-      max-height: 3000px;
-      margin-top: 15px;
-    }
-
-    .accordion-content ul,
-    .card ul,
-    .specialisms {
-      list-style: none;
-      padding-left: 0;
-      margin-top: 15px;
-    }
-
-    .accordion-content ul li,
-    .card ul li,
-    .specialisms li {
-      position: relative;
-      padding-left: 28px;
-      margin-bottom: 10px;
-      line-height: 1.5;
-    }
-
-    .accordion-content ul li::before,
-    .card ul li::before,
-    .specialisms li::before {
-      content: "\2713";
-      position: absolute;
-      left: 0;
-      color: #0b7285;
-      font-weight: bold;
+    .service-link:focus {
+      outline: 2px solid #0b7285;
+      outline-offset: 3px;
+      border-radius: 4px;
     }
 
     /* HIGHLIGHTS + CONTACT */
@@ -454,53 +393,6 @@
       to { transform: translateX(-50%); }
     }
 
-    /* TEAM */
-    .team-card {
-      display: flex;
-      gap: 30px;
-      align-items: flex-start;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    }
-
-    .team-photo {
-  width: 180px;
-  height: 180px;      /* force square */
-  border-radius: 12px;
-  object-fit: cover;  /* crop to fill square */
-  object-position: center;
-  flex-shrink: 0;
-  background: #eef2f7;
-  border: 1px solid #d9e2ec;
-}
-
-    .team-content { flex: 1; }
-    .team-role { color: #0b7285; font-weight: bold; margin-bottom: 15px; }
-
-    .linkedin-link { margin-top: 20px; margin-bottom: 20px; }
-
-    .linkedin-link a {
-      color: #0077b5;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 4px 8px;
-      border-radius: 4px;
-      transition: background 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      min-height: 44px;
-      min-width: 44px;
-    }
-
-    .linkedin-link a:hover {
-      text-decoration: underline;
-      background: rgba(0, 119, 181, 0.1);
-    }
-
-    .linkedin-link a:focus { outline: 2px solid #0077b5; outline-offset: 2px; }
-
     /* TESTIMONIALS */
     .testimonial-grid {
       display: grid;
@@ -570,7 +462,7 @@
 
     /* Responsive */
     @media (max-width: 1250px) {
-      .nav-brand { font-size: 28px; }
+      .nav-brand { font-size: 15px; }
       .nav-links a, .nav-dropbtn { font-size: 14px; padding: 8px; }
     }
 
@@ -582,7 +474,7 @@
       .nav-toggle { display: flex; }
 
       .nav-brand {
-        font-size: 18px;
+        font-size: 14px;
         margin-right: 0;
       }
 
@@ -636,15 +528,6 @@
 
       .card { padding: 24px; }
 
-      .team-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 24px;
-      }
-
-      .team-photo { width: 150px; max-width: 150px; }
-
       .consultation-button { padding: 12px 20px; font-size: 14px; }
 
       .logo-slider { padding: 20px 0; }
@@ -666,18 +549,9 @@
       .intro { font-size: 15px; }
 
       .card { padding: 16px; border-left-width: 4px; }
-
-      .team-photo { width: 120px; max-width: 120px; }
-
       .testimonial-card { padding: 16px; }
 
-      .accordion-trigger {
-        font-size: 15px;
-        padding: 10px;
-        margin: -10px -10px 0 -10px;
-      }
-
-      .nav-brand { font-size: 16px; }
+      .nav-brand { font-size: 13px; }
       .nav-links a { font-size: 14px; padding: 6px 8px; }
 
       .why-grid { gap: 16px; padding: 0 12px; }
@@ -694,80 +568,76 @@
       .footer-content h3 { font-size: 18px; }
 
       .iframe-container { height: 1120px; }
+
+      .service-link { font-size: 24px; }
     }
 
     @media (max-width: 360px) {
-      .nav-brand { font-size: 14px; }
+      .nav-brand { font-size: 12px; }
       .btn { font-size: 14px; padding: 11px 20px; }
+      .service-link { font-size: 20px; }
     }
   </style>
 
- <script>
-  function toggleAccordion(button) {
-    const content = button.nextElementSibling;
-    button.classList.toggle('active');
-    content.classList.toggle('active');
-  }
+  <script>
+    function setupMobileMenu() {
+      const toggle = document.querySelector('.nav-toggle');
+      const links = document.querySelector('.nav-links');
 
-  function setupMobileMenu() {
-    const toggle = document.querySelector('.nav-toggle');
-    const links = document.querySelector('.nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', () => {
+          const isOpen = links.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', String(isOpen));
+        });
 
-    if (toggle && links) {
-      toggle.addEventListener('click', () => {
-        const isOpen = links.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', String(isOpen));
+        links.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            links.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    }
+
+    function setupDropdownMenu() {
+      const dropdowns = document.querySelectorAll('.nav-dropdown');
+
+      dropdowns.forEach((dropdown) => {
+        const button = dropdown.querySelector('.nav-dropbtn');
+        if (!button) return;
+
+        button.addEventListener('click', (e) => {
+          e.stopPropagation();
+
+          dropdowns.forEach((d) => {
+            if (d !== dropdown) {
+              d.classList.remove('open');
+              const otherBtn = d.querySelector('.nav-dropbtn');
+              if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          const isOpen = dropdown.classList.toggle('open');
+          button.setAttribute('aria-expanded', String(isOpen));
+        });
       });
 
-      links.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          links.classList.remove('open');
-          toggle.setAttribute('aria-expanded', 'false');
+      document.addEventListener('click', (e) => {
+        dropdowns.forEach((dropdown) => {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+            const button = dropdown.querySelector('.nav-dropbtn');
+            if (button) button.setAttribute('aria-expanded', 'false');
+          }
         });
       });
     }
-  }
 
-  function setupDropdownMenu() {
-    const dropdowns = document.querySelectorAll('.nav-dropdown');
-
-    dropdowns.forEach((dropdown) => {
-      const button = dropdown.querySelector('.nav-dropbtn');
-      if (!button) return;
-
-      button.addEventListener('click', (e) => {
-        e.stopPropagation();
-
-        // close other dropdowns first
-        dropdowns.forEach((d) => {
-          if (d !== dropdown) {
-            d.classList.remove('open');
-            const otherBtn = d.querySelector('.nav-dropbtn');
-            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-          }
-        });
-
-        const isOpen = dropdown.classList.toggle('open');
-        button.setAttribute('aria-expanded', String(isOpen));
-      });
+    document.addEventListener('DOMContentLoaded', () => {
+      setupMobileMenu();
+      setupDropdownMenu();
     });
-
-    document.addEventListener('click', (e) => {
-      dropdowns.forEach((dropdown) => {
-        if (!dropdown.contains(e.target)) {
-          dropdown.classList.remove('open');
-          const button = dropdown.querySelector('.nav-dropbtn');
-          if (button) button.setAttribute('aria-expanded', 'false');
-        }
-      });
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    setupMobileMenu();
-    setupDropdownMenu();
-  });
-</script>
+  </script>
 </head>
 
 <body id="top">
@@ -794,21 +664,21 @@
           </div>
         </div>
 
-       <a href="#working-with">Working With</a>
-<a href="#contact">Contact</a>
+        <a href="#working-with">Working With</a>
+        <a href="#contact">Contact</a>
 
-<div class="nav-dropdown">
-  <button class="nav-dropbtn" aria-expanded="false" aria-haspopup="true">
-    About Us ▾
-  </button>
-  <div class="nav-dropdown-content">
-    <a href="about-rb-business-insights.html">About RB Business Insights</a>
-    <a href="meet-the-team.html">Meet the Team</a>
-  </div>
-</div>
+        <div class="nav-dropdown">
+          <button class="nav-dropbtn" aria-expanded="false" aria-haspopup="true">
+            About Us ▾
+          </button>
+          <div class="nav-dropdown-content">
+            <a href="about-rb-business-insights.html">About RB Business Insights</a>
+            <a href="meet-the-team.html">Meet the Team</a>
+          </div>
+        </div>
 
-<a href="resources-articles.html">Resources / Articles</a>
-<a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="consultation-link">Book a Free Consultation</a>
+        <a href="resources-articles.html">Resources / Articles</a>
+        <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="consultation-link">Book a Free Consultation</a>
       </div>
     </div>
   </nav>
@@ -818,7 +688,6 @@
       src="rb-business-insights-consulting-banner.png"
       alt="RB Business Insights Consulting Banner - Business Improvement, Leadership Development, Employee Engagement"
     >
-
     <p>
       Helping organisations turn people insight into practical improvement through Investors in
       People support, employee voice, leadership reviews and organisational development.
@@ -832,7 +701,6 @@
 
   <section>
     <h2>Practical support for better organisations</h2>
-
     <p class="intro">
       We help organisations improve leadership, employee engagement, culture and business performance
       through practical, evidence-based consultancy and support
@@ -842,81 +710,70 @@
   <div class="why-grid">
     <div class="why-card">
       <h3>People</h3>
-      <p>
-        Creating workplaces where people can thrive and perform at their best.
-      </p>
+      <p>Creating workplaces where people can thrive and perform at their best.</p>
     </div>
 
     <div class="why-card">
       <h3>Leadership</h3>
-      <p>
-        Developing confident leaders who inspire trust, engagement and accountability.
-      </p>
+      <p>Developing confident leaders who inspire trust, engagement and accountability.</p>
     </div>
 
     <div class="why-card">
       <h3>Performance</h3>
-      <p>
-        Turning feedback and insight into measurable organisational improvement.
-      </p>
+      <p>Turning feedback and insight into measurable organisational improvement.</p>
     </div>
 
     <div class="why-card">
       <h3>Partnership</h3>
-      <p>
-        Providing practical support, challenge and expertise every step of the journey.
-      </p>
+      <p>Providing practical support, challenge and expertise every step of the journey.</p>
     </div>
   </div>
 
- <section id="services">
-  <h2>Our Services</h2>
+  <section id="services">
+    <h2>Our Services</h2>
+    <p class="intro">
+      Comprehensive solutions tailored to your organisation's needs
+    </p>
 
-  <p class="intro">
-    Comprehensive solutions tailored to your organisation's needs
-  </p>
+    <div class="services">
+      <div class="card">
+        <a class="service-link" href="investors-in-people.html">Investors in People</a>
+        <p>
+          Whether you're beginning your Investors in People journey or looking to build on an existing accreditation, we provide expert guidance, challenge and support every step of the way.
+        </p>
+      </div>
 
-  <div class="services">
-    <div class="card">
-      <a class="service-link" href="investors-in-people.html">Investors in People</a>
-      <p>
-        Whether you're beginning your Investors in People journey or looking to build on an existing accreditation, we provide expert guidance, challenge and support every step of the way.
-      </p>
+      <div class="card">
+        <a class="service-link" href="employee-voice-engagement.html">Employee Voice & Engagement</a>
+        <p>
+          Highly engaged employees drive better customer experiences, stronger retention and improved business performance. We help organisations understand what their people are thinking and, more importantly, what to do about it.
+        </p>
+      </div>
+
+      <div class="card">
+        <a class="service-link" href="leadership-development.html">Leadership Development</a>
+        <p>
+          Strong leadership is at the heart of every successful organisation. We help leaders understand their impact, strengthen their capabilities and create environments where people perform at their best.
+        </p>
+      </div>
+
+      <div class="card">
+        <a class="service-link" href="organisational-development.html">Organisational Development</a>
+        <p>
+          Whether you're creating a new strategy, refreshing an existing plan, or looking to improve execution and accountability, we provide practical frameworks and expert facilitation to help turn ideas into action.
+        </p>
+      </div>
     </div>
-
-    <div class="card">
-      <a class="service-link" href="employee-voice-engagement.html">Employee Voice & Engagement</a>
-      <p>
-        Highly engaged employees drive better customer experiences, stronger retention and improved business performance. We help organisations understand what their people are thinking and, more importantly, what to do about it.
-      </p>
-    </div>
-
-    <div class="card">
-      <a class="service-link" href="leadership-development.html">Leadership Development</a>
-      <p>
-        Strong leadership is at the heart of every successful organisation. We help leaders understand their impact, strengthen their capabilities and create environments where people perform at their best.
-      </p>
-    </div>
-
-    <div class="card">
-      <a class="service-link" href="organisational-development.html">Organisational Development</a>
-      <p>
-        Whether you're creating a new strategy, refreshing an existing plan, or looking to improve execution and accountability, we provide practical frameworks and expert facilitation to help turn ideas into action.
-      </p>
-    </div>
-  </div>
-</section>  </section>
+  </section>
 
   <section id="consultation">
     <div class="highlight">
       <h2>Book a Free Consultation</h2>
-
       <p>
         Whether you're exploring Investors in People, employee engagement,
         leadership development or wider organisational improvement, an initial
         conversation can help identify the right next steps.
       </p>
-
       <p>
         Book a no-obligation consultation to discuss your challenges,
         priorities and opportunities.
@@ -927,7 +784,6 @@
 
   <section id="working-with">
     <h2>Working With</h2>
-
     <p class="intro">
       Proud to support organisations across the public, private and not-for-profit sectors.
     </p>
@@ -942,6 +798,7 @@
         <img src="images/logos/carbon%20rewind.png" alt="Carbon Rewind">
         <img src="images/logos/coram.png" alt="Coram">
         <img src="images/logos/id905K9udI_logos.png" alt="Partner Company">
+
         <img src="images/logos/ACS.png" alt="ACS">
         <img src="images/logos/BAR.png" alt="BAR">
         <img src="images/logos/Citisense.png" alt="Citisense">
@@ -954,54 +811,40 @@
     </div>
   </section>
 
- 
   <section id="testimonials">
     <h2>What Clients Say</h2>
-
     <p class="intro">
       Don't just take our word for it – hear from our clients about their experience working with us.
     </p>
 
     <div class="testimonial-grid">
       <div class="testimonial-card">
-        <p>
-          "Over the last 5 years Richard’s broad knowledge and insights on both Leadership and Company Culture have been invaluable in improving SWR as a workplace, improving employee engagement and ultimately achieving IIP Gold."
-        </p>
+        <p>"Over the last 5 years Richard’s broad knowledge and insights on both Leadership and Company Culture have been invaluable in improving SWR as a workplace, improving employee engagement and ultimately achieving IIP Gold."</p>
         <div class="testimonial-source">Jason, CEO</div>
       </div>
 
       <div class="testimonial-card">
-        <p>
-          "Richard is a consummate professional and brings a wealth of experience from previous projects and interaction with other organisations, this in turn has helped support and develop the ideas, planning and implementation of key company initiatives"
-        </p>
+        <p>"Richard is a consummate professional and brings a wealth of experience from previous projects and interaction with other organisations, this in turn has helped support and develop the ideas, planning and implementation of key company initiatives"</p>
         <div class="testimonial-source">Lee, Head of Talent</div>
       </div>
 
       <div class="testimonial-card">
-        <p>
-          "Richard has been a critical friend of our business for the past four years, asking deep and searching questions to help us find our own ways of improving the workplace and the employee experience. "
-        </p>
+        <p>"Richard has been a critical friend of our business for the past four years, asking deep and searching questions to help us find our own ways of improving the workplace and the employee experience."</p>
         <div class="testimonial-source">Pearson Education</div>
       </div>
 
       <div class="testimonial-card">
-        <p>
-          "I can thoroughly recommend Richard, he has a professional and dynamic approach to any situation he encounters and he is great at finding solutions. He is incredibly pragmatic and has lots of experience in a range of organisations and businesses."
-        </p>
+        <p>"I can thoroughly recommend Richard, he has a professional and dynamic approach to any situation he encounters and he is great at finding solutions. He is incredibly pragmatic and has lots of experience in a range of organisations and businesses."</p>
         <div class="testimonial-source">Carolyn, Non Exec Director</div>
       </div>
 
       <div class="testimonial-card">
-        <p>
-          "A great strategist who can help you look at a situation from different angles, a great listener with patience and one who could see through problems giving confidence, great integrity and knew how to balance situations and  wonderful confidence boaster when you thought things would not work out"
-        </p>
+        <p>"A great strategist who can help you look at a situation from different angles, a great listener with patience and one who could see through problems giving confidence, great integrity and knew how to balance situations and wonderful confidence boaster when you thought things would not work out"</p>
         <div class="testimonial-source">Tasneem, EI Specialist</div>
       </div>
 
       <div class="testimonial-card">
-        <p>
-          "The every best things about working with Richard were that that he absolutely zoned into the clients issues identifying the problems and then formulated the solution with great skill. His fixes were as needed - .often creative , visionary yet combined with the right amount of process."
-        </p>
+        <p>"The very best things about working with Richard were that he absolutely zoned into the clients issues identifying the problems and then formulated the solution with great skill. His fixes were as needed - often creative, visionary yet combined with the right amount of process."</p>
         <div class="testimonial-source">Zarina, Director</div>
       </div>
     </div>
@@ -1009,22 +852,15 @@
 
   <section id="contact">
     <h2>Get in Touch</h2>
-
     <p class="intro">
       Have questions or ready to get started? We'd love to hear from you.
     </p>
 
     <div class="contact-box">
       <h3>Contact us directly</h3>
-      <p>
-        <strong>Email:</strong> <a href="mailto:richard@rb-businessinsights.co.uk">richard@rb-businessinsights.co.uk</a>
-      </p>
-      <p>
-        <strong>Phone:</strong> 07773 335735
-      </p>
-      <p>
-        <strong>Or use the form below to get in touch:</strong>
-      </p>
+      <p><strong>Email:</strong> <a href="mailto:richard@rb-businessinsights.co.uk">richard@rb-businessinsights.co.uk</a></p>
+      <p><strong>Phone:</strong> 07773 335735</p>
+      <p><strong>Or use the form below to get in touch:</strong></p>
 
       <div class="contact-fallback">
         <a class="consultation-button" href="mailto:richard@rb-businessinsights.co.uk?subject=Website%20enquiry%20-%20RB%20Business%20Insights">Email us now</a>
@@ -1050,9 +886,7 @@
         Helping organisations turn people insight into practical improvement through Investors in People support,
         employee voice, leadership reviews and organisational development.
       </p>
-      <p>
-        <strong>Email:</strong> <a href="mailto:richard@rb-businessinsights.co.uk">richard@rb-businessinsights.co.uk</a>
-      </p>
+      <p><strong>Email:</strong> <a href="mailto:richard@rb-businessinsights.co.uk">richard@rb-businessinsights.co.uk</a></p>
       <p style="margin-top: 30px; font-size: 14px; color: #9ff3f0;">
         © 2024 RB Business Insights. All rights reserved.
       </p>
