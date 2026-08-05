@@ -1043,6 +1043,49 @@
     margin-top: 6px;
     background: rgba(255,255,255,0.04);
   }
+/* --- NAV LAYOUT FIX (desktop) --- */
+.nav-container {
+  max-width: 1400px;          /* give more room */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.nav-brand {
+  white-space: nowrap;         /* keep RB Business Insights on one line */
+  font-size: 34px;             /* slightly smaller so it fits */
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;                   /* tighter spacing */
+  flex-wrap: nowrap;           /* prevent wrapping to second line */
+  margin-left: auto;           /* push links block right */
+}
+
+.nav-links a,
+.nav-dropbtn {
+  white-space: nowrap;         /* keep each item on one line */
+  font-size: 16px;
+  padding: 8px 10px;
+}
+
+.nav-links a.consultation-link {
+  margin-left: 14px;           /* separate gold button */
+  white-space: nowrap;
+}
+
+/* Optional: keep header visible on medium desktop */
+@media (max-width: 1200px) {
+  .nav-brand { font-size: 28px; }
+  .nav-links a, .nav-dropbtn { font-size: 15px; padding: 8px; }
+}
+
+/* Mobile stays as your existing hamburger rules */
 }  
     }
   </style>
