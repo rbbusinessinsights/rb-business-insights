@@ -886,6 +886,81 @@
         font-size: 14px;
         padding: 11px 20px;
       }
+    .nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-dropbtn {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.nav-dropbtn:hover,
+.nav-dropbtn:focus {
+  color: #9ff3f0;
+  background: rgba(159, 243, 240, 0.1);
+  outline: none;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 280px;
+  background: #031b34;
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  z-index: 1200;
+  padding: 8px;
+}
+
+.nav-dropdown-content a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 4px;
+}
+
+.nav-dropdown-content a:hover,
+.nav-dropdown-content a:focus {
+  background: rgba(159, 243, 240, 0.15);
+  color: #9ff3f0;
+}
+
+.nav-dropdown.open .nav-dropdown-content {
+  display: block;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .nav-dropdown {
+    width: 100%;
+  }
+
+  .nav-dropbtn {
+    width: 100%;
+    text-align: left;
+    justify-content: flex-start;
+  }
+
+  .nav-dropdown-content {
+    position: static;
+    min-width: 100%;
+    box-shadow: none;
+    margin-top: 6px;
+    background: rgba(255,255,255,0.04);
+  }
+}  
     }
   </style>
 
@@ -920,6 +995,33 @@
     } else {
       setupMobileMenu();
     }
+   function setupDropdownMenu() {
+  const dropdown = document.querySelector('.nav-dropdown');
+  const button = dropdown?.querySelector('.nav-dropbtn');
+
+  if (!dropdown || !button) return;
+
+  button.addEventListener('click', () => {
+    const isOpen = dropdown.classList.toggle('open');
+    button.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove('open');
+      button.setAttribute('aria-expanded', 'false');
+    }
+  });
+     if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    setupMobileMenu();
+    setupDropdownMenu();
+  });
+} else {
+  setupMobileMenu();
+  setupDropdownMenu();
+}
+} 
   </script>
 </head>
 
@@ -933,15 +1035,17 @@
       ☰
     </button>
 
-    <div class="nav-links">
-      <a href="services.html">Explore Services</a>
-      <a href="#working-with">Working With</a>
-      <a href="#contact">Contact</a>
-      <a href="#team">Meet the Team</a>
-      <a href="#consultation" class="consultation-link">Book a Free Consultation</a>
-    </div>
+    <div class="nav-dropdown">
+  <button class="nav-dropbtn" aria-expanded="false" aria-haspopup="true">
+    Explore Services ▾
+  </button>
+  <div class="nav-dropdown-content">
+    <a href="investors-in-people.html">Investors in People</a>
+    <a href="employee-voice-engagement.html">Employee Voice & Engagement</a>
+    <a href="leadership-development.html">Leadership Development</a>
+    <a href="organisational-development.html">Organisational Development</a>
   </div>
-</nav>
+</div>
 
 <header>
   <img
