@@ -400,7 +400,67 @@
       outline-offset: 2px;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover 
+    .nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-dropbtn {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-dropbtn:hover,
+.nav-dropbtn:focus {
+  color: #9ff3f0;
+  background: rgba(159, 243, 240, 0.1);
+  outline: none;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 300px;
+  background: #031b34;
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  z-index: 1200;
+  padding: 8px;
+}
+
+.nav-dropdown-content a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 4px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-dropdown-content a:hover,
+.nav-dropdown-content a:focus {
+  background: rgba(159, 243, 240, 0.15);
+  color: #9ff3f0;
+}
+
+.nav-dropdown.open .nav-dropdown-content {
+  display: block;
+}
+    {
       color: #9ff3f0;
       background: rgba(159, 243, 240, 0.1);
     }
@@ -429,7 +489,25 @@
 
     /* Mobile navigation */
    @media (max-width: 768px) {
-  .nav-toggle {
+ .nav-dropdown {
+  width: 100%;
+}
+
+.nav-dropbtn {
+  width: 100%;
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.nav-dropdown-content {
+  position: static;
+  min-width: 100%;
+  box-shadow: none;
+  margin-top: 6px;
+  background: rgba(255,255,255,0.04);
+}
+     
+     .nav-toggle {
     display: flex;
   }
 
@@ -972,6 +1050,24 @@
     }
 
     function setupMobileMenu() {
+      function setupDropdownMenu() {
+  const dropdown = document.querySelector('.nav-dropdown');
+  const button = dropdown?.querySelector('.nav-dropbtn');
+
+  if (!dropdown || !button) return;
+
+  button.addEventListener('click', () => {
+    const isOpen = dropdown.classList.toggle('open');
+    button.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove('open');
+      button.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
       const toggle = document.querySelector('.nav-toggle');
       const links = document.querySelector('.nav-links');
 
@@ -990,10 +1086,15 @@
       }
     }
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', setupMobileMenu);
-    } else {
-      setupMobileMenu();
+   if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    setupMobileMenu();
+    setupDropdownMenu();
+  });
+} else {
+  setupMobileMenu();
+  setupDropdownMenu();
+}
     }
    function setupDropdownMenu() {
   const dropdown = document.querySelector('.nav-dropdown');
@@ -1060,7 +1161,16 @@
 
   <div class="hero-cta">
     <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="btn">Book a Free Consultation</a>
-    <a href="services.html" class="btn">Explore Services</a>
+    <div class="nav-dropdown">
+  <button class="nav-dropbtn" aria-expanded="false" aria-haspopup="true">Explore Services ▾</button>
+  <div class="nav-dropdown-content">
+    <a href="services.html">All Services</a>
+    <a href="investors-in-people.html">Investors in People</a>
+    <a href="employee-voice-engagement.html">Employee Voice & Engagement</a>
+    <a href="leadership-development.html">Leadership Development</a>
+    <a href="organisational-development.html">Organisational Development</a>
+  </div>
+</div>
   </div>
 </header>
 
