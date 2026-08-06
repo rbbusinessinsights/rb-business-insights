@@ -97,7 +97,7 @@
 
     .nav-links a:hover {
       color: #9ff3f0;
-      background: rgba(159, 243, 240, 0.1);
+      background: rgba(159,243,240,0.1);
     }
 
     .nav-links a:focus { outline: 2px solid #9ff3f0; outline-offset: 2px; }
@@ -134,7 +134,7 @@
     .nav-dropbtn:hover,
     .nav-dropbtn:focus {
       color: #9ff3f0;
-      background: rgba(159, 243, 240, 0.1);
+      background: rgba(159,243,240,0.1);
       outline: none;
     }
 
@@ -163,7 +163,7 @@
 
     .nav-dropdown-content a:hover,
     .nav-dropdown-content a:focus {
-      background: rgba(159, 243, 240, 0.15);
+      background: rgba(159,243,240,0.15);
       color: #9ff3f0;
     }
 
@@ -245,6 +245,10 @@
       background: linear-gradient(135deg, #5a189a, #7b2cbf);
     }
 
+    .article-card-image.strategy {
+      background: linear-gradient(135deg, #0b7285, #087e8b);
+    }
+
     .article-card-content {
       padding: 24px;
       display: flex;
@@ -281,6 +285,10 @@
 
     .article-card.trust h3 {
       color: #5a189a;
+    }
+
+    .article-card.strategy h3 {
+      color: #0b7285;
     }
 
     .article-meta {
@@ -328,6 +336,10 @@
       color: #7b2cbf;
     }
 
+    .article-card.strategy .article-link {
+      color: #0b7285;
+    }
+
     .article-link:hover {
       gap: 12px;
       color: #062b55;
@@ -335,6 +347,10 @@
 
     .article-card.trust .article-link:hover {
       color: #5a189a;
+    }
+
+    .article-card.strategy .article-link:hover {
+      color: #087e8b;
     }
 
     .article-link::after {
@@ -375,7 +391,7 @@
       transition: background 0.3s ease;
     }
 
-    .consultation-button:hover { background: #095d6d; }
+    .consultation-button:hover { background: #087e8b; }
 
     footer {
       background: #031b34;
@@ -590,7 +606,28 @@
       </div>
     </div>
 
-    <!-- Article 2: Employee Engagement -->
+    <!-- Article 2: Business Strategy -->
+    <div class="article-card strategy">
+      <div class="article-card-image strategy">📋</div>
+      <div class="article-card-content">
+        <span class="article-category leadership">Leadership</span>
+        <span class="article-category leadership">Strategy</span>
+        <h3>Why Business Strategy Means Nothing if Your People Don't Understand It</h3>
+        <div class="article-meta">
+          <span>By Richard Budd</span>
+          <span>Aug 6, 2026</span>
+          <span>8 min read</span>
+        </div>
+        <p class="article-excerpt">
+          Strategy is only valuable when people understand it. Discover how to bridge the gap between leadership intent and employee understanding, and why helping people grasp organisational direction should be business-critical.
+        </p>
+        <div class="article-links">
+          <a href="article-strategy-people.html" class="article-link">Read Article</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article 3: Employee Engagement -->
     <div class="article-card">
       <div class="article-card-image">📊</div>
       <div class="article-card-content">
@@ -607,24 +644,6 @@
         <div class="article-links">
           <a href="article-employee-engagement-wrong-way.html" class="article-link">Read Article</a>
         </div>
-      </div>
-    </div>
-
-    <!-- Coming Soon: Article 3 -->
-    <div class="article-card">
-      <div class="article-card-image">💡</div>
-      <div class="article-card-content">
-        <span class="article-category">Leadership</span>
-        <h3>Coming Soon</h3>
-        <div class="article-meta">
-          <span>By RB Business Insights</span>
-          <span>TBA</span>
-          <span>TBA</span>
-        </div>
-        <p class="article-excerpt">
-          We're working on our next article. Check back soon for more insights on leadership, culture and organisational development.
-        </p>
-        <div style="color: #cbd5e0; font-weight: 600; margin-top: auto;">More coming soon...</div>
       </div>
     </div>
   </div>
