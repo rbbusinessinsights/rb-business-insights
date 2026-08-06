@@ -1,0 +1,18 @@
+# Robots file for search engine crawling
+# For more information, visit https://www.robotstxt.org/
+
+User-agent: *
+Allow: /
+
+# Disallow admin and system directories (if applicable)
+Disallow: /.git/
+Disallow: /.github/
+
+# Sitemap location
+Sitemap: https://rbbusinessinsights.github.io/rb-business-insights/sitemap.xml
+
+# Crawl delay (optional - allows servers to process requests responsibly)
+Crawl-delay: 1
+
+# Request rate
+Request-rate: 30/60
