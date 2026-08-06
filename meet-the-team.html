@@ -207,6 +207,7 @@
     .intro {
       font-size: 19px;
       max-width: 900px;
+      margin-bottom: 30px;
     }
 
     .team-card {
@@ -217,6 +218,7 @@
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
     }
 
     .team-photo {
@@ -231,16 +233,31 @@
 
     .team-content { flex: 1; }
 
+    .team-content h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 24px;
+      color: #062b55;
+    }
+
     .team-role {
       color: #0b7285;
       font-weight: bold;
       margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .team-content p {
+      margin: 12px 0;
+      line-height: 1.7;
+      color: #2d3748;
     }
 
     .specialisms {
       list-style: none;
       padding-left: 0;
       margin-top: 15px;
+      margin-bottom: 15px;
     }
 
     .specialisms li {
@@ -276,6 +293,11 @@
     .linkedin-link a:hover {
       text-decoration: underline;
       background: rgba(0, 119, 181, 0.1);
+    }
+
+    .linkedin-link a::before {
+      content: "🔗 ";
+      margin-right: 6px;
     }
 
     .highlight {
@@ -514,6 +536,7 @@
       Our experienced team brings together a wealth of expertise in people development and organisational change.
     </p>
 
+    <!-- Richard B -->
     <div class="team-card">
       <img
         src="headshot.jpg"
@@ -551,6 +574,77 @@
         </div>
       </div>
     </div>
+
+    <!-- Lindsey Waters -->
+    <div class="team-card">
+      <img
+        src="placeholder.jpg"
+        alt="Lindsey Waters"
+        class="team-photo"
+        onerror="this.onerror=null;this.src='https://via.placeholder.com/180x180?text=LW';"
+      >
+      <div class="team-content">
+        <h3>Lindsey Waters</h3>
+        <div class="team-role">Performance Specialist</div>
+
+        <p>
+          Lindsey is an experienced Manager and leader with in excess of 20 years' experience across Systems Integrator, Banking, Pharmaceutical, Retail, Construction, Recruitment, Social Care and Government Services. She has a proven record of Service Management, Operational Management, Programme and Project Management, and Process re-engineering across a wide range of organisations.
+        </p>
+
+        <p>
+          With a passion for people management and continuous improvement at the heart of all her roles, Lindsey is an accredited Investors in People Practitioner and Performance Specialist. She has coached and led both large and small operational teams, as well as complex projects with matrix responsibility for international resources.
+        </p>
+
+        <ul class="specialisms">
+          <li>Facet5 and TeamScape practitioner</li>
+          <li>Investors in People Practitioner</li>
+          <li>Strategy Development</li>
+          <li>Employee Engagement</li>
+        </ul>
+
+        <div class="linkedin-link">
+          <a href="https://www.linkedin.com/in/waterslindsey/" target="_blank" rel="noopener noreferrer">View LinkedIn Profile</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gary Inman -->
+    <div class="team-card">
+      <img
+        src="placeholder.jpg"
+        alt="Gary Inman"
+        class="team-photo"
+        onerror="this.onerror=null;this.src='https://via.placeholder.com/180x180?text=GI';"
+      >
+      <div class="team-content">
+        <h3>Gary Inman</h3>
+        <div class="team-role">Organisational Development Specialist</div>
+
+        <p>
+          Gary is passionate about creating positive workplace cultures based on respect, inclusion, collaboration and empowerment. For more than 20 years he's been helping organisations to get the best from their people, challenging and extending practices, widening horizons and helping to create brilliant places to work.
+        </p>
+
+        <p>
+          Not just because that makes for happier, more fulfilling lives for everyone (though that's reason enough), but because that's also the way to deliver the best outcomes for the business and for customers. His wide experience as an Investors in People specialist has exposed him to hundreds of forward-thinking organisations and given him a huge base of experience and insight to draw upon.
+        </p>
+
+        <p>
+          Gary is striving to make the world a better place: taking what we know and understand about people, and inspiring others to new and exciting visions, to build workplaces that support, grow, excite and inspire, that are safe but stimulating, and that deliver sustainable high performance.
+        </p>
+
+        <ul class="specialisms">
+          <li>Investors in People specialist</li>
+          <li>Personal coaching and mentoring</li>
+          <li>Organisational development</li>
+          <li>Bid writing and ESG</li>
+        </ul>
+
+        <div class="linkedin-link">
+          <a href="https://www.linkedin.com/in/gary-inman-people-enabler/" target="_blank" rel="noopener noreferrer">View LinkedIn Profile</a>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <section id="consultation">
