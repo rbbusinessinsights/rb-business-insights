@@ -48,36 +48,15 @@
       padding: 8px 6px;
       border-radius: 4px;
       transition: background 0.3s ease;
-      white-space: nowrap;
-      flex-shrink: 0;
-      margin-right: 12px;
     }
 
     .nav-brand:hover { background: rgba(159, 243, 240, 0.1); }
-    .nav-brand:focus { outline: 2px solid #9ff3f0; outline-offset: 2px; }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 24px;
-      cursor: pointer;
-      padding: 8px;
-      min-height: 44px;
-      min-width: 44px;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .nav-toggle:focus { outline: 2px solid #9ff3f0; outline-offset: 2px; }
 
     .nav-links {
       display: flex;
       align-items: center;
       gap: 14px;
-      flex-wrap: nowrap;
-      margin-left: auto;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
@@ -88,10 +67,6 @@
       padding: 8px 10px;
       border-radius: 4px;
       transition: background 0.3s ease;
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-      white-space: nowrap;
     }
 
     .nav-links a:hover {
@@ -99,84 +74,21 @@
       background: rgba(159, 243, 240, 0.1);
     }
 
-    .nav-links a:focus { outline: 2px solid #9ff3f0; outline-offset: 2px; }
-
     .nav-links a.consultation-link {
       background: #d4a017;
       color: white !important;
       font-weight: 700 !important;
       padding: 10px 16px;
       border-radius: 6px;
-      margin-left: 12px;
     }
 
-    .consultation-link:hover { background: #c89510; color: white !important; }
-    .consultation-link:focus { outline: 2px solid white; outline-offset: 2px; }
-
-    .nav-dropdown { position: relative; display: inline-block; flex-shrink: 0; }
-
-    .nav-dropbtn {
-      background: none;
-      border: none;
-      color: white;
-      font-weight: 600;
-      font-size: 15px;
-      padding: 8px 10px;
-      border-radius: 4px;
-      cursor: pointer;
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-      white-space: nowrap;
-    }
-
-    .nav-dropbtn:hover,
-    .nav-dropbtn:focus {
-      color: #9ff3f0;
-      background: rgba(159, 243, 240, 0.1);
-      outline: none;
-    }
-
-    .nav-dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 300px;
-      background: #031b34;
-      border-radius: 6px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      z-index: 1200;
-      padding: 8px;
-    }
-
-    .nav-dropdown-content a {
-      display: flex;
-      align-items: center;
-      color: white;
-      text-decoration: none;
-      padding: 10px 12px;
-      border-radius: 4px;
-      min-height: 44px;
-    }
-
-    .nav-dropdown-content a:hover,
-    .nav-dropdown-content a:focus {
-      background: rgba(159, 243, 240, 0.15);
-      color: #9ff3f0;
-    }
-
-    .nav-dropdown.open .nav-dropdown-content { display: block; }
+    .nav-links a.consultation-link:hover { background: #c89510; }
 
     header {
       background: linear-gradient(135deg, #062b55, #0b7285);
       color: white;
       padding: 30px 20px;
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
     }
 
     header img {
@@ -188,10 +100,15 @@
       object-fit: contain;
     }
 
+    header h1 {
+      font-size: 40px;
+      margin: 10px 0 6px;
+    }
+
     header p {
-      font-size: 21px;
+      font-size: 18px;
       max-width: 850px;
-      margin: 0 auto 20px auto;
+      margin: 0 auto;
     }
 
     section {
@@ -207,78 +124,74 @@
     }
 
     .intro {
-      font-size: 19px;
+      font-size: 18px;
       max-width: 900px;
     }
 
-    .card {
+    .service-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .detail-card {
       background: white;
-      padding: 32px;
+      padding: 28px;
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      border-left: 6px solid #0b7285;
-      margin-top: 20px;
+      border-top: 4px solid #0b7285;
     }
 
-    .card h3 {
-      margin-top: 0;
+    .detail-card h3 {
       color: #062b55;
+      margin-top: 0;
+      margin-bottom: 15px;
     }
 
-    .card ul {
+    .detail-card ul {
       list-style: none;
       padding-left: 0;
-      margin-top: 15px;
+      margin: 0;
     }
 
-    .card ul li {
+    .detail-card li {
       position: relative;
-      padding-left: 28px;
+      padding-left: 25px;
       margin-bottom: 10px;
-      line-height: 1.5;
     }
 
-    .card ul li::before {
-      content: "\2713";
+    .detail-card li::before {
+      content: "✓";
       position: absolute;
       left: 0;
       color: #0b7285;
       font-weight: bold;
     }
 
-    .highlight {
+    .cta-section {
       background: white;
-      border-radius: 14px;
+      border-radius: 12px;
       padding: 35px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      margin-top: 20px;
+      margin-top: 30px;
+      text-align: center;
     }
 
-    .consultation-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    .cta-button {
+      display: inline-block;
       background: #0b7285;
       color: white;
       padding: 14px 24px;
-      border-radius: 8px;
       text-decoration: none;
+      border-radius: 6px;
       font-weight: bold;
       margin-top: 15px;
-      cursor: pointer;
-      border: none;
       transition: background 0.3s ease;
-      min-height: 44px;
-      min-width: 44px;
     }
 
-    .consultation-button:hover {
+    .cta-button:hover {
       background: #095d6d;
-    }
-
-    .consultation-button:focus {
-      outline: 2px solid #062b55;
-      outline-offset: 2px;
     }
 
     footer {
@@ -294,325 +207,103 @@
       margin: auto;
     }
 
-    .footer-content h3 {
-      margin-top: 0;
-      color: white;
-    }
-
-    .footer-content p {
-      margin: 10px 0;
-    }
-
     .footer-content a {
       color: #9ff3f0;
       text-decoration: none;
-      padding: 2px 4px;
-      border-radius: 3px;
-      transition: background 0.3s ease;
     }
 
     .footer-content a:hover {
       text-decoration: underline;
     }
 
-    .footer-content a:focus {
-      outline: 2px solid #9ff3f0;
-      outline-offset: 2px;
-    }
-
-    @media (max-width: 1250px) {
-      .nav-brand { font-size: 15px; }
-      .nav-links a, .nav-dropbtn { font-size: 14px; padding: 8px; }
-    }
-
     @media (max-width: 768px) {
-      .nav-toggle { display: flex; }
-
-      .nav-brand {
-        font-size: 14px;
-        margin-right: 0;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 56px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background: #031b34;
-        padding: 20px;
-        gap: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        margin-left: 0;
-      }
-
-      .nav-links.open {
-        display: flex;
-        max-height: 900px;
-      }
-
-      .nav-links a { justify-content: flex-start; }
-
-      .nav-dropdown { width: 100%; }
-
-      .nav-dropbtn {
-        width: 100%;
-        text-align: left;
-        justify-content: flex-start;
-      }
-
-      .nav-dropdown-content {
-        position: static;
-        min-width: 100%;
-        box-shadow: none;
-        margin-top: 6px;
-        background: rgba(255,255,255,0.04);
-      }
-
-      header { padding: 25px 20px; }
-
-      header img {
-        max-width: 80%;
-        max-height: 160px;
-      }
-
-      header p { font-size: 18px; }
-
       section { padding: 20px 16px; }
-
-      h2 {
-        font-size: 26px;
-        margin-bottom: 16px;
-      }
-
-      .intro { font-size: 16px; }
-
-      .card { padding: 24px; }
-      .highlight { padding: 24px; }
-    }
-
-    @media (max-width: 480px) {
-      header {
-        padding: 20px 16px;
-      }
-
-      header img {
-        max-width: 85%;
-        max-height: 120px;
-      }
-
-      header p {
-        font-size: 16px;
-        margin: 0 auto 20px auto;
-      }
-
-      section {
-        padding: 16px 12px;
-      }
-
-      h2 {
-        font-size: 22px;
-        margin-bottom: 12px;
-      }
-
-      .intro {
-        font-size: 15px;
-      }
-
-      .card {
-        padding: 16px;
-        border-left-width: 4px;
-      }
-
-      .nav-brand {
-        font-size: 13px;
-      }
-
-      .nav-links a {
-        font-size: 14px;
-        padding: 6px 8px;
-      }
-
-      .highlight { padding: 20px; }
-
-      footer { padding: 24px 16px; }
-
-      .footer-content h3 { font-size: 18px; }
+      header h1 { font-size: 32px; }
+      h2 { font-size: 26px; }
+      .detail-card { padding: 20px; }
     }
   </style>
-
-  <script>
-    function setupMobileMenu() {
-      const toggle = document.querySelector('.nav-toggle');
-      const links = document.querySelector('.nav-links');
-
-      if (toggle && links) {
-        toggle.addEventListener('click', () => {
-          const isOpen = links.classList.toggle('open');
-          toggle.setAttribute('aria-expanded', String(isOpen));
-        });
-
-        links.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            links.classList.remove('open');
-            toggle.setAttribute('aria-expanded', 'false');
-          });
-        });
-      }
-    }
-
-    function setupDropdownMenu() {
-      const dropdowns = document.querySelectorAll('.nav-dropdown');
-
-      dropdowns.forEach((dropdown) => {
-        const button = dropdown.querySelector('.nav-dropbtn');
-        if (!button) return;
-
-        button.addEventListener('click', (e) => {
-          e.stopPropagation();
-
-          dropdowns.forEach((d) => {
-            if (d !== dropdown) {
-              d.classList.remove('open');
-              const otherBtn = d.querySelector('.nav-dropbtn');
-              if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-            }
-          });
-
-          const isOpen = dropdown.classList.toggle('open');
-          button.setAttribute('aria-expanded', String(isOpen));
-        });
-      });
-
-      document.addEventListener('click', (e) => {
-        dropdowns.forEach((dropdown) => {
-          if (!dropdown.contains(e.target)) {
-            dropdown.classList.remove('open');
-            const button = dropdown.querySelector('.nav-dropbtn');
-            if (button) button.setAttribute('aria-expanded', 'false');
-          }
-        });
-      });
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      setupMobileMenu();
-      setupDropdownMenu();
-    });
-  </script>
 </head>
 
-<body id="top">
+<body>
 
 <nav class="navbar">
   <div class="nav-container">
     <a href="index.html" class="nav-brand">RB Business Insights</a>
-
-    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-      ☰
-    </button>
-
     <div class="nav-links">
-      <div class="nav-dropdown">
-        <button class="nav-dropbtn" aria-expanded="false" aria-haspopup="true">Explore Services ▾</button>
-        <div class="nav-dropdown-content">
-          <a href="services.html">All Services</a>
-          <a href="investors-in-people.html">Investors in People</a>
-          <a href="employee-voice-engagement.html">Employee Voice & Engagement</a>
-          <a href="leadership-development.html">Leadership Development</a>
-          <a href="organisational-development.html">Organisational Development</a>
-        </div>
-      </div>
-
-      <a href="index.html#working-with">Working With</a>
-      <a href="index.html#contact">Contact</a>
-
-      <div class="nav-dropdown">
-        <button class="nav-dropbtn" aria-expanded="false" aria-haspopup="true">
-          About Us ▾
-        </button>
-        <div class="nav-dropdown-content">
-          <a href="about-rb-business-insights.html">About RB Business Insights</a>
-          <a href="meet-the-team.html">Meet the Team</a>
-        </div>
-      </div>
-
-      <a href="resources-articles.html">Resources / Articles</a>
-      <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="consultation-link">Book a Free Consultation</a>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about-rb-business-insights.html">About</a>
+      <a href="resources-articles.html">Resources</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="consultation-link">Book Consultation</a>
     </div>
   </div>
 </nav>
 
 <header>
-  <img
-    src="rb-business-insights-consulting-banner.png"
-    alt="RB Business Insights Consulting Banner - Business Improvement, Leadership Development, Employee Engagement"
-  >
-  <p>
-    Helping organisations turn people insight into practical improvement through Investors in People support,
-    employee voice, leadership reviews and organisational development.
-  </p>
+  <img src="rb-business-insights-consulting-banner.png" alt="RB Business Insights - Employee Voice & Engagement">
+  <h1>Employee Voice & Engagement</h1>
+  <p>Understand what your people are thinking and turn employee insight into practical action.</p>
 </header>
 
 <section>
-  <h2>Employee Voice & Engagement</h2>
-
+  <h2>Our Approach</h2>
   <p class="intro">
-    Highly engaged employees drive better customer experiences, stronger retention and improved business performance. We help organisations understand what their people are thinking and, more importantly, act on what they're saying to drive meaningful business improvement.
+    Employee voice and engagement are fundamental to organisational success. We help organisations understand what their people are experiencing, thinking and needing, and turn that insight into practical improvement.
   </p>
 
-  <div class="card">
-    <h3>How we support you</h3>
-    <ul>
-      <li>Employee engagement surveys</li>
-      <li>Pulse surveys</li>
-      <li>Employee voice programmes</li>
-      <li>Listening groups and focus groups</li>
-      <li>Culture diagnostics</li>
-      <li>Employee experience reviews</li>
-      <li>Wellbeing assessments</li>
-      <li>Exit interview analysis</li>
-      <li>Action planning workshops</li>
-      <li>Engagement strategy development</li>
-    </ul>
+  <div class="service-details">
+    <div class="detail-card">
+      <h3>Pulse Surveys & Listening Groups</h3>
+      <ul>
+        <li>Regular pulse checks on engagement and culture</li>
+        <li>Structured listening groups to explore themes</li>
+        <li>Understanding what matters most to your people</li>
+      </ul>
+    </div>
+
+    <div class="detail-card">
+      <h3>Culture & Climate Diagnostics</h3>
+      <ul>
+        <li>Comprehensive culture assessments</li>
+        <li>Understanding current state and desired future</li>
+        <li>Identifying gaps and opportunities</li>
+      </ul>
+    </div>
+
+    <div class="detail-card">
+      <h3>Wellbeing & Support</h3>
+      <ul>
+        <li>Employee wellbeing assessments</li>
+        <li>Understanding support needs</li>
+        <li>Planning wellbeing initiatives</li>
+      </ul>
+    </div>
+
+    <div class="detail-card">
+      <h3>Action Planning & Implementation</h3>
+      <ul>
+        <li>Turning insight into action</li>
+        <li>Developing improvement plans</li>
+        <li>Supporting successful implementation</li>
+      </ul>
+    </div>
   </div>
-</section>
 
-<section id="consultation">
-  <div class="highlight">
-    <h2>Book a Free Consultation</h2>
-
-    <p>
-      Whether you're exploring Investors in People, employee engagement,
-      leadership development or wider organisational improvement, an initial
-      conversation can help identify the right next steps.
-    </p>
-
-    <p>
-      Book a no-obligation consultation to discuss your challenges,
-      priorities and opportunities.
-    </p>
-    <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="consultation-button">Schedule online</a>
+  <div class="cta-section">
+    <h2>Ready to Understand Your People Better?</h2>
+    <p>Let's discuss how we can help you gather meaningful employee insight and drive practical improvement.</p>
+    <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="cta-button">Book a Free Consultation</a>
   </div>
 </section>
 
 <footer>
   <div class="footer-content">
     <h3>RB Business Insights</h3>
-    <p>
-      Helping organisations turn people insight into practical improvement through Investors in People support,
-      employee voice, leadership reviews and organisational development.
-    </p>
-    <p>
-      <strong>Email:</strong> <a href="mailto:richard@rb-businessinsights.co.uk">richard@rb-businessinsights.co.uk</a>
-    </p>
-    <p style="margin-top: 30px; font-size: 14px; color: #9ff3f0;">
-      © 2024 RB Business Insights. All rights reserved.
-    </p>
+    <p>Helping organisations turn people insight into practical improvement through Investors in People support, employee voice, leadership reviews and organisational development.</p>
+    <p><strong>Email:</strong> <a href="mailto:richard@rb-businessinsights.co.uk">richard@rb-businessinsights.co.uk</a></p>
+    <p style="margin-top: 30px; font-size: 14px; color: #9ff3f0;">© 2024 RB Business Insights. All rights reserved.</p>
   </div>
 </footer>
 

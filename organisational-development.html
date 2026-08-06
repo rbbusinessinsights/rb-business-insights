@@ -4,201 +4,308 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Organisational Development | RB Business Insights</title>
-<meta name="description" content="Organisational development consultancy including strategic planning, OKRs, EOS implementation support, culture transformation and operational improvement.">
+<meta name="description" content="Organisational development consultancy including strategic planning, culture transformation and operational improvement.">
 
-<style>
-* { box-sizing: border-box; }
-body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; background: #f4f7fb; color: #1f2933; }
-.navbar { background: #031b34; color: white; padding: 14px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
-.nav-container { max-width: 1150px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-.nav-brand { color: white; text-decoration: none; font-weight: 700; font-size: 18px; padding: 8px; border-radius: 4px; }
-.nav-toggle { display: none; background: none; border: none; color: white; font-size: 24px; cursor: pointer; padding: 8px; min-height: 44px; min-width: 44px; }
-.nav-links { display: flex; gap: 22px; flex-wrap: wrap; justify-content: flex-end; align-items: center; }
-.nav-links a { color: white; text-decoration: none; font-weight: 600; font-size: 15px; padding: 8px 12px; border-radius: 4px; min-height: 44px; display: flex; align-items: center; }
-.nav-links a:hover { color: #9ff3f0; background: rgba(159,243,240,0.1); }
-.nav-links a.consultation-link { background: #d4a017; color: white !important; font-weight: 700 !important; padding: 10px 16px; border-radius: 6px; }
+  <style>
+    * { box-sizing: border-box; }
 
-.nav-dropdown { position: relative; display: inline-block; }
-.nav-dropbtn { background: none; border: none; color: white; font-weight: 600; font-size: 15px; padding: 8px 12px; border-radius: 4px; cursor: pointer; min-height: 44px; display: inline-flex; align-items: center; }
-.nav-dropbtn:hover { color: #9ff3f0; background: rgba(159,243,240,0.1); }
-.nav-dropdown-content { display: none; position: absolute; top: 100%; left: 0; min-width: 300px; background: #031b34; border-radius: 6px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); z-index: 1200; padding: 8px; }
-.nav-dropdown-content a { display: block; color: white; text-decoration: none; padding: 10px 12px; border-radius: 4px; min-height: 44px; }
-.nav-dropdown-content a:hover { background: rgba(159,243,240,0.15); color: #9ff3f0; }
-.nav-dropdown.open .nav-dropdown-content { display: block; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f4f7fb;
+      color: #1f2933;
+    }
 
-header { background: linear-gradient(135deg, #062b55, #0b7285); color: white; padding: 40px 20px; text-align: center; }
-header .logo-container { display: flex; align-items: center; justify-content: center; min-height: 100px; margin-bottom: 20px; }
-header img { max-width: 300px; max-height: 100px; width: auto; height: auto; object-fit: contain; }
-header p { font-size: 21px; max-width: 850px; margin: 0 auto; }
+    .navbar {
+      background: #031b34;
+      color: white;
+      padding: 14px 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
 
-section { max-width: 1150px; margin: auto; padding: 25px 20px; }
-h2 { font-size: 32px; color: #062b55; margin-bottom: 20px; }
-.intro { font-size: 19px; max-width: 900px; }
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-left: 0;
+      padding-right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
 
-.card { background: white; padding: 32px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-left: 6px solid #0b7285; margin-top: 20px; }
-.card h3 { margin-top: 0; color: #062b55; }
-.card ul { list-style: none; padding-left: 0; margin-top: 15px; }
-.card ul li { position: relative; padding-left: 28px; margin-bottom: 10px; }
-.card ul li::before { content: "\2713"; position: absolute; left: 0; color: #0b7285; font-weight: bold; }
+    .nav-brand {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.3px;
+      padding: 8px 6px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
 
-.highlight { background: white; border-radius: 14px; padding: 35px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-top: 20px; }
-.consultation-button { display: inline-flex; align-items: center; justify-content: center; background: #0b7285; color: white; padding: 14px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px; min-height: 44px; min-width: 44px; }
-.consultation-button:hover { background: #062b55; }
+    .nav-brand:hover { background: rgba(159, 243, 240, 0.1); }
 
-footer { background: #031b34; color: white; text-align: center; padding: 40px 20px; margin-top: 20px; }
-.footer-content { max-width: 800px; margin: auto; }
-.footer-content a { color: #9ff3f0; text-decoration: none; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
 
-@media (max-width: 768px) {
-  .nav-toggle { display: block; }
-  .nav-links { display: none; gap: 0; flex-direction: column; position: absolute; top: 54px; left: 0; right: 0; background: #031b34; padding: 10px 0; border-radius: 0 0 6px 6px; }
-  .nav-links.show { display: flex; }
-  .nav-links a { padding: 12px 20px; border-radius: 0; }
-  h2 { font-size: 24px; }
-  .card { padding: 20px; }
-  header p { font-size: 16px; }
-  header .logo-container { min-height: 70px; }
-  header img { max-width: 220px; max-height: 70px; }
-}
-</style>
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 8px 10px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #9ff3f0;
+      background: rgba(159, 243, 240, 0.1);
+    }
+
+    .nav-links a.consultation-link {
+      background: #d4a017;
+      color: white !important;
+      font-weight: 700 !important;
+      padding: 10px 16px;
+      border-radius: 6px;
+    }
+
+    .nav-links a.consultation-link:hover { background: #c89510; }
+
+    header {
+      background: linear-gradient(135deg, #062b55, #0b7285);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header img {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 85%;
+      height: auto;
+      max-height: 200px;
+      object-fit: contain;
+    }
+
+    header h1 {
+      font-size: 40px;
+      margin: 10px 0 6px;
+    }
+
+    header p {
+      font-size: 18px;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 25px 20px;
+    }
+
+    h2 {
+      font-size: 32px;
+      color: #062b55;
+      margin-bottom: 20px;
+    }
+
+    .intro {
+      font-size: 18px;
+      max-width: 900px;
+    }
+
+    .service-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .detail-card {
+      background: white;
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border-top: 4px solid #0b7285;
+    }
+
+    .detail-card h3 {
+      color: #062b55;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .detail-card ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .detail-card li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 10px;
+    }
+
+    .detail-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #0b7285;
+      font-weight: bold;
+    }
+
+    .cta-section {
+      background: white;
+      border-radius: 12px;
+      padding: 35px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #0b7285;
+      color: white;
+      padding: 14px 24px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 15px;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #095d6d;
+    }
+
+    footer {
+      background: #031b34;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 20px;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .footer-content a {
+      color: #9ff3f0;
+      text-decoration: none;
+    }
+
+    .footer-content a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 20px 16px; }
+      header h1 { font-size: 32px; }
+      h2 { font-size: 26px; }
+      .detail-card { padding: 20px; }
+    }
+  </style>
 </head>
+
 <body>
 
 <nav class="navbar">
   <div class="nav-container">
     <a href="index.html" class="nav-brand">RB Business Insights</a>
-    <button class="nav-toggle" id="navToggle">☰</button>
-    <div class="nav-links" id="navLinks">
+    <div class="nav-links">
       <a href="index.html">Home</a>
-      <div class="nav-dropdown">
-        <button class="nav-dropbtn">Services ▼</button>
-        <div class="nav-dropdown-content">
-          <a href="organisational-development.html">Organisational Development</a>
-          <a href="leadership-development.html">Leadership Development</a>
-          <a href="employee-voice-engagement.html">Employee Voice & Engagement</a>
-          <a href="index.html#services">All Services</a>
-        </div>
-      </div>
-      <a href="index.html#about">About Us</a>
-      <div class="nav-dropdown">
-        <button class="nav-dropbtn">About ▼</button>
-        <div class="nav-dropdown-content">
-          <a href="index.html#about">Company Overview</a>
-          <a href="index.html#team">Our Team</a>
-          <a href="index.html#approach">Our Approach</a>
-        </div>
-      </div>
-      <a href="index.html#resources">Resources / Articles</a>
-      <a href="index.html#contact" class="consultation-link">Book Consultation</a>
+      <a href="services.html">Services</a>
+      <a href="about-rb-business-insights.html">About</a>
+      <a href="resources-articles.html">Resources</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="consultation-link">Book Consultation</a>
     </div>
   </div>
 </nav>
 
 <header>
-  <div class="logo-container">
-    <img src="rb-logo-website-header-white-text-transparent.png" alt="RB Business Insights Logo">
-  </div>
-  <p>Transforming organisations through strategic development, planning, and sustainable operational improvement</p>
+  <img src="rb-business-insights-consulting-banner.png" alt="RB Business Insights - Organisational Development">
+  <h1>Organisational Development</h1>
+  <p>Strategic planning and operational improvement for sustainable organisational success.</p>
 </header>
 
 <section>
-  <h2>Organisational Development</h2>
-  <p class="intro">We partner with organisations to build stronger foundations for sustainable growth and performance improvement. Our consultancy helps you align strategy, structure, and culture to achieve ambitious goals.</p>
-</section>
+  <h2>Our Approach</h2>
+  <p class="intro">
+    Sustainable organisational success requires strategic clarity, strong culture and operational excellence. We help organisations develop strategies, improve processes and build the capabilities needed to thrive.
+  </p>
 
-<section>
-  <div class="card">
-    <h3>Strategic Planning & OKRs</h3>
-    <p>Clarify your vision and roadmap with structured strategic planning and OKR (Objectives and Key Results) frameworks. We help organisations define clear priorities and measure progress effectively.</p>
-    <ul>
-      <li>Strategic visioning and roadmap development</li>
-      <li>OKR framework implementation and coaching</li>
-      <li>Quarterly business reviews and performance tracking</li>
-      <li>Competitive analysis and market positioning</li>
-    </ul>
+  <div class="service-details">
+    <div class="detail-card">
+      <h3>Strategic Planning & Facilitation</h3>
+      <ul>
+        <li>Developing strategic direction</li>
+        <li>Facilitating planning conversations</li>
+        <li>Creating actionable strategies</li>
+      </ul>
+    </div>
+
+    <div class="detail-card">
+      <h3>Culture Transformation</h3>
+      <ul>
+        <li>Assessing current culture</li>
+        <li>Defining desired culture</li>
+        <li>Supporting transformation journey</li>
+      </ul>
+    </div>
+
+    <div class="detail-card">
+      <h3>Operational Improvement</h3>
+      <ul>
+        <li>Process improvement and efficiency</li>
+        <li>Operational excellence support</li>
+        <li>Systems and ways of working</li>
+      </ul>
+    </div>
+
+    <div class="detail-card">
+      <h3>Change Leadership</h3>
+      <ul>
+        <li>Leading organisational change</li>
+        <li>Change management support</li>
+        <li>Building change capability</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="card">
-    <h3>EOS Implementation & Scaling</h3>
-    <p>Build a scalable organisation using the Entrepreneurial Operating System (EOS). We provide expert guidance to implement EOS tools and processes that drive accountability and clarity across teams.</p>
-    <ul>
-      <li>EOS foundational training and implementation</li>
-      <li>Quarterly business reviews and pulse checks</li>
-      <li>Accountability systems and metrics</li>
-      <li>Ongoing EOS coaching and optimisation</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>Culture Transformation</h3>
-    <p>Shape a high-performance culture that aligns with your strategic direction. We help organisations diagnose, design, and embed the values, behaviours, and systems that drive success.</p>
-    <ul>
-      <li>Culture assessment and diagnostic reviews</li>
-      <li>Values definition and embedding programmes</li>
-      <li>Behaviour and capability framework development</li>
-      <li>Change leadership and transformation support</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>Operational Improvement & Efficiency</h3>
-    <p>Optimise processes and systems to improve efficiency, reduce waste, and enhance customer experience. Our operational improvement programmes drive tangible business results.</p>
-    <ul>
-      <li>Process mapping and efficiency analysis</li>
-      <li>Lean and continuous improvement methodologies</li>
-      <li>Systems and technology optimisation</li>
-      <li>Change management and implementation support</li>
-    </ul>
-  </div>
-
-  <div class="highlight">
-    <h3>Why Choose RB Business Insights for Organisational Development?</h3>
-    <p>We combine strategic thinking with practical implementation support. Our consultants bring real-world experience in transforming organisations of all sizes. We work as trusted partners, not just advisors.</p>
-    <a href="index.html#contact" class="consultation-button">Schedule a Consultation</a>
+  <div class="cta-section">
+    <h2>Ready to Transform Your Organisation?</h2>
+    <p>Let's discuss how we can help you develop strategy, improve culture and drive sustainable organisational improvement.</p>
+    <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="cta-button">Book a Free Consultation</a>
   </div>
 </section>
 
 <footer>
   <div class="footer-content">
-    <p>&copy; 2024 RB Business Insights. All rights reserved.</p>
-    <p><a href="index.html">Home</a> | <a href="index.html#about">About</a> | <a href="index.html#contact">Contact</a></p>
+    <h3>RB Business Insights</h3>
+    <p>Helping organisations turn people insight into practical improvement through Investors in People support, employee voice, leadership reviews and organisational development.</p>
+    <p><strong>Email:</strong> <a href="mailto:richard@rb-businessinsights.co.uk">richard@rb-businessinsights.co.uk</a></p>
+    <p style="margin-top: 30px; font-size: 14px; color: #9ff3f0;">© 2024 RB Business Insights. All rights reserved.</p>
   </div>
 </footer>
-
-<script>
-// Navbar toggle for mobile
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
-
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-});
-
-// Close menu when a link is clicked
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('show');
-  });
-});
-
-// Dropdown functionality
-document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
-  const button = dropdown.querySelector('.nav-dropbtn');
-  button.addEventListener('click', (e) => {
-    e.stopPropagation();
-    // Close other dropdowns
-    document.querySelectorAll('.nav-dropdown').forEach(d => {
-      if (d !== dropdown) d.classList.remove('open');
-    });
-    dropdown.classList.toggle('open');
-  });
-});
-
-// Close dropdowns when clicking outside
-document.addEventListener('click', () => {
-  document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
-});
-</script>
 
 </body>
 </html>
