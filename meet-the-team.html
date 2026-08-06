@@ -221,14 +221,24 @@
       margin-bottom: 30px;
     }
 
-    .team-photo {
+    .team-photo-wrapper {
       width: 180px;
-      height: 180px;
-      border-radius: 12px;
+      height: 220px;
       flex-shrink: 0;
-      object-fit: cover;
+      border-radius: 12px;
+      overflow: hidden;
       background: #eef2f7;
       border: 1px solid #d9e2ec;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .team-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
 
     .team-content { flex: 1; }
@@ -419,9 +429,9 @@
         text-align: center;
       }
 
-      .team-photo {
+      .team-photo-wrapper {
         width: 150px;
-        height: 150px;
+        height: 180px;
       }
 
       .highlight { padding: 24px; }
@@ -430,7 +440,7 @@
     @media (max-width: 480px) {
       header h1 { font-size: 28px; }
       .consultation-button { width: 100%; }
-      .team-photo { width: 120px; height: 120px; }
+      .team-photo-wrapper { width: 120px; height: 150px; }
     }
   </style>
 
@@ -551,11 +561,13 @@
 
     <!-- Richard Budd -->
     <div class="team-card">
-      <img
-        src="headshot.jpg"
-        alt="Richard Budd"
-        class="team-photo"
-      >
+      <div class="team-photo-wrapper">
+        <img
+          src="headshot.jpg"
+          alt="Richard Budd"
+          class="team-photo"
+        >
+      </div>
       <div class="team-content">
         <h3>Richard Budd</h3>
         <div class="team-role">Founder & Principal Consultant</div>
@@ -589,11 +601,13 @@
 
     <!-- Lindsey Waters -->
     <div class="team-card">
-      <img
-        src="lindsey-waters.jpg"
-        alt="Lindsey Waters"
-        class="team-photo"
-      >
+      <div class="team-photo-wrapper">
+        <img
+          src="lindsey-waters.jpg"
+          alt="Lindsey Waters"
+          class="team-photo"
+        >
+      </div>
       <div class="team-content">
         <h3>Lindsey Waters</h3>
         <div class="team-role">Performance Specialist & Partner</div>
@@ -622,11 +636,13 @@
 
     <!-- Gary Inman -->
     <div class="team-card">
-      <img
-        src="gary-inman.jpg"
-        alt="Gary Inman"
-        class="team-photo"
-      >
+      <div class="team-photo-wrapper">
+        <img
+          src="gary-inman.jpg"
+          alt="Gary Inman"
+          class="team-photo"
+        >
+      </div>
       <div class="team-content">
         <h3>Gary Inman</h3>
         <div class="team-role">Organisational Development Specialist & Partner</div>
