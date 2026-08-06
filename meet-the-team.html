@@ -6,3 +6,288 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <title>Meet the Team | RB Business Insights</title>
   <meta name="description" content="Meet the team at RB Business Insights. Experienced support in Investors in People, leadership development, employee engagement and organisational improvement.">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f4f7fb;
+      color: #1f2933;
+    }
+
+    .navbar {
+      background: #031b34;
+      color: white;
+      padding: 14px 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-left: 0;
+      padding-right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav-brand {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.3px;
+      padding: 8px 6px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .nav-brand:hover { background: rgba(159, 243, 240, 0.1); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 8px 10px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #9ff3f0;
+      background: rgba(159, 243, 240, 0.1);
+    }
+
+    .nav-links a.consultation-link {
+      background: #d4a017;
+      color: white !important;
+      font-weight: 700 !important;
+      padding: 10px 16px;
+      border-radius: 6px;
+    }
+
+    .nav-links a.consultation-link:hover { background: #c89510; }
+
+    header {
+      background: linear-gradient(135deg, #062b55, #0b7285);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header img {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 85%;
+      height: auto;
+      max-height: 200px;
+      object-fit: contain;
+    }
+
+    header h1 {
+      font-size: 40px;
+      margin: 10px 0 6px;
+    }
+
+    header p {
+      font-size: 18px;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 25px 20px;
+    }
+
+    h2 {
+      font-size: 32px;
+      color: #062b55;
+      margin-bottom: 20px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .team-member {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      text-align: center;
+      border-top: 4px solid #0b7285;
+    }
+
+    .team-member img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 4px solid #0b7285;
+    }
+
+    .team-member h3 {
+      color: #062b55;
+      margin: 15px 0 5px 0;
+      font-size: 20px;
+    }
+
+    .team-member .role {
+      color: #0b7285;
+      font-weight: bold;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .team-member p {
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .cta-section {
+      background: white;
+      border-radius: 12px;
+      padding: 35px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #0b7285;
+      color: white;
+      padding: 14px 24px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 15px;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #095d6d;
+    }
+
+    footer {
+      background: #031b34;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 20px;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .footer-content a {
+      color: #9ff3f0;
+      text-decoration: none;
+    }
+
+    .footer-content a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 20px 16px; }
+      header h1 { font-size: 32px; }
+      h2 { font-size: 26px; }
+      .team-member { padding: 20px; }
+      .team-member img { width: 120px; height: 120px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-brand">RB Business Insights</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about-rb-business-insights.html">About</a>
+      <a href="resources-articles.html">Resources</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="consultation-link">Book Consultation</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <img src="rb-business-insights-consulting-banner.png" alt="RB Business Insights - Meet the Team">
+  <h1>Meet the Team</h1>
+  <p>Experienced consultants dedicated to helping organisations improve people, culture and performance.</p>
+</header>
+
+<section>
+  <h2>Our Team</h2>
+  <p>
+    Our team brings extensive experience in people development, leadership, organisational culture and business improvement. We're passionate about helping organisations succeed through developing their people and building stronger, more engaged workplaces.
+  </p>
+
+  <div class="team-grid">
+    <div class="team-member">
+      <img src="gary-inman.jpg" alt="Gary Inman">
+      <h3>Gary Inman</h3>
+      <div class="role">Consultant</div>
+      <p>
+        Gary brings extensive experience in organisational development, leadership and culture improvement. Passionate about helping organisations build engaged, high-performing teams.
+      </p>
+    </div>
+
+    <div class="team-member">
+      <img src="lindsey-waters.jpg" alt="Lindsey Waters">
+      <h3>Lindsey Waters</h3>
+      <div class="role">Consultant</div>
+      <p>
+        Lindsey specialises in employee engagement, culture transformation and organisational improvement. Dedicated to helping organisations create workplaces where people thrive.
+      </p>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h2>Ready to Work Together?</h2>
+    <p>Let's discuss how our team can help your organisation improve culture, engagement and performance.</p>
+    <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="cta-button">Book a Free Consultation</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <h3>RB Business Insights</h3>
+    <p>Helping organisations turn people insight into practical improvement through Investors in People support, employee voice, leadership reviews and organisational development.</p>
+    <p><strong>Email:</strong> <a href="mailto:richard@rb-businessinsights.co.uk">richard@rb-businessinsights.co.uk</a></p>
+    <p style="margin-top: 30px; font-size: 14px; color: #9ff3f0;">© 2024 RB Business Insights. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
