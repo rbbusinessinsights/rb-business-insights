@@ -21,13 +21,14 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; 
 .nav-dropdown { position: relative; display: inline-block; }
 .nav-dropbtn { background: none; border: none; color: white; font-weight: 600; font-size: 15px; padding: 8px 12px; border-radius: 4px; cursor: pointer; min-height: 44px; display: inline-flex; align-items: center; }
 .nav-dropbtn:hover { color: #9ff3f0; background: rgba(159,243,240,0.1); }
-.nav-dropdown-content { display: none; position: absolute; top: 100%; left: 0; min-width: 300px; background: #031b34; border-radius: 6px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); z-index: 1200; padding: 12px 0; }
+.nav-dropdown-content { display: none; position: absolute; top: 100%; left: 0; min-width: 300px; background: #031b34; border-radius: 6px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); z-index: 1200; padding: 8px; }
 .nav-dropdown-content a { display: block; color: white; text-decoration: none; padding: 10px 12px; border-radius: 4px; min-height: 44px; }
 .nav-dropdown-content a:hover { background: rgba(159,243,240,0.15); color: #9ff3f0; }
 .nav-dropdown.open .nav-dropdown-content { display: block; }
 
-header { background: linear-gradient(135deg, #062b55, #0b7285); color: white; padding: 30px 20px; text-align: center; }
-header img { display: block; margin: 0 auto 20px; max-width: 85%; max-height: 200px; object-fit: contain; }
+header { background: linear-gradient(135deg, #062b55, #0b7285); color: white; padding: 40px 20px; text-align: center; }
+header .logo-container { display: flex; align-items: center; justify-content: center; min-height: 80px; margin-bottom: 20px; }
+header img { max-width: 200px; max-height: 80px; width: auto; height: auto; object-fit: contain; }
 header p { font-size: 21px; max-width: 850px; margin: 0 auto; }
 
 section { max-width: 1150px; margin: auto; padding: 25px 20px; }
@@ -41,7 +42,7 @@ h2 { font-size: 32px; color: #062b55; margin-bottom: 20px; }
 .card ul li::before { content: "\2713"; position: absolute; left: 0; color: #0b7285; font-weight: bold; }
 
 .highlight { background: white; border-radius: 14px; padding: 35px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-top: 20px; }
-.consultation-button { display: inline-flex; align-items: center; justify-content: center; background: #0b7285; color: white; padding: 14px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; margin-top: 20px; transition: background 0.3s ease; }
+.consultation-button { display: inline-flex; align-items: center; justify-content: center; background: #0b7285; color: white; padding: 14px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px; min-height: 44px; min-width: 44px; }
 .consultation-button:hover { background: #062b55; }
 
 footer { background: #031b34; color: white; text-align: center; padding: 40px 20px; margin-top: 20px; }
@@ -56,6 +57,8 @@ footer { background: #031b34; color: white; text-align: center; padding: 40px 20
   h2 { font-size: 24px; }
   .card { padding: 20px; }
   header p { font-size: 16px; }
+  header .logo-container { min-height: 60px; }
+  header img { max-width: 150px; max-height: 60px; }
 }
 </style>
 </head>
@@ -92,7 +95,9 @@ footer { background: #031b34; color: white; text-align: center; padding: 40px 20
 </nav>
 
 <header>
-  <img src="rb-logo.png" alt="RB Business Insights Logo">
+  <div class="logo-container">
+    <img src="logo.png" alt="RB Business Insights Logo">
+  </div>
   <p>Transforming organisations through strategic development, planning, and sustainable operational improvement</p>
 </header>
 
@@ -115,7 +120,7 @@ footer { background: #031b34; color: white; text-align: center; padding: 40px 20
 
   <div class="card">
     <h3>EOS Implementation & Scaling</h3>
-    <p>Build a scalable organisation using the Entrepreneurial Operating System (EOS). We provide expert guidance to implement EOS tools and processes that drive accountability and clarity across your business.</p>
+    <p>Build a scalable organisation using the Entrepreneurial Operating System (EOS). We provide expert guidance to implement EOS tools and processes that drive accountability and clarity across teams.</p>
     <ul>
       <li>EOS foundational training and implementation</li>
       <li>Quarterly business reviews and pulse checks</li>
@@ -148,7 +153,7 @@ footer { background: #031b34; color: white; text-align: center; padding: 40px 20
 
   <div class="highlight">
     <h3>Why Choose RB Business Insights for Organisational Development?</h3>
-    <p>We combine strategic thinking with practical implementation support. Our consultants bring real-world experience in transforming organisations of all sizes. We work as trusted partners, not external experts, ensuring our recommendations are grounded in your business context and delivered with your team's buy-in.</p>
+    <p>We combine strategic thinking with practical implementation support. Our consultants bring real-world experience in transforming organisations of all sizes. We work as trusted partners, not just advisors.</p>
     <a href="index.html#contact" class="consultation-button">Schedule a Consultation</a>
   </div>
 </section>
