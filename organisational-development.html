@@ -21,7 +21,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; 
 .nav-dropdown { position: relative; display: inline-block; }
 .nav-dropbtn { background: none; border: none; color: white; font-weight: 600; font-size: 15px; padding: 8px 12px; border-radius: 4px; cursor: pointer; min-height: 44px; display: inline-flex; align-items: center; }
 .nav-dropbtn:hover { color: #9ff3f0; background: rgba(159,243,240,0.1); }
-.nav-dropdown-content { display: none; position: absolute; top: 100%; left: 0; min-width: 300px; background: #031b34; border-radius: 6px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); z-index: 1200; padding: 8px; }
+.nav-dropdown-content { display: none; position: absolute; top: 100%; left: 0; min-width: 300px; background: #031b34; border-radius: 6px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); z-index: 1200; padding: 12px 0; }
 .nav-dropdown-content a { display: block; color: white; text-decoration: none; padding: 10px 12px; border-radius: 4px; min-height: 44px; }
 .nav-dropdown-content a:hover { background: rgba(159,243,240,0.15); color: #9ff3f0; }
 .nav-dropdown.open .nav-dropdown-content { display: block; }
@@ -41,141 +41,159 @@ h2 { font-size: 32px; color: #062b55; margin-bottom: 20px; }
 .card ul li::before { content: "\2713"; position: absolute; left: 0; color: #0b7285; font-weight: bold; }
 
 .highlight { background: white; border-radius: 14px; padding: 35px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-top: 20px; }
-.consultation-button { display: inline-flex; align-items: center; justify-content: center; background: #0b7285; color: white; padding: 14px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px; min-height: 44px; }
+.consultation-button { display: inline-flex; align-items: center; justify-content: center; background: #0b7285; color: white; padding: 14px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; margin-top: 20px; transition: background 0.3s ease; }
+.consultation-button:hover { background: #062b55; }
 
 footer { background: #031b34; color: white; text-align: center; padding: 40px 20px; margin-top: 20px; }
 .footer-content { max-width: 800px; margin: auto; }
 .footer-content a { color: #9ff3f0; text-decoration: none; }
 
 @media (max-width: 768px) {
-  .nav-toggle { display: flex; }
-  .nav-links { display: none; position: absolute; top: 56px; left: 0; right: 0; flex-direction: column; background: #031b34; padding: 20px; gap: 10px; max-height: 0; overflow: hidden; }
-  .nav-links.open { display: flex; max-height: 900px; }
-  .nav-dropdown { width: 100%; }
-  .nav-dropbtn { width: 100%; text-align: left; justify-content: flex-start; }
-  .nav-dropdown-content { position: static; min-width: 100%; box-shadow: none; margin-top: 6px; background: rgba(255,255,255,0.04); }
+  .nav-toggle { display: block; }
+  .nav-links { display: none; gap: 0; flex-direction: column; position: absolute; top: 54px; left: 0; right: 0; background: #031b34; padding: 10px 0; border-radius: 0 0 6px 6px; }
+  .nav-links.show { display: flex; }
+  .nav-links a { padding: 12px 20px; border-radius: 0; }
+  h2 { font-size: 24px; }
+  .card { padding: 20px; }
+  header p { font-size: 16px; }
 }
 </style>
-
-<script>
-function setupMobileMenu() {
-  const toggle = document.querySelector('.nav-toggle');
-  const links = document.querySelector('.nav-links');
-  if (toggle && links) {
-    toggle.addEventListener('click', () => {
-      const isOpen = links.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(isOpen));
-    });
-    links.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        links.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
-}
-
-function setupDropdownMenu() {
-  const dropdown = document.querySelector('.nav-dropdown');
-  const button = dropdown?.querySelector('.nav-dropbtn');
-  if (!dropdown || !button) return;
-
-  button.addEventListener('click', () => {
-    const isOpen = dropdown.classList.toggle('open');
-    button.setAttribute('aria-expanded', String(isOpen));
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!dropdown.contains(e.target)) {
-      dropdown.classList.remove('open');
-      button.setAttribute('aria-expanded', 'false');
-    }
-  });
-}
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => { setupMobileMenu(); setupDropdownMenu(); });
-} else {
-  setupMobileMenu();
-  setupDropdownMenu();
-}
-</script>
 </head>
-
 <body>
+
 <nav class="navbar">
   <div class="nav-container">
     <a href="index.html" class="nav-brand">RB Business Insights</a>
-    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
-
-    <div class="nav-links">
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
       <div class="nav-dropdown">
-        <button class="nav-dropbtn" aria-expanded="false" aria-haspopup="true">Explore Services ▾</button>
+        <button class="nav-dropbtn">Services ▼</button>
         <div class="nav-dropdown-content">
-          <a href="investors-in-people.html">Investors in People</a>
-          <a href="employee-voice-engagement.html">Employee Voice & Engagement</a>
-          <a href="leadership-development.html">Leadership Development</a>
           <a href="organisational-development.html">Organisational Development</a>
+          <a href="leadership-development.html">Leadership Development</a>
+          <a href="employee-voice-engagement.html">Employee Voice & Engagement</a>
+          <a href="index.html#services">All Services</a>
         </div>
       </div>
-      <a href="working-with.html">Working With</a>
-      <a href="contact.html">Contact</a>
-      <a href="team.html">Meet the Team</a>
-      <a href="contact.html#consultation" class="consultation-link">Book a Free Consultation</a>
+      <a href="index.html#about">About Us</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropbtn">About ▼</button>
+        <div class="nav-dropdown-content">
+          <a href="index.html#about">Company Overview</a>
+          <a href="index.html#team">Our Team</a>
+          <a href="index.html#approach">Our Approach</a>
+        </div>
+      </div>
+      <a href="index.html#resources">Resources / Articles</a>
+      <a href="index.html#contact" class="consultation-link">Book Consultation</a>
     </div>
   </div>
 </nav>
 
 <header>
-  <img src="rb-business-insights-consulting-banner.png" alt="RB Business Insights Consulting Banner - Business Improvement, Leadership Development, Employee Engagement">
-  <p>Helping organisations turn people insight into practical improvement through Investors in People support, employee voice, leadership reviews and organisational development.</p>
+  <img src="rb-logo.png" alt="RB Business Insights Logo">
+  <p>Transforming organisations through strategic development, planning, and sustainable operational improvement</p>
 </header>
 
 <section>
   <h2>Organisational Development</h2>
-  <p class="intro">
-    Whether you're creating a new strategy, refreshing an existing plan, or looking to improve execution and
-    accountability, we provide practical frameworks and expert facilitation to help turn ideas into action.
-  </p>
-
-  <div class="card">
-    <h3>How we support you</h3>
-    <ul>
-      <li>Strategic planning and strategy development</li>
-      <li>Strategy facilitation workshops</li>
-      <li>Vision, mission and values development</li>
-      <li>Organisational reviews and business health checks</li>
-      <li>Growth planning and scaling support</li>
-      <li>Strategic objective setting and prioritisation</li>
-      <li>OKR design and implementation</li>
-      <li>Entrepreneurial Operating System / EOS implementation support</li>
-      <li>Leadership team alignment and accountability frameworks</li>
-      <li>Operational improvement reviews</li>
-      <li>Cultural transformation programmes</li>
-      <li>Change management and business transformation</li>
-      <li>Customer experience reviews</li>
-      <li>Performance improvement initiatives</li>
-      <li>Facilitation of leadership away days and strategy retreats</li>
-    </ul>
-  </div>
+  <p class="intro">We partner with organisations to build stronger foundations for sustainable growth and performance improvement. Our consultancy helps you align strategy, structure, and culture to achieve ambitious goals.</p>
 </section>
 
-<section id="consultation">
+<section>
+  <div class="card">
+    <h3>Strategic Planning & OKRs</h3>
+    <p>Clarify your vision and roadmap with structured strategic planning and OKR (Objectives and Key Results) frameworks. We help organisations define clear priorities and measure progress effectively.</p>
+    <ul>
+      <li>Strategic visioning and roadmap development</li>
+      <li>OKR framework implementation and coaching</li>
+      <li>Quarterly business reviews and performance tracking</li>
+      <li>Competitive analysis and market positioning</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>EOS Implementation & Scaling</h3>
+    <p>Build a scalable organisation using the Entrepreneurial Operating System (EOS). We provide expert guidance to implement EOS tools and processes that drive accountability and clarity across your business.</p>
+    <ul>
+      <li>EOS foundational training and implementation</li>
+      <li>Quarterly business reviews and pulse checks</li>
+      <li>Accountability systems and metrics</li>
+      <li>Ongoing EOS coaching and optimisation</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Culture Transformation</h3>
+    <p>Shape a high-performance culture that aligns with your strategic direction. We help organisations diagnose, design, and embed the values, behaviours, and systems that drive success.</p>
+    <ul>
+      <li>Culture assessment and diagnostic reviews</li>
+      <li>Values definition and embedding programmes</li>
+      <li>Behaviour and capability framework development</li>
+      <li>Change leadership and transformation support</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Operational Improvement & Efficiency</h3>
+    <p>Optimise processes and systems to improve efficiency, reduce waste, and enhance customer experience. Our operational improvement programmes drive tangible business results.</p>
+    <ul>
+      <li>Process mapping and efficiency analysis</li>
+      <li>Lean and continuous improvement methodologies</li>
+      <li>Systems and technology optimisation</li>
+      <li>Change management and implementation support</li>
+    </ul>
+  </div>
+
   <div class="highlight">
-    <h2>Book a Free Consultation</h2>
-    <p>Whether you're exploring Investors in People, employee engagement, leadership development or wider organisational improvement, an initial conversation can help identify the right next steps.</p>
-    <p>Book a no-obligation consultation to discuss your challenges, priorities and opportunities.</p>
-    <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="consultation-button">Schedule online</a>
+    <h3>Why Choose RB Business Insights for Organisational Development?</h3>
+    <p>We combine strategic thinking with practical implementation support. Our consultants bring real-world experience in transforming organisations of all sizes. We work as trusted partners, not external experts, ensuring our recommendations are grounded in your business context and delivered with your team's buy-in.</p>
+    <a href="index.html#contact" class="consultation-button">Schedule a Consultation</a>
   </div>
 </section>
 
 <footer>
   <div class="footer-content">
-    <h3>RB Business Insights</h3>
-    <p>Helping organisations turn people insight into practical improvement through Investors in People support, employee voice, leadership reviews and organisational development.</p>
-    <p><strong>Email:</strong> <a href="mailto:richard@rb-businessinsights.co.uk">richard@rb-businessinsights.co.uk</a></p>
-    <p style="margin-top: 30px; font-size: 14px; color: #9ff3f0;">© 2024 RB Business Insights. All rights reserved.</p>
+    <p>&copy; 2024 RB Business Insights. All rights reserved.</p>
+    <p><a href="index.html">Home</a> | <a href="index.html#about">About</a> | <a href="index.html#contact">Contact</a></p>
   </div>
 </footer>
+
+<script>
+// Navbar toggle for mobile
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
+
+// Close menu when a link is clicked
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('show');
+  });
+});
+
+// Dropdown functionality
+document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+  const button = dropdown.querySelector('.nav-dropbtn');
+  button.addEventListener('click', (e) => {
+    e.stopPropagation();
+    // Close other dropdowns
+    document.querySelectorAll('.nav-dropdown').forEach(d => {
+      if (d !== dropdown) d.classList.remove('open');
+    });
+    dropdown.classList.toggle('open');
+  });
+});
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', () => {
+  document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+});
+</script>
+
 </body>
 </html>
