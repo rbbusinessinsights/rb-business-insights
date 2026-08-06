@@ -22,7 +22,7 @@
   .navbar {
     background: #031b34;
     color: white;
-    padding: 14px 20px;
+    padding: 14px 10px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -30,23 +30,28 @@
   }
 
   .nav-container {
-    max-width: 1150px;
-    margin: auto;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 16px;
   }
 
   .nav-brand {
     color: white;
     text-decoration: none;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 15px;
     letter-spacing: 0.3px;
-    padding: 8px;
+    padding: 8px 6px;
     border-radius: 4px;
     transition: background 0.3s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-right: 12px;
   }
 
   .nav-brand:hover {
@@ -79,10 +84,10 @@
 
   .nav-links {
     display: flex;
-    gap: 22px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
     align-items: center;
+    gap: 14px;
+    flex-wrap: nowrap;
+    margin-left: auto;
   }
 
   .nav-links a {
@@ -90,12 +95,13 @@
     text-decoration: none;
     font-weight: 600;
     font-size: 15px;
-    padding: 8px 12px;
+    padding: 8px 10px;
     border-radius: 4px;
     transition: background 0.3s ease;
     min-height: 44px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    white-space: nowrap;
   }
 
   .nav-links a:hover {
@@ -114,10 +120,7 @@
     font-weight: 700 !important;
     padding: 10px 16px;
     border-radius: 6px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
+    margin-left: 12px;
   }
 
   .consultation-link:hover {
@@ -133,6 +136,7 @@
   .nav-dropdown {
     position: relative;
     display: inline-block;
+    flex-shrink: 0;
   }
 
   .nav-dropbtn {
@@ -141,12 +145,13 @@
     color: white;
     font-weight: 600;
     font-size: 15px;
-    padding: 8px 12px;
+    padding: 8px 10px;
     border-radius: 4px;
     cursor: pointer;
     min-height: 44px;
     display: inline-flex;
     align-items: center;
+    white-space: nowrap;
   }
 
   .nav-dropbtn:hover,
@@ -170,14 +175,13 @@
   }
 
   .nav-dropdown-content a {
-    display: block;
+    display: flex;
+    align-items: center;
     color: white;
     text-decoration: none;
     padding: 10px 12px;
     border-radius: 4px;
     min-height: 44px;
-    display: flex;
-    align-items: center;
   }
 
   .nav-dropdown-content a:hover,
@@ -359,8 +363,18 @@
     outline-offset: 2px;
   }
 
+  @media (max-width: 1250px) {
+    .nav-brand { font-size: 15px; }
+    .nav-links a, .nav-dropbtn { font-size: 14px; padding: 8px; }
+  }
+
   @media (max-width: 768px) {
     .nav-toggle { display: flex; }
+
+    .nav-brand {
+      font-size: 14px;
+      margin-right: 0;
+    }
 
     .nav-links {
       display: none;
@@ -376,6 +390,7 @@
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease;
+      margin-left: 0;
     }
 
     .nav-links.open {
@@ -383,13 +398,9 @@
       max-height: 900px;
     }
 
-    .nav-links a {
-      justify-content: flex-start;
-    }
+    .nav-links a { justify-content: flex-start; }
 
-    .nav-dropdown {
-      width: 100%;
-    }
+    .nav-dropdown { width: 100%; }
 
     .nav-dropbtn {
       width: 100%;
@@ -423,7 +434,7 @@
     h2 { font-size: 22px; margin-bottom: 12px; }
     .intro { font-size: 15px; }
 
-    .nav-brand { font-size: 16px; }
+    .nav-brand { font-size: 13px; }
     .nav-links a { font-size: 14px; padding: 6px 8px; }
 
     .service-card { padding: 18px; }
@@ -455,33 +466,43 @@
   }
 
   function setupDropdownMenu() {
-    const dropdown = document.querySelector('.nav-dropdown');
-    const button = dropdown?.querySelector('.nav-dropbtn');
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
 
-    if (!dropdown || !button) return;
+    dropdowns.forEach((dropdown) => {
+      const button = dropdown.querySelector('.nav-dropbtn');
+      if (!button) return;
 
-    button.addEventListener('click', () => {
-      const isOpen = dropdown.classList.toggle('open');
-      button.setAttribute('aria-expanded', String(isOpen));
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        dropdowns.forEach((d) => {
+          if (d !== dropdown) {
+            d.classList.remove('open');
+            const otherBtn = d.querySelector('.nav-dropbtn');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        const isOpen = dropdown.classList.toggle('open');
+        button.setAttribute('aria-expanded', String(isOpen));
+      });
     });
 
     document.addEventListener('click', (e) => {
-      if (!dropdown.contains(e.target)) {
-        dropdown.classList.remove('open');
-        button.setAttribute('aria-expanded', 'false');
-      }
+      dropdowns.forEach((dropdown) => {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+          const button = dropdown.querySelector('.nav-dropbtn');
+          if (button) button.setAttribute('aria-expanded', 'false');
+        }
+      });
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      setupMobileMenu();
-      setupDropdownMenu();
-    });
-  } else {
+  document.addEventListener('DOMContentLoaded', () => {
     setupMobileMenu();
     setupDropdownMenu();
-  }
+  });
 </script>
 </head>
 
@@ -499,6 +520,7 @@
       <div class="nav-dropdown">
         <button class="nav-dropbtn" aria-expanded="false" aria-haspopup="true">Explore Services ▾</button>
         <div class="nav-dropdown-content">
+          <a href="services.html">All Services</a>
           <a href="investors-in-people.html">Investors in People</a>
           <a href="employee-voice-engagement.html">Employee Voice & Engagement</a>
           <a href="leadership-development.html">Leadership Development</a>
@@ -506,10 +528,21 @@
         </div>
       </div>
 
-      <a href="working-with.html">Working With</a>
-      <a href="contact.html">Contact</a>
-      <a href="team.html">Meet the Team</a>
-      <a href="contact.html#consultation" class="consultation-link">Book a Free Consultation</a>
+      <a href="index.html#working-with">Working With</a>
+      <a href="index.html#contact">Contact</a>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropbtn" aria-expanded="false" aria-haspopup="true">
+          About Us ▾
+        </button>
+        <div class="nav-dropdown-content">
+          <a href="about-rb-business-insights.html">About RB Business Insights</a>
+          <a href="meet-the-team.html">Meet the Team</a>
+        </div>
+      </div>
+
+      <a href="resources-articles.html">Resources / Articles</a>
+      <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="consultation-link">Book a Free Consultation</a>
     </div>
   </div>
 </nav>
@@ -520,7 +553,7 @@
     alt="RB Business Insights Consulting Banner - Business Improvement, Leadership Development, Employee Engagement"
   >
   <h1>Our Services</h1>
-  <p>Comprehensive support tailored to your organisation’s needs.</p>
+  <p>Comprehensive support tailored to your organisation's needs.</p>
 </header>
 
 <section>
