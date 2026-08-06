@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Most Organisations Are Chasing Employee Engagement the Wrong Way | RB Business Insights</title>
+  <meta name="description" content="Article by Richard Budd exploring why employee engagement initiatives often miss the mark and what organisations should focus on instead.">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f4f7fb;
+      color: #1f2933;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background: #031b34;
+      color: white;
+      padding: 14px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .nav-container {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .nav-brand {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+      padding: 8px;
+      border-radius: 4px;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a:hover {
+      color: #9ff3f0;
+      background: rgba(159,243,240,0.1);
+    }
+
+    .nav-links a.consultation-link {
+      background: #d4a017;
+      color: white !important;
+      font-weight: 700 !important;
+      padding: 10px 16px;
+      border-radius: 6px;
+    }
+
+    .nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .nav-dropbtn {
+      background: none;
+      border: none;
+      color: white;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .nav-dropbtn:hover {
+      color: #9ff3f0;
+      background: rgba(159,243,240,0.1);
+    }
+
+    .nav-dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 300px;
+      background: #031b34;
+      border-radius: 6px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      z-index: 1200;
+      padding: 12px 0;
+    }
+
+    .nav-dropdown-content a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 4px;
+      min-height: 44px;
+    }
+
+    .nav-dropdown-content a:hover {
+      background: rgba(159,243,240,0.15);
+      color: #9ff3f0;
+    }
+
+    .nav-dropdown.open .nav-dropdown-content {
+      display: block;
+    }
+
+    /* ARTICLE HERO */
+    header {
+      background: linear-gradient(135deg, #062b55, #0b7285);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 15px 0;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .article-meta-hero {
+      font-size: 16px;
+      margin: 15px 0;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .article-meta-hero strong {
+      font-weight: 700;
+      color: white;
+    }
+
+    /* ARTICLE CONTENT */
+    .article-container {
+      max-width: 850px;
+      margin: auto;
+      padding: 40px 20px;
+      background: white;
+      min-height: 60vh;
+    }
+
+    .article-content {
+      line-height: 1.9;
+      color: #2d3748;
+    }
+
+    .article-content h2 {
+      font-size: 28px;
+      color: #062b55;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      padding-bottom: 12px;
+      border-bottom: 3px solid #0b7285;
+    }
+
+    .article-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-content p {
+      font-size: 16px;
+      margin-bottom: 18px;
+      text-align: justify;
+    }
+
+    .article-content strong {
+      color: #062b55;
+      font-weight: 700;
+    }
+
+    /* BACK LINK */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #0b7285;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .back-link:hover {
+      color: #062b55;
+    }
+
+    /* CONSULTATION CTA */
+    .article-cta {
+      background: #f0f4f8;
+      border-left: 5px solid #0b7285;
+      padding: 25px;
+      border-radius: 8px;
+      margin-top: 50px;
+      margin-bottom: 40px;
+    }
+
+    .article-cta h3 {
+      margin-top: 0;
+      color: #062b55;
+      font-size: 20px;
+    }
+
+    .article-cta p {
+      margin: 10px 0;
+      font-size: 15px;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #0b7285;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 15px;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #095d6d;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #031b34;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 0;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .footer-content a {
+      color: #9ff3f0;
+      text-decoration: none;
+    }
+
+    .footer-content a:hover {
+      text-decoration: underline;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 54px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: #031b34;
+        padding: 10px 0;
+        gap: 0;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        border-radius: 0;
+        padding: 12px 20px;
+      }
+
+      header h1 {
+        font-size: 28px;
+      }
+
+      .article-meta-hero {
+        font-size: 14px;
+      }
+
+      .article-container {
+        padding: 25px 15px;
+      }
+
+      .article-content h2 {
+        font-size: 22px;
+      }
+
+      .article-content p {
+        font-size: 15px;
+        text-align: left;
+      }
+    }
+  </style>
+
+  <script>
+    function setupMobileMenu() {
+      const toggle = document.querySelector('.nav-toggle');
+      const links = document.querySelector('.nav-links');
+
+      if (toggle && links) {
+        toggle.addEventListener('click', () => {
+          const isOpen = links.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        links.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            links.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    }
+
+    function setupDropdownMenu() {
+      const dropdown = document.querySelector('.nav-dropdown');
+      const button = dropdown?.querySelector('.nav-dropbtn');
+      if (!dropdown || !button) return;
+
+      button.addEventListener('click', () => {
+        const isOpen = dropdown.classList.toggle('open');
+        button.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+          button.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        setupMobileMenu();
+        setupDropdownMenu();
+      });
+    } else {
+      setupMobileMenu();
+      setupDropdownMenu();
+    }
+  </script>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-brand">RB Business Insights</a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+
+    <div class="nav-links">
+      <div class="nav-dropdown">
+        <button class="nav-dropbtn" aria-expanded="false" aria-haspopup="true">Services ▾</button>
+        <div class="nav-dropdown-content">
+          <a href="organisational-development.html">Organisational Development</a>
+          <a href="leadership-development.html">Leadership Development</a>
+          <a href="employee-voice-engagement.html">Employee Voice & Engagement</a>
+        </div>
+      </div>
+      <a href="resources-articles.html">Resources / Articles</a>
+      <a href="about-rb-business-insights.html">About</a>
+      <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="consultation-link">Book Consultation</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <h1>Why Most Organisations Are Chasing Employee Engagement the Wrong Way</h1>
+  <div class="article-meta-hero">
+    <strong>By Richard Budd, RB Business Insights</strong> • August 6, 2026 • 5 min read
+  </div>
+</header>
+
+<div class="article-container">
+  <a href="resources-articles.html" class="back-link">← Back to Resources</a>
+
+  <article class="article-content">
+    
+    <p>I've lost count of the number of employee focus groups I've facilitated over the years.</p>
+
+    <p>Different sectors. Different locations. Different leadership teams.</p>
+
+    <p>Yet the conversations often follow a remarkably similar pattern.</p>
+
+    <p>Senior leaders tell me they want to improve engagement.</p>
+
+    <p>Employees tell me they want to be listened to.</p>
+
+    <p>At first, those two things sound closely connected.</p>
+
+    <p><strong>They're not.</strong></p>
+
+    <h2>Engagement Isn't a Survey Score</h2>
+
+    <p>Too often, employee engagement becomes something organisations try to measure rather than something they try to understand.</p>
+
+    <p>A survey goes out.</p>
+
+    <p>A score comes back.</p>
+
+    <p>A presentation is created.</p>
+
+    <p>An action plan follows.</p>
+
+    <p>Everyone feels like progress has been made.</p>
+
+    <p>But six months later, many of the same frustrations remain.</p>
+
+    <p>Not because leaders don't care.</p>
+
+    <p>Usually because they've focused on the symptom rather than the cause.</p>
+
+    <p>Engagement isn't about how people answer a survey once a year.</p>
+
+    <p><strong>It's about how they feel on a Tuesday morning when nobody is watching.</strong></p>
+
+    <p>Do they feel trusted?</p>
+
+    <p>Do they feel their opinion matters?</p>
+
+    <p>Do they believe decisions are made for the right reasons?</p>
+
+    <p>Do they feel that somebody would notice if they weren't there tomorrow?</p>
+
+    <p>Those are the questions that really matter.</p>
+
+    <h2>People Rarely Ask for More Communication</h2>
+
+    <p>One of the biggest myths in business is that employees want more communication.</p>
+
+    <p>Most don't.</p>
+
+    <p><strong>They want better communication.</strong></p>
+
+    <p>There's a difference.</p>
+
+    <p>In organisations up and down the country, people are drowning in emails, Teams messages, newsletters and leadership updates.</p>
+
+    <p>The issue isn't volume.</p>
+
+    <p>The issue is relevance.</p>
+
+    <p>I've spoken to countless employees who can recite the latest corporate messages almost word for word, yet still have no real understanding of why important decisions have been made.</p>
+
+    <p>When people don't understand the "why", trust starts to erode.</p>
+
+    <p>And once trust disappears, engagement soon follows.</p>
+
+    <h2>The Best Organisations Make People Feel Involved</h2>
+
+    <p>A lot of leaders believe engagement is driven by perks, benefits and wellbeing initiatives.</p>
+
+    <p>Those things have value.</p>
+
+    <p>But they are rarely the reason people stay.</p>
+
+    <p>When employees tell me why they love working somewhere, the answers are surprisingly simple:</p>
+
+    <p><strong>"I feel trusted."</strong></p>
+
+    <p><strong>"My manager genuinely cares."</strong></p>
+
+    <p><strong>"I know what's expected of me."</strong></p>
+
+    <p><strong>"I can influence things."</strong></p>
+
+    <p><strong>"People listen when I have an idea."</strong></p>
+
+    <p>Notice what's missing.</p>
+
+    <p>Nobody talks about the fruit basket.</p>
+
+    <p>Nobody talks about the discount portal.</p>
+
+    <p>Nobody talks about free coffee.</p>
+
+    <p><strong>People stay where they feel they matter.</strong></p>
+
+    <h2>Listening Isn't the Same as Hearing</h2>
+
+    <p>Many organisations have become very good at collecting feedback.</p>
+
+    <p>Far fewer are good at acting on it.</p>
+
+    <p>Employees notice this quickly.</p>
+
+    <p>Nothing damages credibility faster than asking people for their views and then allowing those views to disappear into a black hole.</p>
+
+    <p>When that happens, future surveys become an exercise in compliance rather than honest feedback.</p>
+
+    <p>People stop telling you what they really think.</p>
+
+    <p>They start telling you what they think you want to hear.</p>
+
+    <p>And once that happens, leaders lose one of their most valuable sources of insight.</p>
+
+    <p><strong>The organisations that build genuine engagement don't have all the answers.</strong></p>
+
+    <p>They're simply better at showing people their voice has made a difference.</p>
+
+    <h2>Leadership Matters More Than Any Initiative</h2>
+
+    <p>Over the years I've reviewed organisations with impressive engagement strategies, sophisticated wellbeing programmes and excellent people policies.</p>
+
+    <p>Yet some of them still struggled to create highly engaged cultures.</p>
+
+    <p>Why?</p>
+
+    <p><strong>Because people experience organisations through their managers.</strong></p>
+
+    <p>Not through policy documents.</p>
+
+    <p>Not through PowerPoint presentations.</p>
+
+    <p>Not through values displayed on office walls.</p>
+
+    <p>Through daily interactions.</p>
+
+    <p>A manager who listens, gives clarity, follows through on commitments and treats people with respect will do more for engagement than any annual initiative ever could.</p>
+
+    <p>The opposite is equally true.</p>
+
+    <p>The most beautifully designed people strategy in the world will struggle if people don't trust the person they report to.</p>
+
+    <h2>The Real Question Leaders Should Ask</h2>
+
+    <p>Whenever I hear a leadership team ask:</p>
+
+    <p><strong>"How can we improve engagement?"</strong></p>
+
+    <p>I often think they're asking the wrong question.</p>
+
+    <p>A better question might be:</p>
+
+    <p><strong>"What is it like to work here, really?"</strong></p>
+
+    <p>Not in the boardroom.</p>
+
+    <p>Not in leadership meetings.</p>
+
+    <p>Not in reports and dashboards.</p>
+
+    <p>For the person answering customer calls.</p>
+
+    <p>For the team leader working nights.</p>
+
+    <p>For the engineer on site.</p>
+
+    <p>For the administrator keeping everything moving behind the scenes.</p>
+
+    <p>Because engagement isn't created through programmes.</p>
+
+    <p><strong>It's created through everyday experiences.</strong></p>
+
+    <p>Get those experiences right and engagement follows naturally.</p>
+
+    <p>Get them wrong and no survey score, wellbeing initiative or communication campaign will fix the problem.</p>
+
+    <p>In my experience, the organisations that truly thrive are not obsessed with measuring engagement.</p>
+
+    <p><strong>They're obsessed with creating the conditions that allow it to exist.</strong></p>
+
+    <p>And that's a very different conversation.</p>
+
+    <div class="article-cta">
+      <h3>Improve Employee Engagement at Your Organisation</h3>
+      <p>If this resonates with your organisation, we can help you move beyond measurement to create genuine engagement through better conversations, trust and leadership.</p>
+      <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="cta-button">Book a Free Consultation</a>
+    </div>
+
+  </article>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2024 RB Business Insights. All rights reserved.</p>
+    <p><a href="index.html">Home</a> | <a href="resources-articles.html">Resources</a> | <a href="about-rb-business-insights.html">About</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
