@@ -2,7 +2,7 @@
 
 ## About Us
 
-**RB Business Insights** is a dedicated consultancy specializing in organizational development, leadership excellence, and employee engagement. We help businesses transform their workplace culture, improve leadership capabilities, and drive measurable business performance through evidence-based consulting.
+**RB Business Insights** is a dedicated consultancy specializing in organizational development, leadership excellence, and employee engagement. We help businesses transform their workplace culture, develop confident leaders, and create environments where people thrive. Serving organizations across Hertfordshire, Bedfordshire, London, Essex, Norfolk, Suffolk, Cambridgeshire, Kent, Berkshire, Buckinghamshire, and the wider UK.
 
 ### What We Do
 
@@ -26,6 +26,21 @@ We provide practical, tailored solutions for organizations across the public, pr
 - **Public Sector** - Government, education, healthcare
 - **Private Sector** - Commercial businesses, professional services
 - **Not-for-Profit** - Charities, social enterprises, community organizations
+
+## Service Areas
+
+We proudly serve organizations across South East England:
+
+- **Hertfordshire** - Consultancy for Hertfordshire businesses
+- **Bedfordshire** - Business improvement in Bedfordshire
+- **London** - Organizational development across London
+- **Essex** - Leadership development in Essex
+- **Norfolk** - Employee engagement in Norfolk
+- **Suffolk** - Culture improvement in Suffolk
+- **Cambridgeshire** - Business consulting in Cambridgeshire
+- **Kent** - Investors in People support in Kent
+- **Berkshire** - Organizational development in Berkshire
+- **Buckinghamshire** - Leadership coaching in Buckinghamshire
 
 ## Services
 
@@ -88,6 +103,7 @@ Explore our latest insights on leadership, organizational culture, and business 
 - Organizations pursuing or maintaining Investors in People accreditation
 - Companies investing in leadership development
 - Enterprises requiring organizational development support
+- South East England businesses (Hertfordshire, Bedfordshire, London, Essex, Norfolk, Suffolk, Cambridgeshire, Kent, Berkshire, Buckinghamshire)
 
 **What We Specialize In:**
 - Organizational development consulting
@@ -98,6 +114,7 @@ Explore our latest insights on leadership, organizational culture, and business 
 - Business improvement consultancy
 - People management strategies
 - Executive coaching and development
+- Local business consulting in South East England
 
 ---
 
