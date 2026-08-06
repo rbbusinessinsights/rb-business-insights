@@ -241,6 +241,10 @@
       font-weight: 700;
     }
 
+    .article-card-image.trust {
+      background: linear-gradient(135deg, #5a189a, #7b2cbf);
+    }
+
     .article-card-content {
       padding: 24px;
       display: flex;
@@ -262,12 +266,21 @@
       width: fit-content;
     }
 
+    .article-category.leadership {
+      background: #f3e5f5;
+      color: #7b2cbf;
+    }
+
     .article-card h3 {
       margin: 0 0 12px 0;
       font-size: 20px;
       color: #062b55;
       font-weight: 700;
       line-height: 1.4;
+    }
+
+    .article-card.trust h3 {
+      color: #5a189a;
     }
 
     .article-meta {
@@ -277,6 +290,7 @@
       display: flex;
       gap: 12px;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .article-meta span {
@@ -293,6 +307,12 @@
       flex-grow: 1;
     }
 
+    .article-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
     .article-link {
       display: inline-flex;
       align-items: center;
@@ -304,13 +324,25 @@
       transition: gap 0.3s ease;
     }
 
+    .article-card.trust .article-link {
+      color: #7b2cbf;
+    }
+
     .article-link:hover {
       gap: 12px;
       color: #062b55;
     }
 
+    .article-card.trust .article-link:hover {
+      color: #5a189a;
+    }
+
     .article-link::after {
       content: "→";
+    }
+
+    .article-link.download::before {
+      content: "📥";
     }
 
     /* HIGHLIGHT BOX */
@@ -536,7 +568,29 @@
   </p>
 
   <div class="articles-grid">
-    <!-- Article 1 -->
+    <!-- Article 1: The Trust Paradox -->
+    <div class="article-card trust">
+      <div class="article-card-image trust">🔐</div>
+      <div class="article-card-content">
+        <span class="article-category leadership">Leadership</span>
+        <span class="article-category leadership">Culture</span>
+        <h3>The Trust Paradox</h3>
+        <div class="article-meta">
+          <span>By Investors in People</span>
+          <span>June 2026</span>
+          <span>15 min read</span>
+        </div>
+        <p class="article-excerpt">
+          Why behaviour, not belief, determines trust and how leaders can bridge the trust gap to drive performance. A comprehensive whitepaper exploring why 82% of HR leaders believe employees are trusted, yet 61% of employees regularly "cover themselves" at work.
+        </p>
+        <div class="article-links">
+          <a href="article-trust-paradox.html" class="article-link">Read Article</a>
+          <a href="the_trust_paradox_v1.pdf" class="article-link download" download>Download PDF</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article 2: Employee Engagement -->
     <div class="article-card">
       <div class="article-card-image">📊</div>
       <div class="article-card-content">
@@ -550,43 +604,27 @@
         <p class="article-excerpt">
           Engagement isn't about survey scores or annual initiatives. It's about how people feel on a Tuesday morning when nobody is watching. Discover what really drives employee engagement.
         </p>
-        <a href="article-employee-engagement-wrong-way.html" class="article-link">Read Article</a>
+        <div class="article-links">
+          <a href="article-employee-engagement-wrong-way.html" class="article-link">Read Article</a>
+        </div>
       </div>
     </div>
 
-    <!-- Coming Soon: Article 2 -->
+    <!-- Coming Soon: Article 3 -->
     <div class="article-card">
       <div class="article-card-image">💡</div>
       <div class="article-card-content">
         <span class="article-category">Leadership</span>
         <h3>Coming Soon</h3>
         <div class="article-meta">
-          <span>By Richard Budd</span>
+          <span>By RB Business Insights</span>
           <span>TBA</span>
           <span>TBA</span>
         </div>
         <p class="article-excerpt">
           We're working on our next article. Check back soon for more insights on leadership, culture and organisational development.
         </p>
-        <div style="color: #cbd5e0; font-weight: 600;">More coming soon...</div>
-      </div>
-    </div>
-
-    <!-- Coming Soon: Article 3 -->
-    <div class="article-card">
-      <div class="article-card-image">🎯</div>
-      <div class="article-card-content">
-        <span class="article-category">Strategy</span>
-        <h3>Coming Soon</h3>
-        <div class="article-meta">
-          <span>By Richard Budd</span>
-          <span>TBA</span>
-          <span>TBA</span>
-        </div>
-        <p class="article-excerpt">
-          We're working on our next article. Check back soon for more insights on leadership, culture and organisational development.
-        </p>
-        <div style="color: #cbd5e0; font-weight: 600;">More coming soon...</div>
+        <div style="color: #cbd5e0; font-weight: 600; margin-top: auto;">More coming soon...</div>
       </div>
     </div>
   </div>
