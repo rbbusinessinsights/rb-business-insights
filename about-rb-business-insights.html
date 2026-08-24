@@ -332,8 +332,35 @@
       .value-list {
         grid-template-columns: 1fr;
       }
-    }
-  </style>
+    }@media (max-width: 768px) {
+   ...
+}
+
+/* Add tick icons to all value boxes */
+
+.value-item {
+  position: relative;
+  padding-left: 55px;
+}
+
+.value-item::before {
+  content: "✓";
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  width: 24px;
+  height: 24px;
+  background: #0b7285;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+</style>
+  
 </head>
 <body>
 
@@ -365,11 +392,38 @@
   <h1>About RB Business Insights</h1>
   <p>Helping organisations create better workplaces and stronger businesses</p>
 </header>
+<section class="stats-section">
 
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <div class="stat-number">20+</div>
+      <div class="stat-text">Years' Experience</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-number">150+</div>
+      <div class="stat-text">Organisations Supported</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-number">15+</div>
+      <div class="stat-text">Industry Sectors</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-number">100%</div>
+      <div class="stat-text">Tailored Approach</div>
+    </div>
+
+  </div>
+
+</section>
+  
 <!-- MAIN CONTENT -->
 <section id="about">
   <div class="intro">
-    <p>At RB Business Insights, we use two decades of exerience to help organisations create environments where people and businesses thrive together.</p>
+    <p>At RB Business Insights, we use two decades of experience to help organisations create environments where people and businesses thrive together.</p>
     
     <p>We work with leaders who recognise that sustainable success is built on more than commercial performance alone. It comes from engaged people, effective leadership, a clear sense of purpose and a culture where everyone has the opportunity to contribute.</p>
 
@@ -462,6 +516,28 @@
 
   <p>Our focus is always on helping organisations create workplaces where people want to contribute, leaders inspire confidence, and businesses achieve sustainable success.</p>
 </section>
+<section>
+
+  <h2>Meet the Founder</h2>
+
+  <div class="highlight-box">
+
+    <p>
+      RB Business Insights was founded by Richard Budd, an organisational development and leadership consultant with more than 20 years' experience supporting organisations across the public, private and not-for-profit sectors.
+    </p>
+
+    <p>
+      Having supported over 150 organisations, Richard brings practical insight, challenge and collaboration to help organisations create workplaces where people and performance thrive together.
+    </p>
+
+    <p>
+      meet-the-team.htmlLearn more about Richard and the team →</a>
+    </p>
+
+  </div>
+
+</section>
+  
 <!-- OUR BELIEF -->
 <section>
   <h2>Our Belief and values</h2>
