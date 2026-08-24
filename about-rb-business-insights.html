@@ -486,8 +486,8 @@
           </div>
         </div>
 
-        <a href="#working-with">Working With</a>
-        <a href="#contact">Contact</a>
+       <a href="index.html#working-with">Working With</a>
+<a href="index.html#contact">Contact</a>
 
         <div class="nav-dropdown">
           <button class="nav-dropbtn" aria-expanded="false" aria-haspopup="true">
@@ -681,36 +681,69 @@
 </footer>
 
 <script>
-// Mobile menu toggle
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
+function setupMobileMenu() {
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
 
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-});
-
-// Close menu when a link is clicked
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('show');
-  });
-});
-
-// Dropdown functionality
-document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
-  const button = dropdown.querySelector('.nav-dropbtn');
-  button.addEventListener('click', (e) => {
-    e.stopPropagation();
-    document.querySelectorAll('.nav-dropdown').forEach(d => {
-      if (d !== dropdown) d.classList.remove('open');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
     });
-    dropdown.classList.toggle('open');
-  });
-});
 
-// Close dropdowns when clicking outside
-document.addEventListener('click', () => {
-  document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+    links.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+}
+
+function setupDropdownMenu() {
+  const dropdowns = document.querySelectorAll('.nav-dropdown');
+
+  dropdowns.forEach((dropdown) => {
+    const button = dropdown.querySelector('.nav-dropbtn');
+    if (!button) return;
+
+    button.addEventListener('click', (e) => {
+      e.stopPropagation();
+
+      dropdowns.forEach((d) => {
+        if (d !== dropdown) {
+          d.classList.remove('open');
+          const otherBtn = d.querySelector('.nav-dropbtn');
+
+          if (otherBtn) {
+            otherBtn.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+
+      const isOpen = dropdown.classList.toggle('open');
+      button.setAttribute('aria-expanded', String(isOpen));
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    dropdowns.forEach((dropdown) => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('open');
+
+        const button = dropdown.querySelector('.nav-dropbtn');
+
+        if (button) {
+          button.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  setupMobileMenu();
+  setupDropdownMenu();
 });
 </script>
 
