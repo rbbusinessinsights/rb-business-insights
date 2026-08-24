@@ -716,6 +716,180 @@
       .btn { font-size: 14px; padding: 11px 20px; }
       .service-link { font-size: 20px; }
     }
+/* ==================================================
+   RB BUSINESS INSIGHTS STATS SECTION
+   ================================================== */
+
+.rb-stats {
+  width: 100%;
+  padding: 42px 20px 38px;
+  background: #f6f8f9;
+}
+
+.rb-stats-container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.rb-stat-card {
+  position: relative;
+  min-height: 185px;
+  padding: 24px 20px 22px;
+  border-radius: 8px;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(20, 44, 54, 0.13);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Subtle background detail */
+.rb-stat-card::after {
+  content: "";
+  position: absolute;
+  width: 105px;
+  height: 105px;
+  right: -32px;
+  bottom: -42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.rb-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(20, 44, 54, 0.2);
+}
+
+.rb-stat-label {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 14px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.rb-stat-number {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 8px;
+  font-size: clamp(2.7rem, 4vw, 3.55rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.rb-stat-number span {
+  margin-left: 2px;
+  font-size: 0.58em;
+  font-weight: 700;
+  vertical-align: 14%;
+}
+
+.rb-stat-description {
+  position: relative;
+  z-index: 1;
+  max-width: 190px;
+  margin: 0 auto;
+  font-size: 0.97rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+/* Card colours */
+.rb-stat-navy {
+  background: linear-gradient(145deg, #173f4a, #235767);
+}
+
+.rb-stat-teal {
+  background: linear-gradient(145deg, #22786f, #319587);
+}
+
+.rb-stat-green {
+  background: linear-gradient(145deg, #4e9e78, #65b58d);
+}
+
+.rb-stat-blue {
+  background: linear-gradient(145deg, #355865, #476f7d);
+}
+
+.rb-stats-supporting-text {
+  max-width: 900px;
+  margin: 26px auto 0;
+  color: #34515a;
+  font-size: 1rem;
+  line-height: 1.65;
+  text-align: center;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .rb-stats-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .rb-stats {
+    padding: 32px 16px;
+  }
+
+  .rb-stats-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .rb-stat-card {
+    min-height: 160px;
+    padding: 20px 12px 18px;
+  }
+
+  .rb-stat-label {
+    margin-bottom: 12px;
+    font-size: 0.65rem;
+    letter-spacing: 1.1px;
+  }
+
+  .rb-stat-number {
+    font-size: 2.55rem;
+  }
+
+  .rb-stat-description {
+    font-size: 0.82rem;
+  }
+
+  .rb-stats-supporting-text {
+    margin-top: 22px;
+    font-size: 0.92rem;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 350px) {
+  .rb-stats-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .rb-stat-card {
+    transition: none;
+  }
+
+  .rb-stat-card:hover {
+    transform: none;
+  }
+}
+  
   </style>
 
   <script>
@@ -837,7 +1011,41 @@
       <a href="services.html" class="btn">Explore Services</a>
     </div>
   </header>
+<!-- RB Business Insights Stats Section -->
+<section class="rb-stats" aria-label="RB Business Insights experience and reach">
+  <div class="rb-stats-container">
 
+    <div class="rb-stat-card rb-stat-navy">
+      <div class="rb-stat-label">Experience</div>
+      <div class="rb-stat-number">20<span>+</span></div>
+      <div class="rb-stat-description">Years' Experience</div>
+    </div>
+
+    <div class="rb-stat-card rb-stat-teal">
+      <div class="rb-stat-label">Organisations</div>
+      <div class="rb-stat-number">150<span>+</span></div>
+      <div class="rb-stat-description">Organisations Supported</div>
+    </div>
+
+    <div class="rb-stat-card rb-stat-green">
+      <div class="rb-stat-label">Reach</div>
+      <div class="rb-stat-number">15<span>+</span></div>
+      <div class="rb-stat-description">Industry Sectors</div>
+    </div>
+
+    <div class="rb-stat-card rb-stat-blue">
+      <div class="rb-stat-label">Our Approach</div>
+      <div class="rb-stat-number">100<span>%</span></div>
+      <div class="rb-stat-description">Tailored to Every Client</div>
+    </div>
+
+  </div>
+
+  <p class="rb-stats-supporting-text">
+    Trusted by organisations across the public, private and not-for-profit
+    sectors to improve leadership, culture, engagement and performance.
+  </p>
+</section>
   <section>
     <h2>Practical support for better organisations</h2>
     <p class="intro">
