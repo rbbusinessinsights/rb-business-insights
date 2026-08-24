@@ -578,6 +578,37 @@
     @media (max-width: 768px) {
       .nav-toggle { display: flex; }
 
+    /* ensure both JS variants ('open' and 'show') are handled and dropdown content is left-aligned */
+.nav-links,
+.nav-links.open,
+.nav-links.show,
+.nav-links a,
+.nav-links.open a,
+.nav-links.show a,
+.nav-dropdown,
+.nav-dropdown .nav-dropbtn,
+.nav-dropdown .nav-dropdown-content,
+.nav-dropdown .nav-dropdown-content a {
+  text-align: left;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* make dropdown content full width and align to left on mobile */
+.nav-dropdown .nav-dropdown-content {
+  width: 100%;
+  box-shadow: none;
+  margin-top: 6px;
+  background: rgba(255,255,255,0.04);
+  text-align: left;
+}
+
+/* if dropdowns are toggled with 'open' or 'show', ensure positioned to the left */
+.nav-dropdown.open .nav-dropdown-content,
+.nav-dropdown.show .nav-dropdown-content {
+  left: 0;
+  right: auto;
+}  
       .nav-brand {
         font-size: 14px;
         margin-right: 0;
