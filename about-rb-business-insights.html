@@ -332,9 +332,7 @@
       .value-list {
         grid-template-columns: 1fr;
       }
-    }@media (max-width: 768px) {
-   ...
-}
+    
 
 /* Add tick icons to all value boxes */
 
@@ -358,25 +356,73 @@
   font-weight: bold;
   font-size: 14px;
 }
-<section class="stats-section">
+/* STATS SECTION */
 
-* <div class="stats-grid">
+.stats-section {
+  max-width: 1150px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
 
-    <di* class="stat-card">
-      <div cla*s="stat-number">20+</div>
-      <d*v class="stat-text">Years' Experie*ce</div>
-    </div>
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
 
-    <div clas*="stat-card">
-      <div class="st*t-number">150+</div>
-      <div cl*ss="stat-text">Organisations Suppo*ted</div>
-    </div>
+.stat-card {
+  background: linear-gradient(135deg, #062b55, #0b7285);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
 
-    <div cla*s="stat-card">
-      <div class="s*at-number">15+</div>
-      <div cl*ss="stat-text">Industry Sectors</d*
-    }
-</style>
+.stat-card:nth-child(2) {
+  background: linear-gradient(135deg, #0b7285, #0f8f99);
+}
+
+.stat-card:nth-child(3) {
+  background: linear-gradient(135deg, #147a6c, #1d9a88);
+}
+
+.stat-card:nth-child(4) {
+  background: linear-gradient(135deg, #244f73, #406b8f);
+}
+
+.stat-number {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.stat-text {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.founder-link {
+  display: inline-block;
+  background: #0b7285;
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.founder-link:hover {
+  background: #062b55;
+}
+  </style>
   
 </head>
 <body>
@@ -548,8 +594,11 @@
     </p>
 
     <p>
-      meet-the-team.htmlLearn more about Richard and the team →</a>
-    </p>
+
+<a href="meet-the-team.html
+Learn more about Richard and the team →
+</a>
+</p>
 
   </div>
 
