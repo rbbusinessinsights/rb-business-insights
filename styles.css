@@ -42,6 +42,9 @@ header p { font-size: 20px; max-width: 850px; margin: 0 auto 24px; }
 
 section { max-width: 1150px; margin: auto; padding: 25px 20px; }
 h1,h2,h3 { color: #062b55; }
+/* Ensure headings outside the header use the site-blue even if cached header-adjacent rules persist */
+:not(header) h1, :not(header) h2, :not(header) h3 { color: #062b55 !important; }
+
 h2 { font-size: 32px; margin-bottom: 20px; }
 .intro { font-size: 19px; max-width: 900px; }
 
@@ -153,3 +156,6 @@ header h1, header h2, header h3 { color: white !important; font-weight: 700; }
 }
 /* Ensure header page titles stay white and bold over the gradient header */
 header h1, header h2, header h3 { color: white !important; font-weight: 700; }
+
+/* Force headings outside the header to use the site blue so content areas remain readable */
+:not(header) h1, :not(header) h2, :not(header) h3 { color: #062b55 !important; }
