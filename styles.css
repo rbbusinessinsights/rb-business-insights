@@ -89,6 +89,15 @@ footer { background: #031b34; color: white; text-align: center; padding: 30px 20
 /* CONSOLIDATED NAV / HEADER RULES (moved from per-page inline styles) */
 .nav-toggle { display: none; background: none; border: none; color: white; font-size: 24px; cursor: pointer; padding: 8px; min-height: 44px; min-width: 44px; align-items: center; justify-content: center; }
 
+/* Ensure dropdown menu items stack vertically and occupy full width */
+.nav-dropdown-content { display: block !important; min-width: unset !important; }
+.nav-dropdown-content a { display: block !important; width: 100% !important; padding: 10px 12px; color: white !important; text-decoration: none; }
+.nav-dropdown-content a:hover, .nav-dropdown-content a:focus { background: rgba(159,243,240,0.08) !important; color: #9ff3f0 !important; }
+/* Ensure section titles directly under the header stay white and bold */
+header + section h2, header + section h1, header + section h3 { color: white !important; font-weight: 700 !important; }
+/* Fallback for hero-like areas where h2 needs to be white */
+.section-hero h2, .hero h2, .page-hero h2 { color: white !important; font-weight: 700 !important; } 
+
 @media (max-width: 1250px) {
   .nav-brand { font-size: 15px; }
   .nav-links a, .nav-dropbtn { font-size: 14px; padding: 8px; }
@@ -126,3 +135,5 @@ footer { background: #031b34; color: white; text-align: center; padding: 30px 20
   .intro { font-size: 16px; }
   .highlight { padding: 24px; }
 }
+/* Ensure header page titles stay white and bold over the gradient header */
+header h1, header h2, header h3 { color: white !important; font-weight: 700; }
