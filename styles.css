@@ -112,8 +112,6 @@ footer { background: #031b34; color: white; text-align: center; padding: 30px 20
 
 /* Ensure section titles directly under the header stay white and bold */
 header + section h2, header + section h1, header + section h3 { color: white !important; font-weight: 700 !important; }
-/* Fallback for hero-like areas where h2 needs to be white */
-.section-hero h2, .hero h2, .page-hero h2 { color: white !important; font-weight: 700 !important; }
 
 @media (max-width: 1250px) {
   .nav-brand { font-size: 15px; }
