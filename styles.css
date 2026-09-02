@@ -86,3 +86,43 @@ footer { background: #031b34; color: white; text-align: center; padding: 30px 20
   .team-card { flex-direction: column; align-items: center; text-align: center; }
   .team-photo { width: 140px; }
 }
+/* CONSOLIDATED NAV / HEADER RULES (moved from per-page inline styles) */
+.nav-toggle { display: none; background: none; border: none; color: white; font-size: 24px; cursor: pointer; padding: 8px; min-height: 44px; min-width: 44px; align-items: center; justify-content: center; }
+
+@media (max-width: 1250px) {
+  .nav-brand { font-size: 15px; }
+  .nav-links a, .nav-dropbtn { font-size: 14px; padding: 8px; }
+}
+
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; }
+  .nav-brand { font-size: 14px; margin-right: 0; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: #031b34;
+    padding: 20px;
+    gap: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    margin-left: 0;
+  }
+
+  .nav-links.open { display: flex; max-height: 900px; align-items: flex-start; text-align: left; }
+  .nav-links a { justify-content: flex-start; }
+  .nav-dropdown { width: 100%; }
+  .nav-dropbtn { width: 100%; text-align: left; justify-content: flex-start; }
+  .nav-dropdown-content { position: static; min-width: 100%; box-shadow: none; margin-top: 6px; background: rgba(255,255,255,0.04); }
+  header h1 { font-size: 32px; }
+  header p { font-size: 18px; }
+  section { padding: 20px 16px; }
+  h2 { font-size: 26px; margin-bottom: 16px; }
+  .intro { font-size: 16px; }
+  .highlight { padding: 24px; }
+}

@@ -438,6 +438,7 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="styles.css">
 
   <script>
     function setupMobileMenu() {
@@ -448,12 +449,67 @@
         toggle.addEventListener('click', () => {
           const isOpen = links.classList.toggle('open');
           toggle.setAttribute('aria-expanded', String(isOpen));
+
+          // enforce left-aligned mobile layout when open
+          if (isOpen) {
+            links.style.alignItems = 'flex-start';
+            links.style.textAlign = 'left';
+            links.querySelectorAll('a').forEach(a => {
+              a.style.justifyContent = 'flex-start';
+              a.style.textAlign = 'left';
+            });
+            links.querySelectorAll('.nav-dropbtn').forEach(btn => {
+              btn.style.width = '100%';
+              btn.style.textAlign = 'left';
+              btn.style.justifyContent = 'flex-start';
+            });
+            links.querySelectorAll('.nav-dropdown-content').forEach(dd => {
+              dd.style.position = 'static';
+              dd.style.minWidth = '100%';
+              dd.style.boxShadow = 'none';
+            });
+          } else {
+            // remove inline styles when closed
+            links.style.removeProperty('align-items');
+            links.style.removeProperty('text-align');
+            links.querySelectorAll('a').forEach(a => {
+              a.style.removeProperty('justify-content');
+              a.style.removeProperty('text-align');
+            });
+            links.querySelectorAll('.nav-dropbtn').forEach(btn => {
+              btn.style.removeProperty('width');
+              btn.style.removeProperty('text-align');
+              btn.style.removeProperty('justify-content');
+            });
+            links.querySelectorAll('.nav-dropdown-content').forEach(dd => {
+              dd.style.removeProperty('position');
+              dd.style.removeProperty('min-width');
+              dd.style.removeProperty('box-shadow');
+            });
+          }
         });
 
         links.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', () => {
             links.classList.remove('open');
             toggle.setAttribute('aria-expanded', 'false');
+            // cleanup inline styles after navigation
+            links.style.removeProperty('align-items');
+            links.style.removeProperty('text-align');
+            links.querySelectorAll('a').forEach(a => {
+              a.style.removeProperty('justify-content');
+              a.style.removeProperty('text-align');
+            });
+            links.querySelectorAll('.nav-dropbtn').forEach(btn => {
+              btn.style.removeProperty('width');
+              btn.style.removeProperty('text-align');
+              btn.style.removeProperty('justify-content');
+            });
+            links.querySelectorAll('.nav-dropdown-content').forEach(dd => {
+              dd.style.removeProperty('position');
+              dd.style.removeProperty('min-width');
+              dd.style.removeProperty('box-shadow');
+            });
           });
         });
       }
