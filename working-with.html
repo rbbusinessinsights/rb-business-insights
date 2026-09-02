@@ -1415,5 +1415,19 @@
   </div>
 </footer>
 
+  <script>
+    // Duplicate the logo-track content so the CSS animation can translate by -50% for a seamless loop
+    (function(){
+      try {
+        const track = document.querySelector('.logo-track');
+        if (track) {
+          track.innerHTML = track.innerHTML + track.innerHTML;
+        }
+      } catch (e) {
+        /* benign fallback if DOM not accessible */
+        console.warn('logo-track duplication failed', e);
+      }
+    })();
+  </script>
 </body>
 </html>
