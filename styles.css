@@ -157,5 +157,5 @@ header h1, header h2, header h3 { color: white !important; font-weight: 700; }
 /* Ensure header page titles stay white and bold over the gradient header */
 header h1, header h2, header h3 { color: white !important; font-weight: 700; }
 
-/* Force headings outside the header to use the site blue so content areas remain readable */
-:not(header) h1, :not(header) h2, :not(header) h3 { color: #062b55 !important; }
+/* Force headings within content sections to use the site blue so content areas remain readable. */
+section h1, section h2, section h3 { color: #062b55 !important; }
