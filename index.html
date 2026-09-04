@@ -887,8 +887,13 @@
   }
 
   .rb-stats-container {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 12px;
+  }
+
+  .rb-stats-highlight {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .rb-stat-card {
@@ -914,18 +919,23 @@
     margin-top: 22px;
     font-size: 0.92rem;
   }
+
+  .rb-stats-copy {
+    padding-left: 4px;
+  }
+
+  .rb-stats-headshot {
+    justify-self: start;
+  }
+
+  .rb-stats-headshot img {
+    width: 108px;
+    height: 108px;
+  }
 }
 
 /* Very small phones */
 @media (max-width: 350px) {
-  .rb-stats-container {
-    grid-template-columns: 1fr;
-  }
-
-  .rb-stats-highlight {
-    grid-template-columns: 1fr;
-  }
-
   .rb-stats-headshot img {
     width: 96px;
     height: 96px;
