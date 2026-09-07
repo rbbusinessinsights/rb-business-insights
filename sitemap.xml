@@ -50,9 +50,15 @@
   </url>
   <url>
     <loc>https://rbbusinessinsights.github.io/rb-business-insights/resources-articles.html</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://rbbusinessinsights.github.io/rb-business-insights/article-leadership-accountability.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rbbusinessinsights.github.io/rb-business-insights/contact.html</loc>
