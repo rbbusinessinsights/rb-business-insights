@@ -225,6 +225,10 @@ section h1, section h2, section h3 { color: #062b55 !important; }
 .nav-brand:focus { outline: 2px solid #0b7285; outline-offset: 2px; }
 .nav-toggle { color: #062b55; }
 
+@media (min-width: 1500px) {
+  .nav-brand { transform: translateX(-80px); }
+}
+
 .nav-links {
   align-items: center;
   flex-wrap: nowrap;
