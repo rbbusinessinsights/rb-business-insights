@@ -315,12 +315,12 @@
     }
 
     .hero-inner {
-      width: min(1180px, 100%);
+      width: min(1300px, 100%);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+      grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
       align-items: center;
-      gap: clamp(36px, 7vw, 100px);
+      gap: clamp(36px, 5vw, 72px);
     }
 
     .hero-content { max-width: 690px; }
@@ -354,7 +354,7 @@
     }
 
     .home-hero p.hero-copy {
-      max-width: 650px;
+      max-width: 780px;
       margin: 24px 0 0;
       color: rgba(255, 255, 255, 0.9);
       font-size: clamp(18px, 2vw, 21px);
@@ -364,7 +364,7 @@
     .home-hero .hero-supporting-copy {
       margin: 12px 0 0;
       color: #9ff3f0;
-      font-size: clamp(16px, 1.7vw, 18px);
+      font-size: clamp(15px, 1.4vw, 17px);
       font-style: italic;
       line-height: 1.5;
     }
@@ -418,6 +418,7 @@
       overflow: hidden;
       background: #0b7285;
       box-shadow: 18px 18px 0 rgba(212, 160, 23, 0.85), 0 20px 48px rgba(0, 0, 0, 0.28);
+      transform: translateX(54px);
     }
 
     .hero-portrait::after {
@@ -780,7 +781,7 @@
       .home-hero { padding: 52px 24px 64px; }
       .hero-inner { grid-template-columns: 1fr; gap: 46px; }
       .hero-content { max-width: 620px; }
-      .hero-portrait { width: min(78vw, 330px); grid-row: 1; }
+      .hero-portrait { width: min(78vw, 330px); grid-row: 1; transform: none; }
 
       section { padding: 20px 16px; }
       h2 { font-size: 26px; margin-bottom: 16px; }
@@ -1253,13 +1254,13 @@
   <header class="home-hero">
     <div class="hero-inner">
       <div class="hero-content">
-        <p class="hero-kicker">People. Performance. Progress.</p>
-        <h1>Turn people insight into practical improvement.</h1>
+        <p class="hero-kicker">People | Performance | Progress</p>
+        <h1>Turn people insight into practical improvement</h1>
         <p class="hero-copy">
           Helping organisations strengthen leadership, engage their people and create workplaces
-          where performance and culture thrive.
+          where performance and culture thrive
         </p>
-        <p class="hero-supporting-copy">Leadership. Culture. Employee engagement. Practical support that delivers lasting change.</p>
+        <p class="hero-supporting-copy">Leadership, culture, employee engagement — practical support that delivers lasting change</p>
         <div class="hero-cta">
           <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="btn">Book a Free Consultation</a>
           <a href="services.html" class="btn btn-secondary">Explore Services</a>
