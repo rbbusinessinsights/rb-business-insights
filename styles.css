@@ -195,6 +195,7 @@ section h1, section h2, section h3 { color: #062b55 !important; }
 }
 
 .nav-container {
+  max-width: 1200px;
   flex-wrap: nowrap;
   gap: 16px;
 }
@@ -203,31 +204,23 @@ section h1, section h2, section h3 { color: #062b55 !important; }
   display: inline-flex;
   align-items: center;
   padding: 3px 6px;
-  color: transparent;
-  font-size: 0;
   text-decoration: none;
   white-space: nowrap;
 }
 
 .nav-brand::before {
-  content: "";
+  content: none;
+}
+
+.nav-brand img {
   display: block;
-  flex: 0 0 230px;
-  width: 230px;
-  height: 48px;
-  background-image: url('rb-business-insights-consulting-banner.png');
-  background-position: left center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  width: 210px;
+  height: auto;
 }
 
 .nav-brand:hover { background: #eef7f8; }
 .nav-brand:focus { outline: 2px solid #0b7285; outline-offset: 2px; }
 .nav-toggle { color: #062b55; }
-
-@media (min-width: 1500px) {
-  .nav-brand { transform: translateX(-80px); }
-}
 
 .nav-links {
   align-items: center;
@@ -271,11 +264,7 @@ section h1, section h2, section h3 { color: #062b55 !important; }
 
 @media (max-width: 768px) {
   .nav-container { flex-wrap: wrap; }
-  .nav-brand::before {
-    flex-basis: 200px;
-    width: 200px;
-    height: 42px;
-  }
+  .nav-brand img { width: 190px; }
 
   .nav-links {
     top: 66px;
