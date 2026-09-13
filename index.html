@@ -318,7 +318,10 @@
       gap: clamp(36px, 5vw, 72px);
     }
 
-    .hero-content { max-width: 690px; }
+    .hero-content {
+      max-width: 850px;
+      text-align: left;
+    }
 
     .hero-kicker {
       display: inline-flex;
@@ -340,7 +343,7 @@
     }
 
     .home-hero h1 {
-      max-width: 680px;
+      max-width: 850px;
       margin: 0;
       color: white !important;
       font-size: clamp(38px, 5vw, 66px);
@@ -360,6 +363,7 @@
       margin-top: 30px;
       display: flex;
       flex-wrap: wrap;
+      justify-content: flex-start;
       gap: 12px;
     }
 
@@ -1080,7 +1084,7 @@
 }
   
   </style>
-  <link rel="stylesheet" href="/styles.css?v=20260913-16">
+  <link rel="stylesheet" href="/styles.css?v=20260913-17">
   <script>
     function setupMobileMenu() {
       const toggle = document.querySelector('.nav-toggle');
