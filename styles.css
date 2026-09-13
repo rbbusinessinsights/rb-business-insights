@@ -219,7 +219,8 @@ section h1, section h2, section h3 { color: #062b55 !important; }
 
 .nav-brand:hover { background: #eef7f8; }
 .nav-brand:focus { outline: 2px solid #0b7285; outline-offset: 2px; }
-.nav-toggle { color: #062b55; }
+.nav-toggle { color: #062b55; font-size: 0; }
+.nav-toggle::before { content: "\2630"; font-size: 24px; }
 
 @media (min-width: 1500px) {
   .nav-brand { transform: translateX(-80px); }
@@ -236,6 +237,21 @@ section h1, section h2, section h3 { color: #062b55 !important; }
 .nav-dropbtn {
   color: #062b55;
   font-size: 14px;
+}
+
+.nav-dropbtn::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  margin-left: 9px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+.nav-dropdown.open .nav-dropbtn::after {
+  transform: rotate(225deg) translate(-2px, -2px);
 }
 
 .nav-links a:hover,
