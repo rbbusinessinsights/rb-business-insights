@@ -1065,6 +1065,17 @@
   
   </style>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Homepage navigation overrides the shared legacy navbar stylesheet. */
+    .navbar { background: #ffffff; color: #062b55; }
+    .nav-links a, .nav-dropbtn { color: #062b55; }
+    .nav-dropdown-content { background: #ffffff; }
+
+    @media (max-width: 768px) {
+      .nav-links { background: #ffffff; }
+      .nav-dropdown .nav-dropdown-content { background: #eef7f8; }
+    }
+  </style>
 
   <script>
     function setupMobileMenu() {
