@@ -362,11 +362,14 @@ header:not(.home-hero):not(.services-hero) p {
 }
 
 header.service-detail-hero .hero-kicker {
-  display: inline-flex;
+  display: flex;
+  width: min(790px, 100%);
   align-items: center;
   gap: 10px;
   margin-top: 0;
   margin-bottom: 12px;
+  margin-right: auto;
+  margin-left: auto;
   color: #9ff3f0;
   font-size: 14px;
   font-weight: 700;
