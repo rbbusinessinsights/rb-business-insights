@@ -229,6 +229,85 @@
     margin: 0 auto 10px auto;
   }
 
+  .services-hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    min-height: 330px;
+    padding: clamp(46px, 6vw, 78px) 20px;
+    text-align: left;
+    background:
+      radial-gradient(circle at 80% 32%, rgba(8, 183, 188, 0.45), transparent 24%),
+      linear-gradient(115deg, #031b34 0%, #062b55 56%, #075d72 100%);
+  }
+
+  .services-hero::before,
+  .services-hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .services-hero::before {
+    width: 440px;
+    height: 440px;
+    right: -110px;
+    bottom: -270px;
+    border: 1px solid rgba(159, 243, 240, 0.3);
+    box-shadow: 0 0 0 46px rgba(159, 243, 240, 0.05), 0 0 0 98px rgba(159, 243, 240, 0.04);
+  }
+
+  .services-hero::after {
+    width: 300px;
+    height: 300px;
+    right: 12%;
+    top: -215px;
+    background: rgba(212, 160, 23, 0.13);
+  }
+
+  .services-hero-content {
+    width: min(1150px, 100%);
+    margin: 0 auto;
+  }
+
+  .services-hero .hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 12px;
+    color: #9ff3f0;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .services-hero .hero-kicker::before {
+    content: "";
+    width: 38px;
+    height: 2px;
+    background: #d4a017;
+  }
+
+  .services-hero h1 {
+    max-width: 700px;
+    margin: 0;
+    color: #ffffff !important;
+    font-size: clamp(40px, 5vw, 62px);
+    line-height: 1.06;
+    letter-spacing: -0.035em;
+  }
+
+  .services-hero p {
+    max-width: 650px;
+    margin: 20px 0 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(18px, 2vw, 21px);
+    line-height: 1.55;
+  }
+
   section {
     max-width: 1150px;
     margin: auto;
@@ -607,13 +686,12 @@
   </div>
 </nav>
 
-<header>
-  <img
-    src="rb-business-insights-consulting-banner.png"
-    alt="RB Business Insights Consulting Banner - Business Improvement, Leadership Development, Employee Engagement"
-  >
-  <h1>Our Services</h1>
-  <p>Comprehensive support tailored to your organisation's needs.</p>
+<header class="services-hero">
+  <div class="services-hero-content">
+    <p class="hero-kicker">Practical, tailored support</p>
+    <h1>Our Services</h1>
+    <p>Comprehensive support tailored to your organisation's needs</p>
+  </div>
 </header>
 
 <section>

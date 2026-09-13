@@ -157,11 +157,6 @@
 
     .nav-brand:hover { background: #eef7f8; }
     .nav-brand:focus { outline: 2px solid #0b7285; outline-offset: 2px; }
-    .nav-brand-logo { display: block; width: 250px; height: auto; }
-
-    @media (min-width: 1500px) {
-      .nav-brand { transform: translateX(-80px); }
-    }
 
     .nav-toggle {
       display: none;
@@ -777,7 +772,6 @@
         background: #eef7f8;
       }
 
-      .nav-brand-logo { width: 210px; }
       .home-hero { padding: 52px 24px 64px; }
       .hero-inner { grid-template-columns: 1fr; gap: 46px; }
       .hero-content { max-width: 620px; }
@@ -813,7 +807,6 @@
       .testimonial-card { padding: 16px; }
 
       .nav-brand { margin-right: 0; }
-      .nav-brand-logo { width: 185px; }
       .nav-links a { font-size: 14px; padding: 6px 8px; }
 
       .why-grid { gap: 16px; padding: 0 12px; }
@@ -1096,18 +1089,6 @@
   
   </style>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Homepage navigation overrides the shared legacy navbar stylesheet. */
-    .navbar { background: #ffffff; color: #062b55; }
-    .nav-links a, .nav-dropbtn { color: #062b55; }
-    .nav-dropdown-content { background: #ffffff; }
-
-    @media (max-width: 768px) {
-      .nav-links { background: #ffffff; }
-      .nav-dropdown .nav-dropdown-content { background: #eef7f8; }
-    }
-  </style>
-
   <script>
     function setupMobileMenu() {
       const toggle = document.querySelector('.nav-toggle');
@@ -1228,9 +1209,7 @@
 
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#top" class="nav-brand" aria-label="RB Business Insights home">
-        <img class="nav-brand-logo" src="rb-business-insights-consulting-banner.png" alt="RB Business Insights">
-      </a>
+      <a href="#top" class="nav-brand">RB Business Insights</a>
 
       <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
         ☰
