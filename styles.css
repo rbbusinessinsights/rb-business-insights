@@ -361,6 +361,27 @@ header:not(.home-hero):not(.services-hero) p {
   line-height: 1.55;
 }
 
+header.service-detail-hero .hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #9ff3f0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+header.service-detail-hero .hero-kicker::before {
+  content: "";
+  width: 38px;
+  height: 2px;
+  background: #d4a017;
+}
+
 @media (max-width: 768px) {
   header:not(.home-hero):not(.services-hero) {
     min-height: 0;
