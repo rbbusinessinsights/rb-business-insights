@@ -281,3 +281,73 @@ section h1, section h2, section h3 { color: #062b55 !important; }
     border: 0;
   }
 }
+
+/* Shared inner-page hero treatment. */
+header:not(.home-hero):not(.services-hero) {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 280px;
+  padding: clamp(46px, 6vw, 78px) 20px;
+  text-align: left;
+  background:
+    radial-gradient(circle at 80% 32%, rgba(8, 183, 188, 0.45), transparent 24%),
+    linear-gradient(115deg, #031b34 0%, #062b55 56%, #075d72 100%);
+}
+
+header:not(.home-hero):not(.services-hero)::before,
+header:not(.home-hero):not(.services-hero)::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+header:not(.home-hero):not(.services-hero)::before {
+  width: 440px;
+  height: 440px;
+  right: -110px;
+  bottom: -270px;
+  border: 1px solid rgba(159, 243, 240, 0.3);
+  box-shadow: 0 0 0 46px rgba(159, 243, 240, 0.05), 0 0 0 98px rgba(159, 243, 240, 0.04);
+}
+
+header:not(.home-hero):not(.services-hero)::after {
+  width: 300px;
+  height: 300px;
+  right: 12%;
+  top: -215px;
+  background: rgba(212, 160, 23, 0.13);
+}
+
+header:not(.home-hero):not(.services-hero) > img { display: none; }
+
+header:not(.home-hero):not(.services-hero) h1,
+header:not(.home-hero):not(.services-hero) p {
+  width: min(1150px, 100%);
+  margin-right: auto;
+  margin-left: auto;
+  text-align: left;
+}
+
+header:not(.home-hero):not(.services-hero) h1 {
+  color: #ffffff !important;
+  font-size: clamp(40px, 5vw, 62px);
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+}
+
+header:not(.home-hero):not(.services-hero) p {
+  max-width: 1150px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(18px, 2vw, 21px);
+  line-height: 1.55;
+}
+
+@media (max-width: 768px) {
+  header:not(.home-hero):not(.services-hero) {
+    min-height: 0;
+    padding: 48px 24px;
+  }
+}
