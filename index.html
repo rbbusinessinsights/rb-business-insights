@@ -123,13 +123,14 @@
 
     /* NAVBAR */
     .navbar {
-      background: linear-gradient(100deg, #031b34 0%, #062b55 58%, #083d66 100%);
-      color: white;
+      background: white;
+      color: #062b55;
       padding: 12px 20px;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 3px 14px rgba(3, 27, 52, 0.22);
+      border-bottom: 1px solid #d9e4ed;
+      box-shadow: 0 3px 14px rgba(3, 27, 52, 0.12);
     }
 
     .nav-container {
@@ -154,15 +155,15 @@
       margin-right: 4px;
     }
 
-    .nav-brand:hover { background: rgba(159, 243, 240, 0.1); }
-    .nav-brand:focus { outline: 2px solid #9ff3f0; outline-offset: 2px; }
+    .nav-brand:hover { background: #eef7f8; }
+    .nav-brand:focus { outline: 2px solid #0b7285; outline-offset: 2px; }
     .nav-brand-logo { display: block; width: 250px; height: auto; }
 
     .nav-toggle {
       display: none;
       background: none;
       border: none;
-      color: white;
+      color: #062b55;
       font-size: 24px;
       cursor: pointer;
       padding: 8px;
@@ -172,7 +173,7 @@
       justify-content: center;
     }
 
-    .nav-toggle:focus { outline: 2px solid #9ff3f0; outline-offset: 2px; }
+    .nav-toggle:focus { outline: 2px solid #0b7285; outline-offset: 2px; }
 
     .nav-links {
       display: flex;
@@ -183,7 +184,7 @@
     }
 
     .nav-links a {
-      color: white;
+      color: #062b55;
       text-decoration: none;
       font-weight: 600;
       font-size: 15px;
@@ -197,30 +198,30 @@
     }
 
     .nav-links a:hover {
-      color: #9ff3f0;
-      background: rgba(159, 243, 240, 0.1);
+      color: #0b7285;
+      background: #eef7f8;
     }
 
-    .nav-links a:focus { outline: 2px solid #9ff3f0; outline-offset: 2px; }
+    .nav-links a:focus { outline: 2px solid #0b7285; outline-offset: 2px; }
 
     .nav-links a.consultation-link {
       background: #d4a017;
-      color: white !important;
+      color: #031b34 !important;
       font-weight: 700 !important;
       padding: 10px 16px;
       border-radius: 6px;
       margin-left: 12px;
     }
 
-    .consultation-link:hover { background: #c89510; color: white !important; }
-    .consultation-link:focus { outline: 2px solid white; outline-offset: 2px; }
+    .consultation-link:hover { background: #e5b536; color: #031b34 !important; }
+    .consultation-link:focus { outline: 2px solid #062b55; outline-offset: 2px; }
 
     .nav-dropdown { position: relative; display: inline-block; flex-shrink: 0; }
 
     .nav-dropbtn {
       background: none;
       border: none;
-      color: white;
+      color: #062b55;
       font-weight: 600;
       font-size: 15px;
       padding: 8px 10px;
@@ -234,8 +235,8 @@
 
     .nav-dropbtn:hover,
     .nav-dropbtn:focus {
-      color: #9ff3f0;
-      background: rgba(159, 243, 240, 0.1);
+      color: #0b7285;
+      background: #eef7f8;
       outline: none;
     }
 
@@ -245,9 +246,10 @@
       top: 100%;
       left: 0;
       min-width: 300px;
-      background: #031b34;
+      background: white;
       border-radius: 6px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      border: 1px solid #d9e4ed;
+      box-shadow: 0 8px 20px rgba(3, 27, 52, 0.16);
       z-index: 1200;
       padding: 8px;
     }
@@ -255,7 +257,7 @@
     .nav-dropdown-content a {
       display: flex;
       align-items: center;
-      color: white;
+      color: #062b55;
       text-decoration: none;
       padding: 10px 12px;
       border-radius: 4px;
@@ -264,8 +266,8 @@
 
     .nav-dropdown-content a:hover,
     .nav-dropdown-content a:focus {
-      background: rgba(159, 243, 240, 0.15);
-      color: #9ff3f0;
+      background: #eef7f8;
+      color: #0b7285;
     }
 
     .nav-dropdown.open .nav-dropdown-content { display: block; }
@@ -704,7 +706,7 @@
   width: 100%;
   box-shadow: none;
   margin-top: 6px;
-  background: rgba(255,255,255,0.04);
+  background: #eef7f8;
   text-align: left;
 }
 
@@ -726,10 +728,10 @@
         left: 0;
         right: 0;
         flex-direction: column;
-        background: #031b34;
+        background: white;
         padding: 20px;
         gap: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 12px rgba(3, 27, 52, 0.16);
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
@@ -759,7 +761,7 @@
         min-width: 100%;
         box-shadow: none;
         margin-top: 6px;
-        background: rgba(255,255,255,0.04);
+        background: #eef7f8;
       }
 
       .nav-brand-logo { width: 210px; }
