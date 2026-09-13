@@ -483,7 +483,7 @@
     }
 
     /* SERVICES */
-    .services {
+    #services .services {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 20px;
@@ -499,11 +499,11 @@
     }
 
     @media (max-width: 900px) {
-      .services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      #services .services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 600px) {
-      .services { grid-template-columns: 1fr; }
+      #services .services { grid-template-columns: 1fr; }
     }
 
     .service-link {
