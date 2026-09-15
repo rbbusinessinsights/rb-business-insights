@@ -528,6 +528,81 @@
       border-radius: 4px;
     }
 
+    /* LATEST INSIGHTS */
+    .latest-insight {
+      margin: 14px 0 24px;
+      padding: clamp(28px, 4vw, 42px);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: center;
+      border-radius: 14px;
+      background: linear-gradient(115deg, #031b34, #062b55 62%, #075d72);
+      box-shadow: 0 8px 24px rgba(3, 27, 52, 0.16);
+    }
+
+    .latest-insight-kicker {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 10px;
+      color: #9ff3f0;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .latest-insight-kicker::before {
+      content: "";
+      width: 32px;
+      height: 2px;
+      background: #d4a017;
+    }
+
+    .latest-insight h2 {
+      margin: 0;
+      color: white !important;
+      font-size: clamp(26px, 3vw, 36px);
+      line-height: 1.16;
+    }
+
+    .latest-insight p:not(.latest-insight-kicker) {
+      max-width: 720px;
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .latest-insight-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+      min-width: 190px;
+    }
+
+    .latest-insight-actions a {
+      color: white;
+      font-weight: 700;
+    }
+
+    .latest-insight-actions .insight-read-link {
+      display: inline-flex;
+      padding: 12px 18px;
+      border-radius: 6px;
+      background: #d4a017;
+      color: #031b34;
+      text-decoration: none;
+    }
+
+    .latest-insight-actions .insight-read-link:hover { background: #e5b536; }
+    .latest-insight-actions .insight-all-link { color: #9ff3f0; }
+
+    @media (max-width: 700px) {
+      .latest-insight { grid-template-columns: 1fr; gap: 22px; }
+      .latest-insight-actions { min-width: 0; }
+    }
+
     /* HIGHLIGHTS + CONTACT */
     .highlight {
       background: white;
@@ -1542,6 +1617,20 @@
           <source srcset="images/logos/mbda.webp" type="image/webp">
           <img src="images/logos/mbda.png" alt="MBDA">
         </picture>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="latest-insights-title">
+    <div class="latest-insight">
+      <div>
+        <p class="latest-insight-kicker">Latest insight</p>
+        <h2 id="latest-insights-title">The Exception That Becomes the Culture</h2>
+        <p>When high performance becomes a shield for poor behaviour, people notice. Explore why the exceptions leaders tolerate can quietly become the culture they are trying to build.</p>
+      </div>
+      <div class="latest-insight-actions">
+        <a class="insight-read-link" href="article-challenging-values.html">Read the latest article</a>
+        <a class="insight-all-link" href="resources-articles.html">View all resources</a>
       </div>
     </div>
   </section>
