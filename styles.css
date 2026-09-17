@@ -419,6 +419,36 @@ header.service-detail-hero .hero-kicker::before {
   background: #d4a017;
 }
 
+/* Article titles remain full-width even when their reading content is constrained. */
+.article-container > article > .article-header,
+.article-container > .article-header {
+  position: relative;
+  width: 100vw;
+  min-height: 280px;
+  margin: 0 calc(50% - 50vw) 42px;
+  padding: clamp(46px, 6vw, 78px) max(20px, calc((100vw - 900px) / 2));
+  overflow: hidden;
+  color: #ffffff;
+  border-bottom: 0;
+  background:
+    radial-gradient(circle at 80% 32%, rgba(8, 183, 188, 0.45), transparent 24%),
+    linear-gradient(115deg, #031b34 0%, #062b55 56%, #075d72 100%);
+}
+
+.article-container > article > .article-header h1,
+.article-container > article > .article-header h2,
+.article-container > article > .article-header h3,
+.article-container > .article-header h1,
+.article-container > .article-header h2,
+.article-container > .article-header h3 {
+  color: #ffffff !important;
+}
+
+.article-container > article > .article-header .article-meta,
+.article-container > .article-header .article-meta {
+  color: rgba(255, 255, 255, 0.85);
+}
+
 @media (max-width: 768px) {
   header:not(.home-hero):not(.services-hero) {
     min-height: 0;
