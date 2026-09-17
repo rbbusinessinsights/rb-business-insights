@@ -187,6 +187,37 @@ section h1, section h2, section h3 { color: #062b55 !important; }
 section .contact-box h2,
 section .contact-box h3 { color: #ffffff !important; }
 
+/* Coloured call-to-action panels need explicit contrast after page heading rules. */
+.cta-section,
+.article-cta,
+.belief-box {
+  color: #ffffff;
+}
+
+.cta-section h1,
+.cta-section h2,
+.cta-section h3,
+.cta-section h4,
+.cta-section p,
+.article-cta h1,
+.article-cta h2,
+.article-cta h3,
+.article-cta h4,
+.article-cta p,
+.belief-box h1,
+.belief-box h2,
+.belief-box h3,
+.belief-box h4,
+.belief-box p {
+  color: #ffffff !important;
+}
+
+.cta-section a:not(.cta-button),
+.article-cta a:not(.cta-button),
+.belief-box a {
+  color: #9ff3f0;
+}
+
 /* Shared navigation: loaded after page-specific styles to keep every menu consistent. */
 .navbar {
   background: #ffffff;
