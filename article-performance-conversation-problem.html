@@ -15,22 +15,22 @@
     .article-categories { margin-top: 16px; }
     .category-tag { padding: 4px 10px; border: 1px solid rgba(159, 243, 240, 0.45); border-radius: 999px; color: #9ff3f0; font-size: 0.84rem; font-weight: 700; }
     .article-content { font-size: 1.08rem; line-height: 1.75; color: #28424c; }
-    .article-content h2 { clear: both; margin: 46px 0 14px; color: #062b55; font-size: clamp(27px, 3vw, 36px); line-height: 1.2; }
-    .article-content p { margin: 0 0 20px; }
+    .article-content h2 { clear: both; margin: 46px 0 14px; color: #062b55; font-size: clamp(27px, 3vw, 36px); line-height: 1.2; text-align: left; }
+    .article-content p { margin: 0 0 20px; text-align: justify; }
     .article-figure { float: left; width: min(35%, 250px); margin: 8px 28px 18px 0; overflow: hidden; border: 1px solid #d9e4ed; border-radius: 12px; box-shadow: 0 10px 24px rgba(3, 27, 52, 0.12); background: #ffffff; }
     .article-figure img { display: block; width: 100%; height: auto; }
     .article-figure-1 { width: min(38%, 275px); margin-top: 0; }
     .article-content::after { content: ""; display: block; clear: both; }
     .illustrated-section { clear: both; margin: 46px 0; }
     .illustrated-section h2 { margin: 0 0 14px; }
-    .illustrated-section-body { display: grid; grid-template-columns: minmax(0, 250px) minmax(0, 1fr); gap: 28px; align-items: start; }
-    .illustrated-section .article-figure { float: none; width: 100%; margin: 0; }
+    .illustrated-section-body { display: flow-root; }
+    .illustrated-section .article-figure { float: left; width: min(35%, 250px); margin: 0 28px 18px 0; }
     .illustrated-section-copy p:last-child { margin-bottom: 0; }
     .cta-section { margin-top: 52px; padding: 32px; border-radius: 14px; background: #062b55; color: white; text-align: center; }
     .cta-section h2 { color: white; margin-top: 0; }
     .cta-button, .back-link { display: inline-flex; margin-top: 12px; padding: 13px 20px; border-radius: 6px; background: #d4a017; color: #031b34; font-weight: 700; text-decoration: none; }
     .back-link { background: transparent; color: #062b55; margin-top: 34px; padding-left: 0; }
-    @media (max-width: 768px) { .article-container { padding: 36px 20px; } .article-figure, .article-figure-1 { float: none; width: 100%; max-width: 420px; margin: 28px auto; } .illustrated-section-body { grid-template-columns: 1fr; gap: 20px; } .illustrated-section .article-figure { max-width: 320px; margin: 0 auto; } }
+    @media (max-width: 768px) { .article-container { padding: 36px 20px; } .article-figure, .article-figure-1, .illustrated-section .article-figure { float: none; width: 100%; max-width: 320px; margin: 28px auto; } }
   </style>
   <script src="/navigation.js?v=20260921-1" defer></script>
 </head>
