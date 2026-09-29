@@ -9,6 +9,12 @@
       "route": "/working-with.html",
       "redirect": "/",
       "statusCode": 301
+    },
+    {
+      "route": "/article-performance-conversation-problem.html",
+      "headers": {
+        "Cache-Control": "no-store, max-age=0"
+      }
     }
   ],
   "globalHeaders": {},
