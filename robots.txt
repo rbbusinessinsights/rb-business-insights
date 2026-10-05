@@ -9,7 +9,7 @@ Disallow: /.git/
 Disallow: /.github/
 
 # Sitemap location
-Sitemap: https://rbbusinessinsights.github.io/rb-business-insights/sitemap.xml
+Sitemap: https://www.rb-businessinsights.co.uk/sitemap.xml
 
 # Crawl delay (optional - allows servers to process requests responsibly)
 Crawl-delay: 1

@@ -82,7 +82,7 @@ Ready to explore how we can help your organization?
 
 📧 **Email:** [richard@rb-businessinsights.co.uk](mailto:richard@rb-businessinsights.co.uk)  
 📱 **Phone:** 07773 335735  
-🌐 **Website:** [www.rb-businessinsights.co.uk](https://rbbusinessinsights.github.io/rb-business-insights/)
+🌐 **Website:** [www.rb-businessinsights.co.uk](https://www.rb-businessinsights.co.uk/)
 
 ## Resources & Articles
 
@@ -141,4 +141,4 @@ This repository contains the complete website for RB Business Insights, built wi
 
 **© 2024 RB Business Insights. All rights reserved.**
 
-For more information, visit [rb-businessinsights.co.uk](https://rbbusinessinsights.github.io/rb-business-insights/) or contact us today.
+For more information, visit [rb-businessinsights.co.uk](https://www.rb-businessinsights.co.uk/) or contact us today.
