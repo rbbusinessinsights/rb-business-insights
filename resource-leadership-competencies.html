@@ -134,6 +134,17 @@
     .result-box ul { margin: 0; padding-left: 18px; font-size: 14px; }
     .result-box li { margin-bottom: 4px; }
     .result-box.blind { background: #fff4e6; } .result-box.hidden-s { background: #ebfbee; } .result-box.focus { background: #fff0f0; }
+    .quota { background: white; border-radius: 12px; padding: 16px 20px; margin: 6px 0 14px; box-shadow: 0 2px 8px rgba(6,43,85,0.08); border-left: 5px solid #d4a017; }
+    .quota-lead { margin: 0 0 10px; font-size: 15px; color: #2d3748; }
+    .quota-row { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; flex-wrap: wrap; }
+    .quota-who { width: 44px; font-weight: 700; color: #062b55; font-size: 14px; }
+    .quota-row.peer .quota-who { color: #7b2cbf; }
+    .quota-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+    .q { background: #edf2f7; border-radius: 20px; padding: 4px 12px; font-size: 13px; color: #2d3748; }
+    .q.strength { border: 2px solid #2f9e44; } .q.dev { border: 2px solid #f59f00; } .q.gap { border: 2px solid #e03131; }
+    .q.met { background: #e6fcf5; } .q.done { background: #2f9e44; color: white; font-weight: 700; }
+    .quota-msg { margin: 6px 0 0; font-size: 14px; color: #c92a2a; font-weight: 700; min-height: 1px; }
+    .seg button.full { opacity: 0.45; cursor: not-allowed; }
     .legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: #52606d; margin-bottom: 10px; }
     .legend span::before { content: ""; display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
     .legend .s::before { background: #2f9e44; } .legend .d::before { background: #f59f00; } .legend .g::before { background: #e03131; }
@@ -275,6 +286,12 @@
       <button class="btn" id="expand-all" type="button">Expand all</button>
       <button class="btn" id="collapse-all" type="button">Collapse all</button>
       <button class="btn primary" id="show-results" type="button">View my reflection summary</button>
+    </div>
+    <div class="quota">
+      <p class="quota-lead"><strong>Make it a real choice.</strong> Across all 38 competencies, select exactly <strong>12 Strengths</strong>, <strong>14 Developing</strong> and <strong>12 Gaps</strong>. Limits force you to prioritise, rather than rating everything as &ldquo;fine&rdquo;. The same limits apply to a peer rating you.</p>
+      <div class="quota-row"><span class="quota-who">Me</span><div class="quota-chips" id="quota-self"></div></div>
+      <div class="quota-row peer"><span class="quota-who">Peer</span><div class="quota-chips" id="quota-peer"></div></div>
+      <p class="quota-msg" id="quota-msg" role="status" aria-live="polite"></p>
     </div>
     <div class="legend" aria-hidden="true"><span class="s">Strength</span><span class="d">Developing</span><span class="g">Gap</span><span style="color:#7b2cbf">&#9711; Ring = peer view added</span></div>
 
@@ -446,10 +463,24 @@
 
   const all = list => Array.from(document.querySelectorAll(list));
 
+  const LIMITS = { strength: 12, gap: 12, dev: 14 };
+  const countOf = (who, v) => Object.values(state).filter(r => r && r[who] === v).length;
+
   function paint() {
     all('.seg button').forEach(b => {
       const on = (state[b.dataset.id] || {})[b.dataset.who] === b.dataset.v;
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      const full = !on && countOf(b.dataset.who, b.dataset.v) >= LIMITS[b.dataset.v];
+      b.classList.toggle('full', full);
+      b.setAttribute('aria-disabled', full ? 'true' : 'false');
+    });
+    ['self', 'peer'].forEach(w => {
+      const el = document.getElementById('quota-' + w);
+      let done = 0;
+      el.innerHTML = ['strength', 'dev', 'gap'].map(v => {
+        const c = countOf(w, v); done += c;
+        return `<span class="q ${v}${c >= LIMITS[v] ? ' met' : ''}"><b>${c}/${LIMITS[v]}</b> ${LABEL[v]}</span>`;
+      }).join('') + (done === 38 ? '<span class="q done">✔ Complete</span>' : '');
     });
     all('details.comp').forEach(d => {
       const r = state[d.dataset.id] || {};
@@ -464,7 +495,13 @@
     const b = e.target.closest('.seg button');
     if (!b) return;
     const r = state[b.dataset.id] = state[b.dataset.id] || {};
-    if (r[b.dataset.who] === b.dataset.v) delete r[b.dataset.who]; else r[b.dataset.who] = b.dataset.v;
+    const msg = document.getElementById('quota-msg');
+    msg.textContent = '';
+    if (r[b.dataset.who] === b.dataset.v) delete r[b.dataset.who];
+    else if (countOf(b.dataset.who, b.dataset.v) >= LIMITS[b.dataset.v]) {
+      msg.textContent = `You have already used all ${LIMITS[b.dataset.v]} "${LABEL[b.dataset.v]}" ratings. Change one of your existing choices first to make room.`;
+      return;
+    } else r[b.dataset.who] = b.dataset.v;
     save(); paint();
     if (!document.getElementById('results').hidden) renderResults();
   });
