@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leadership Competencies Explorer: Reflect, Spot Gaps and Compare Perceptions | RB Business Insights</title>
+  <link rel="icon" type="image/png" href="/favicon-48.png?v=20260929-2" sizes="48x48">
+  <link rel="icon" type="image/png" href="/favicon.png?v=20260929-2" sizes="512x512">
+  <meta name="description" content="An interactive guide to the 38 Korn Ferry Leadership Architect competencies. Use it to develop management competencies, identify gaps and compare your self-perception with peer feedback.">
+
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; background: #f4f7fb; color: #1f2933; }
+
+    /* NAVBAR */
+    .navbar { background: #031b34; color: white; padding: 14px 10px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .nav-container { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .nav-brand { color: white; text-decoration: none; font-weight: 700; font-size: 15px; padding: 8px 6px; border-radius: 4px; white-space: nowrap; flex-shrink: 0; margin-right: 12px; }
+    .nav-brand:hover { background: rgba(159,243,240,0.1); }
+    .nav-brand:focus { outline: 2px solid #9ff3f0; outline-offset: 2px; }
+    .nav-toggle { display: none; background: none; border: none; color: white; font-size: 24px; cursor: pointer; padding: 8px; min-height: 44px; min-width: 44px; align-items: center; justify-content: center; }
+    .nav-toggle:focus { outline: 2px solid #9ff3f0; outline-offset: 2px; }
+    .nav-links { display: flex; align-items: center; gap: 14px; flex-wrap: nowrap; margin-left: auto; }
+    .nav-links a { color: white; text-decoration: none; font-weight: 600; font-size: 15px; padding: 8px 10px; border-radius: 4px; transition: background 0.3s ease; min-height: 44px; display: inline-flex; align-items: center; white-space: nowrap; }
+    .nav-links a:hover { color: #9ff3f0; background: rgba(159,243,240,0.1); }
+    .nav-links a:focus { outline: 2px solid #9ff3f0; outline-offset: 2px; }
+    .nav-links a.consultation-link { background: #d4a017; color: white !important; font-weight: 700 !important; padding: 10px 16px; border-radius: 6px; margin-left: 12px; }
+    .consultation-link:hover { background: #c89510; color: white !important; }
+    .nav-dropdown { position: relative; display: inline-block; flex-shrink: 0; }
+    .nav-dropbtn { background: none; border: none; color: white; font-weight: 600; font-size: 15px; padding: 8px 10px; border-radius: 4px; cursor: pointer; min-height: 44px; display: inline-flex; align-items: center; white-space: nowrap; }
+    .nav-dropbtn:hover, .nav-dropbtn:focus { color: #9ff3f0; background: rgba(159,243,240,0.1); outline: none; }
+    .nav-dropdown-content { display: none; position: absolute; top: 100%; left: 0; min-width: 300px; background: #031b34; border-radius: 6px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); z-index: 1200; padding: 8px; }
+    .nav-dropdown-content a { display: flex; align-items: center; color: white; text-decoration: none; padding: 10px 12px; border-radius: 4px; min-height: 44px; }
+    .nav-dropdown-content a:hover, .nav-dropdown-content a:focus { background: rgba(159,243,240,0.15); color: #9ff3f0; }
+    .nav-dropdown.open .nav-dropdown-content { display: block; }
+
+    /* PAGE */
+    .page { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+    .hero { background: linear-gradient(135deg, #062b55, #0b7285); color: white; border-radius: 16px; padding: 44px 36px; margin-bottom: 32px; }
+    .hero .tags { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+    .tag { background: rgba(255,255,255,0.16); color: #fff; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+    .hero h1 { font-size: 40px; line-height: 1.25; margin: 0 0 16px; }
+    .hero p { font-size: 18px; margin: 0; opacity: 0.95; max-width: 760px; }
+    .hero .meta { margin-top: 18px; font-size: 14px; opacity: 0.8; }
+
+    h2.section-title { font-size: 28px; color: #062b55; margin: 44px 0 8px; }
+    .section-sub { color: #52606d; margin: 0 0 20px; }
+    .page a { color: #0b7285; font-weight: 600; }
+
+    /* USE CASE CARDS */
+    .use-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+    .use-card { background: white; border-radius: 14px; padding: 26px; box-shadow: 0 4px 14px rgba(6,43,85,0.08); border-top: 5px solid #0b7285; }
+    .use-card.peer { border-top-color: #7b2cbf; }
+    .use-card .icon { font-size: 30px; }
+    .use-card h3 { margin: 8px 0; color: #062b55; font-size: 20px; }
+    .use-card p { margin: 0 0 12px; color: #2d3748; }
+    .use-card ul { margin: 0; padding-left: 20px; color: #2d3748; }
+    .use-card li { margin-bottom: 6px; }
+
+    /* STEPS */
+    .steps { counter-reset: step; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-top: 8px; }
+    .step { background: white; border-radius: 12px; padding: 18px 18px 18px 18px; box-shadow: 0 2px 8px rgba(6,43,85,0.06); }
+    .step::before { counter-increment: step; content: counter(step); display: inline-flex; width: 32px; height: 32px; border-radius: 50%; background: #062b55; color: white; font-weight: 700; align-items: center; justify-content: center; margin-bottom: 8px; }
+    .step strong { display: block; color: #062b55; margin-bottom: 4px; }
+    .step span { font-size: 14px; color: #52606d; }
+
+    .callout { background: #fff8e1; border-left: 5px solid #d4a017; border-radius: 8px; padding: 16px 20px; margin-top: 22px; color: #4a3b00; font-size: 15px; }
+
+    /* TOOLBAR */
+    .toolbar { position: sticky; top: 72px; z-index: 50; background: rgba(244,247,251,0.96); backdrop-filter: blur(4px); padding: 12px 0; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .toolbar input[type=search] { flex: 1 1 220px; padding: 12px 14px; border: 2px solid #cbd5e0; border-radius: 8px; font-size: 15px; min-height: 44px; }
+    .toolbar input[type=search]:focus { outline: none; border-color: #0b7285; }
+    .btn { background: white; color: #062b55; border: 2px solid #062b55; padding: 10px 16px; border-radius: 8px; font-weight: 700; font-size: 14px; cursor: pointer; min-height: 44px; }
+    .btn:hover { background: #062b55; color: white; }
+    .btn:focus { outline: 2px solid #0b7285; outline-offset: 2px; }
+    .btn.primary { background: #062b55; color: white; }
+    .btn.primary:hover { background: #0b7285; border-color: #0b7285; }
+
+    /* CATEGORY ACCORDIONS */
+    details.cat { background: white; border-radius: 14px; margin-bottom: 16px; box-shadow: 0 4px 14px rgba(6,43,85,0.08); border-left: 8px solid var(--c); overflow: hidden; }
+    details.cat > summary { list-style: none; cursor: pointer; padding: 22px 24px; display: flex; align-items: center; gap: 16px; }
+    details.cat > summary::-webkit-details-marker { display: none; }
+    details.cat > summary:focus-visible { outline: 3px solid var(--c); outline-offset: -3px; }
+    .cat-icon { width: 54px; height: 54px; border-radius: 14px; background: var(--bg); display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; }
+    .cat-text { flex: 1; min-width: 0; }
+    .cat-text h3 { margin: 0; font-size: 22px; color: #062b55; }
+    .cat-text p { margin: 2px 0 0; font-size: 14px; color: #52606d; }
+    .cat-count { background: var(--bg); color: var(--c); font-weight: 700; font-size: 13px; padding: 6px 12px; border-radius: 20px; white-space: nowrap; }
+    .chev { width: 12px; height: 12px; border-right: 3px solid #062b55; border-bottom: 3px solid #062b55; transform: rotate(45deg); transition: transform 0.25s ease; flex-shrink: 0; margin: 0 4px; }
+    details[open] > summary > .chev { transform: rotate(-135deg); }
+    .cat-body { padding: 4px 20px 22px; display: grid; gap: 18px; }
+    .group[hidden] { display: none; }
+    .group-title { display: flex; align-items: center; gap: 10px; margin: 8px 0 10px; font-size: 16px; color: var(--c); padding-bottom: 8px; border-bottom: 2px solid var(--bg); }
+    .group-letter { width: 28px; height: 28px; border-radius: 8px; background: var(--c); color: white; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; }
+    .group-items { display: grid; gap: 10px; }
+
+    /* COMPETENCY ACCORDIONS */
+    details.comp { border: 1px solid #e2e8f0; border-radius: 10px; background: #fbfcfe; }
+    details.comp[open] { border-color: var(--c); background: white; box-shadow: 0 2px 10px rgba(6,43,85,0.07); }
+    details.comp > summary { list-style: none; cursor: pointer; padding: 14px 16px; display: flex; align-items: center; gap: 12px; }
+    details.comp > summary::-webkit-details-marker { display: none; }
+    details.comp > summary:focus-visible { outline: 3px solid var(--c); outline-offset: -3px; border-radius: 10px; }
+    .comp-num { width: 30px; height: 30px; border-radius: 50%; background: var(--bg); color: var(--c); font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .comp-title { flex: 1; min-width: 0; }
+    .comp-title strong { display: block; color: #062b55; font-size: 17px; }
+    .comp-title span { font-size: 14px; color: #52606d; }
+    .dots { display: flex; gap: 5px; flex-shrink: 0; }
+    .dot { width: 12px; height: 12px; border-radius: 50%; background: #e2e8f0; }
+    .dot.self-strength { background: #2f9e44; } .dot.self-dev { background: #f59f00; } .dot.self-gap { background: #e03131; }
+    .dot.peer.self-strength, .dot.peer.self-dev, .dot.peer.self-gap { outline: 2px solid #7b2cbf; outline-offset: 1px; }
+    .comp-body { padding: 0 18px 18px 58px; }
+    .comp-body h4 { margin: 4px 0 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.6px; color: var(--c); }
+    .comp-body ul { margin: 0 0 14px; padding-left: 18px; }
+    .comp-body li { margin-bottom: 4px; color: #2d3748; }
+
+    .rate { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; border-top: 1px dashed #cbd5e0; padding-top: 14px; }
+    .rate-row fieldset { border: none; margin: 0; padding: 0; }
+    .rate-row legend { font-size: 13px; font-weight: 700; color: #062b55; margin-bottom: 6px; padding: 0; }
+    .rate-row.peer legend { color: #7b2cbf; }
+    .seg { display: flex; gap: 6px; flex-wrap: wrap; }
+    .seg button { border: 2px solid #cbd5e0; background: white; border-radius: 20px; padding: 8px 12px; font-size: 13px; font-weight: 700; cursor: pointer; min-height: 40px; color: #2d3748; }
+    .seg button:focus { outline: 2px solid #0b7285; outline-offset: 2px; }
+    .seg button[aria-pressed=true][data-v=strength] { background: #2f9e44; border-color: #2f9e44; color: white; }
+    .seg button[aria-pressed=true][data-v=dev] { background: #f59f00; border-color: #f59f00; color: #1f2933; }
+    .seg button[aria-pressed=true][data-v=gap] { background: #e03131; border-color: #e03131; color: white; }
+
+    /* RESULTS */
+    .results { background: white; border-radius: 14px; padding: 28px; box-shadow: 0 4px 14px rgba(6,43,85,0.08); margin-top: 10px; }
+    .results[hidden] { display: none; }
+    .result-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-top: 14px; }
+    .result-box { border-radius: 10px; padding: 16px; background: #f4f7fb; }
+    .result-box h4 { margin: 0 0 8px; color: #062b55; font-size: 16px; }
+    .result-box ul { margin: 0; padding-left: 18px; font-size: 14px; }
+    .result-box li { margin-bottom: 4px; }
+    .result-box.blind { background: #fff4e6; } .result-box.hidden-s { background: #ebfbee; } .result-box.focus { background: #fff0f0; }
+    .legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: #52606d; margin-bottom: 10px; }
+    .legend span::before { content: ""; display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+    .legend .s::before { background: #2f9e44; } .legend .d::before { background: #f59f00; } .legend .g::before { background: #e03131; }
+    .privacy { font-size: 13px; color: #52606d; margin-top: 12px; }
+
+    .about { background: white; border-radius: 14px; padding: 26px; margin-top: 30px; box-shadow: 0 4px 14px rgba(6,43,85,0.08); }
+    .about h3 { margin-top: 0; color: #062b55; }
+    .about p { color: #2d3748; }
+    .fine-print { font-size: 13px; color: #52606d; margin-top: 18px; }
+
+    .cta-section { background: linear-gradient(135deg, #062b55, #0b7285); color: white; border-radius: 12px; padding: 40px 30px; margin-top: 40px; text-align: center; }
+    .cta-section h3 { margin: 0 0 12px; font-size: 24px; }
+    .cta-section p { margin: 0 0 20px; opacity: 0.95; }
+    .cta-button { display: inline-flex; align-items: center; justify-content: center; background: #d4a017; color: white !important; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; min-height: 44px; }
+    .cta-button:hover { background: #c89510; }
+    .back-link { display: inline-block; margin-top: 30px; text-decoration: none; }
+
+    footer { background: #031b34; color: white; text-align: center; padding: 40px 20px; margin-top: 40px; }
+    .footer-content { max-width: 800px; margin: auto; }
+    .footer-content a { color: #9ff3f0; text-decoration: none; }
+
+    @media print {
+      .navbar, .toolbar, .cta-section, footer, .back-link { display: none; }
+      details > * { display: block; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      .nav-links { display: none; position: absolute; top: 56px; left: 0; right: 0; flex-direction: column; align-items: flex-start; background: #031b34; padding: 20px; gap: 10px; }
+      .nav-links.open { display: flex; }
+      .nav-dropdown { width: 100%; }
+      .nav-dropbtn { width: 100%; justify-content: flex-start; }
+      .nav-dropdown-content { position: static; min-width: 100%; box-shadow: none; margin-top: 6px; background: rgba(255,255,255,0.04); }
+      .hero { padding: 30px 22px; } .hero h1 { font-size: 30px; } .hero p { font-size: 16px; }
+      .toolbar { top: 64px; }
+      .comp-body { padding-left: 18px; }
+      .cat-count { display: none; }
+      .dots { display: none; }
+    }
+  </style>
+  <link rel="stylesheet" href="/styles.css?v=20260921-2">
+  <script src="/navigation.js?v=20260921-1" defer></script>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-brand" aria-label="RB Business Insights home"><img src="/rb-business-insights-consulting-banner.png" alt="RB Business Insights"></a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"></button>
+    <div class="nav-links">
+      <div class="nav-dropdown">
+        <button class="nav-dropbtn" aria-expanded="false" aria-haspopup="true">Explore Services</button>
+        <div class="nav-dropdown-content">
+          <a href="services.html">All Services</a>
+          <a href="investors-in-people.html">Investors in People</a>
+          <a href="employee-voice-engagement.html">Employee Voice &amp; Engagement</a>
+          <a href="leadership-development.html">Leadership Development</a>
+          <a href="organisational-development.html">Organisational Development</a>
+        </div>
+      </div>
+      <a href="index.html#working-with">Working With</a>
+      <a href="index.html#contact">Contact</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropbtn" aria-expanded="false" aria-haspopup="true">About Us</button>
+        <div class="nav-dropdown-content">
+          <a href="about-rb-business-insights.html">About RB Business Insights</a>
+          <a href="meet-the-team.html">Meet the Team</a>
+        </div>
+      </div>
+      <a href="resources-articles.html">Resources / Articles</a>
+      <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="consultation-link">Book a Free Consultation</a>
+    </div>
+  </div>
+</nav>
+
+<main class="page">
+
+  <header class="hero">
+    <div class="tags"><span class="tag">Resource</span><span class="tag">Leadership</span><span class="tag">Interactive</span></div>
+    <h1>Leadership Competencies Explorer</h1>
+    <p>A practical guide to the 38 Korn Ferry Leadership Architect&reg; competencies. Use it to build management capability, find where your gaps may be, and see how your own view of your leadership compares with the people who work closest to you.</p>
+    <div class="meta">By Richard Budd &middot; Resource &middot; 15 min to explore</div>
+  </header>
+
+  <section aria-labelledby="why">
+    <h2 class="section-title" id="why">How to use this resource</h2>
+    <p class="section-sub">Three ways to put the framework to work, whether you are developing yourself, your managers or your leadership team.</p>
+    <div class="use-grid">
+      <div class="use-card">
+        <div class="icon" aria-hidden="true">🧭</div>
+        <h3>Develop management competencies</h3>
+        <p>Move beyond a vague idea of &ldquo;good management&rdquo; and give people a shared language for what effective leadership looks like in practice.</p>
+        <ul>
+          <li>Set clear expectations for managers at each level</li>
+          <li>Shape development plans and coaching conversations</li>
+          <li>Inform leadership programmes and succession planning</li>
+        </ul>
+      </div>
+      <div class="use-card">
+        <div class="icon" aria-hidden="true">🔍</div>
+        <h3>Identify where gaps may exist</h3>
+        <p>Review each competency honestly and mark it as a strength, a development area or a likely gap. Patterns quickly show where to focus.</p>
+        <ul>
+          <li>Spot gaps for an individual, a team or a whole management group</li>
+          <li>Separate what matters most from what is simply nice to have</li>
+          <li>Avoid trying to fix all 38 at once</li>
+        </ul>
+      </div>
+      <div class="use-card peer">
+        <div class="icon" aria-hidden="true">🪞</div>
+        <h3>Peer-to-peer leadership reflection</h3>
+        <p>Ask colleagues who work closely with you to rate you using the same competencies, then compare how they see your strengths with your own perception.</p>
+        <ul>
+          <li>Discover strengths you under-estimate</li>
+          <li>Uncover blind spots you may not see</li>
+          <li>Turn comparison into an open, honest conversation</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title" style="font-size:22px;margin-top:36px">A simple way to work through it</h2>
+    <div class="steps">
+      <div class="step"><strong>Explore</strong><span>Open each category and read the key behaviours that sit behind each competency.</span></div>
+      <div class="step"><strong>Reflect</strong><span>Rate yourself: strength, developing or gap. Go with your first instinct.</span></div>
+      <div class="step"><strong>Invite peers</strong><span>Ask 3&ndash;5 trusted colleagues to do the same about you, on their own copy.</span></div>
+      <div class="step"><strong>Compare</strong><span>Enter their view and see where perceptions match, and where they differ.</span></div>
+      <div class="step"><strong>Act</strong><span>Choose two or three priorities and agree practical next steps.</span></div>
+    </div>
+    <div class="callout"><strong>Tip for peer reflection:</strong> agree the ground rules first. Feedback should focus on observable behaviours, be given to help rather than judge, and be received with curiosity. The biggest insights often come from the differences, not the agreement.</div>
+  </section>
+
+  <section aria-labelledby="explore">
+    <h2 class="section-title" id="explore">Explore the 38 competencies</h2>
+    <p class="section-sub">Open a category, then open any competency to read its key behaviours and add your own reflections.</p>
+
+    <div class="toolbar">
+      <input type="search" id="search" placeholder="Search competencies or behaviours…" aria-label="Search competencies">
+      <button class="btn" id="expand-all" type="button">Expand all</button>
+      <button class="btn" id="collapse-all" type="button">Collapse all</button>
+      <button class="btn primary" id="show-results" type="button">View my reflection summary</button>
+    </div>
+    <div class="legend" aria-hidden="true"><span class="s">Strength</span><span class="d">Developing</span><span class="g">Gap</span><span style="color:#7b2cbf">&#9711; Ring = peer view added</span></div>
+
+    <div id="categories"></div>
+    <noscript><p>Please enable JavaScript to use the interactive competency explorer.</p></noscript>
+
+    <div class="results" id="results" hidden aria-live="polite">
+      <h3 style="margin-top:0;color:#062b55">Your reflection summary</h3>
+      <p id="results-intro" style="margin:0;color:#52606d"></p>
+      <div class="result-cols" id="result-cols"></div>
+      <p class="privacy">Your ratings are stored only in this browser on your device. Nothing is sent to RB Business Insights. <button class="btn" id="reset" type="button" style="margin-left:6px;min-height:36px;padding:6px 12px">Clear all ratings</button> <button class="btn" id="print" type="button" style="min-height:36px;padding:6px 12px">Print / save as PDF</button></p>
+    </div>
+  </section>
+
+  <section class="about" aria-labelledby="about-fw">
+    <h3 id="about-fw">About the framework</h3>
+    <p>The Korn Ferry Leadership Architect&reg; framework is one of the most widely recognised leadership competency models used globally. Organised into four factors and twelve clusters (A&ndash;L), it helps organisations understand the behaviours that contribute to individual, team and organisational success.</p>
+    <p>RB Business Insights uses competency frameworks such as this to support leadership development, talent strategies, succession planning, performance discussions and organisational capability reviews. While organisations may choose to assess all 38 competencies, the greatest impact often comes from identifying the key leadership behaviours that will make the biggest difference to performance, culture and long-term success.</p>
+    <p class="fine-print">The summaries on this page are an independent overview and interpretation of the 38 Korn Ferry Leadership Architect&reg; competencies. Korn Ferry owns all intellectual property relating to the framework. This page is intended as an educational resource and is not a reproduction of official Korn Ferry material.</p>
+  </section>
+
+  <div class="cta-section">
+    <h3>Want to turn reflection into development?</h3>
+    <p>We can help you choose the competencies that matter most for your organisation, run structured peer reflection sessions and build practical leadership development plans.</p>
+    <a href="https://outlook.office.com/book/RBBusinessinsights1@rb-businessinsights.co.uk/?ismsaljsauthenabled" class="cta-button">Book a Free Consultation</a>
+  </div>
+
+  <a href="resources-articles.html" class="back-link">Back to Resources</a>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <h3>RB Business Insights</h3>
+    <p>Helping organisations turn people insight into practical improvement through Investors in People support, employee voice, leadership reviews and organisational development.</p>
+    <p><strong>Email:</strong> <a href="mailto:richard@rb-businessinsights.co.uk">richard@rb-businessinsights.co.uk</a></p>
+    <p style="margin-top: 30px; font-size: 14px; color: #9ff3f0;">&copy; 2026 RB Business Insights. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const SRC = [
+    { id: 'thought', name: 'Thought Competencies', icon: '💡', c: '#0b7285', bg: '#e0f2f1',
+      desc: 'How leaders think, analyse information, solve problems and make decisions.',
+      items: [
+        ['Business Insight', 'Understanding how organisations operate and create value.', ['Understands commercial drivers and organisational priorities', 'Recognises market trends and external influences', 'Connects strategy with day-to-day decision making', 'Uses business knowledge to guide actions and priorities']],
+        ['Financial Acumen', 'Using financial understanding to make better business decisions.', ['Understands what key financial indicators mean for the organisation', 'Uses financial analysis to evaluate options and opportunities', 'Combines numbers with wider context to reach sound conclusions']],
+        ['Manages Complexity', 'Making sense of complex information and competing demands.', ['Analyses information from multiple sources', 'Identifies root causes rather than symptoms', 'Evaluates risks and opportunities', 'Simplifies complex issues into practical actions']],
+        ['Decision Quality', 'Making sound and timely decisions.', ['Uses evidence and judgement effectively', 'Balances speed with accuracy', 'Considers relevant information and viewpoints', 'Makes decisions despite incomplete information']],
+        ['Strategic Mindset', 'Looking beyond current challenges to future opportunities.', ['Anticipates emerging trends', 'Thinks long term as well as short term', 'Identifies future opportunities and risks', 'Connects vision with practical execution']],
+        ['Global Perspective', 'Taking a wider view of challenges and opportunities.', ['Understands global trends and influences', 'Recognises cultural and market differences', 'Considers broader implications of decisions', 'Thinks beyond local or functional boundaries']],
+        ['Cultivates Innovation', 'Creating an environment where new ideas can flourish.', ['Encourages creative thinking', 'Challenges established approaches', 'Supports experimentation and learning', 'Helps turn ideas into practical improvements']],
+        ['Tech Savvy', 'Understanding the opportunities and implications of technology.', ['Keeps up to date with emerging technologies', 'Adopts useful digital tools', "Evaluates technology's business impact", 'Supports digital capability development']],
+        ['Balances Stakeholders', 'Managing competing expectations effectively.', ['Understands differing stakeholder needs', 'Considers multiple viewpoints', 'Balances short and long-term interests', 'Makes fair and balanced decisions']]
+      ] },
+    { id: 'results', name: 'Results Competencies', icon: '🎯', c: '#c2410c', bg: '#fff0e6',
+      desc: 'Achieving goals, delivering outcomes and maintaining performance.',
+      items: [
+        ['Drives Results', 'Maintaining focus on successful delivery.', ['Delivers against objectives', 'Maintains momentum through challenges', 'Demonstrates persistence and determination', 'Encourages high performance in others']],
+        ['Ensures Accountability', 'Creating ownership and responsibility.', ['Sets clear expectations', 'Takes responsibility for outcomes', 'Holds others accountable fairly', 'Follows through on commitments']],
+        ['Action Oriented', 'Moving quickly and decisively.', ['Seizes opportunities', 'Acts with urgency when needed', 'Tackles difficult issues proactively', 'Maintains energy and momentum']],
+        ['Manages Ambiguity', 'Remaining effective amid uncertainty.', ['Stays calm when direction is unclear', 'Adapts to changing circumstances', 'Makes progress despite uncertainty', 'Manages risk appropriately']],
+        ['Plans and Aligns', 'Converting priorities into action.', ['Establishes clear priorities', 'Aligns work with organisational goals', 'Creates realistic plans', 'Monitors progress and adjusts accordingly']],
+        ['Directs Work', 'Providing clarity and direction.', ['Delegates effectively', 'Clarifies responsibilities', 'Removes barriers to success', 'Supports people to achieve objectives']],
+        ['Resourcefulness', 'Making effective use of available resources.', ['Maximises available resources', 'Solves problems creatively', 'Coordinates multiple activities', 'Achieves results efficiently']],
+        ['Optimises Work Processes', 'Improving productivity and effectiveness.', ['Identifies process improvement opportunities', 'Removes inefficiencies', 'Encourages continuous improvement', 'Creates effective systems and workflows']],
+        ['Drives Vision and Purpose', 'Creating clarity around direction and ambition.', ['Communicates an inspiring vision', 'Creates alignment around goals', 'Builds commitment to organisational purpose', 'Generates enthusiasm for future success']]
+      ] },
+    { id: 'people', name: 'People Competencies', icon: '🤝', c: '#7b2cbf', bg: '#f3e5f5',
+      desc: 'Relationships, collaboration and developing others.',
+      items: [
+        ['Builds Effective Teams', 'Creating high-performing teams.', ['Brings together diverse strengths', 'Creates shared goals', 'Encourages collaboration', 'Builds trust and belonging']],
+        ['Collaborates', 'Working effectively with others.', ['Builds productive partnerships', 'Shares information openly', 'Supports collective success', 'Develops strong working relationships']],
+        ['Communicates Effectively', 'Sharing information clearly and appropriately.', ['Listens actively', 'Adapts communication to different audiences', 'Encourages dialogue and feedback', 'Communicates clearly and consistently']],
+        ['Develops Talent', 'Supporting growth in others.', ['Provides coaching and feedback', 'Identifies development opportunities', 'Encourages learning', 'Supports career progression']],
+        ['Drives Engagement', 'Creating motivation and commitment.', ['Empowers people', 'Connects work to purpose', 'Recognises contribution', 'Encourages involvement and ownership']],
+        ['Attracts Top Talent', 'Bringing the right people into the organisation.', ['Identifies high-potential individuals', 'Makes sound hiring decisions', 'Builds diverse talent pipelines', 'Addresses capability gaps']],
+        ['Interpersonal Savvy', 'Building effective relationships.', ['Relates well to diverse groups', 'Demonstrates diplomacy and tact', 'Builds rapport quickly', 'Understands social dynamics']],
+        ['Builds Networks', 'Creating valuable professional connections.', ['Establishes broad relationships', 'Maintains strong professional networks', 'Shares knowledge and expertise', 'Connects people and opportunities']],
+        ['Organisational Savvy', 'Understanding how organisations really operate.', ['Navigates organisational dynamics', 'Understands influence and decision making', 'Builds support effectively', 'Anticipates organisational challenges']],
+        ['Persuades', 'Influencing others constructively.', ['Presents compelling arguments', 'Gains commitment and support', 'Negotiates effectively', 'Responds well to objections']],
+        ['Manages Conflict', 'Addressing disagreements positively.', ['Tackles difficult conversations', 'Finds common ground', 'Resolves issues constructively', 'Maintains positive relationships']]
+      ] },
+    { id: 'self', name: 'Self Competencies', icon: '🌱', c: '#2f7d32', bg: '#e8f5e9',
+      desc: 'Personal effectiveness, adaptability and integrity.',
+      items: [
+        ['Instils Trust', 'Building confidence through authenticity and integrity.', ['Acts consistently', 'Keeps commitments', 'Demonstrates honesty', 'Builds credibility over time']],
+        ['Courage', 'Addressing difficult situations directly.', ['Speaks up when necessary', 'Provides honest feedback', 'Makes difficult decisions', 'Challenges constructively']],
+        ['Being Resilient', 'Maintaining effectiveness through adversity.', ['Remains composed under pressure', 'Learns from setbacks', 'Maintains optimism', 'Recovers quickly from challenges']],
+        ['Demonstrates Self-Awareness', 'Understanding personal strengths and limitations.', ['Reflects on behaviour and impact', 'Seeks feedback openly', 'Learns from mistakes', 'Recognises development areas']],
+        ['Self-Development', 'Taking responsibility for personal growth.', ['Pursues learning opportunities', 'Stretches beyond comfort zones', 'Invests in personal development', 'Continuously builds capability']],
+        ['Nimble Learning', 'Learning quickly from experience.', ['Experiments with new approaches', 'Applies lessons learned', 'Adapts quickly to change', 'Learns from success and failure']],
+        ['Situational Adaptability', 'Adjusting approach to suit circumstances.', ['Reads situations accurately', 'Changes style when required', 'Remains flexible', 'Responds appropriately to changing demands']],
+        ['Customer Focus', 'Delivering value to customers and stakeholders.', ['Understands customer needs', 'Builds strong relationships', 'Creates effective solutions', 'Maintains a service-oriented mindset']],
+        ['Values Differences', 'Recognising the strengths that diversity brings.', ['Welcomes different perspectives', 'Encourages inclusion', 'Respects cultural differences', 'Creates a sense of belonging']]              ] }
+  ];
+
+  const LAYOUT = {
+    thought: [
+      ['A', 'Understanding the Business', [[5, 'Business Insight'], [11, 'Customer Focus'], [17, 'Financial Acumen'], [35, 'Tech Savvy']]],
+      ['B', 'Making Complex Decisions', [[8, 'Manages Complexity'], [12, 'Decision Quality'], [32, 'Balances Stakeholders']]],
+      ['C', 'Creating the New and Different', [[18, 'Global Perspective'], [19, 'Cultivates Innovation'], [33, 'Strategic Mindset']]]
+    ],
+    results: [
+      ['D', 'Taking Initiative', [[2, 'Action Oriented'], [27, 'Resourcefulness']]],
+      ['E', 'Managing Execution', [[15, 'Directs Work'], [25, 'Plans and Aligns'], [38, 'Optimises Work Processes']]],
+      ['F', 'Focusing on Performance', [[1, 'Ensures Accountability'], [28, 'Drives Results']]]
+    ],
+    people: [
+      ['G', 'Building Collaborative Relationships', [[6, 'Collaborates'], [9, 'Manages Conflict'], [20, 'Interpersonal Savvy'], [21, 'Builds Networks']]],
+      ['H', 'Optimising Diverse Talent', [[4, 'Attracts Top Talent'], [13, 'Develops Talent'], [14, 'Values Differences'], [34, 'Builds Effective Teams']]],
+      ['I', 'Influencing People', [[7, 'Communicates Effectively'], [16, 'Drives Engagement'], [23, 'Organisational Savvy'], [24, 'Persuades'], [37, 'Drives Vision and Purpose']]]
+    ],
+    self: [
+      ['J', 'Being Authentic', [[10, 'Courage'], [36, 'Instils Trust']]],
+      ['K', 'Being Open', [[29, 'Demonstrates Self-Awareness'], [30, 'Self-Development']]],
+      ['L', 'Being Flexible and Adaptable', [[3, 'Manages Ambiguity'], [22, 'Nimble Learning'], [26, 'Being Resilient'], [31, 'Situational Adaptability']]]
+    ]
+  };
+  const BY_NAME = {};
+  SRC.forEach(c => c.items.forEach(i => { BY_NAME[i[0]] = i; }));
+  const CATS = SRC.map(c => {
+    const groups = LAYOUT[c.id].map(([letter, name, list]) => ({
+      letter, name, items: list.map(([num, nm]) => ({ num, data: BY_NAME[nm] }))
+    }));
+    return Object.assign({}, c, { groups, count: groups.reduce((a, g) => a + g.items.length, 0) });
+  });
+
+  const LABEL = { strength: 'Strength', dev: 'Developing', gap: 'Gap' };
+  const KEY = 'rb-leadership-competencies-v1';
+  let state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { state = {}; }
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} };
+  const esc = s => String(s).replace(/[&<>"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
+  const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+
+  const root = document.getElementById('categories');
+  const renderComp = ({ num, data: [name, summary, behaviours] }) => {
+    const id = slug(name);
+    const seg = who => ['strength', 'dev', 'gap'].map(v =>
+      `<button type="button" data-id="${id}" data-who="${who}" data-v="${v}" aria-pressed="false">${LABEL[v]}</button>`).join('');
+    return `<details class="comp" data-id="${id}" data-search="${esc((name + ' ' + summary + ' ' + behaviours.join(' ')).toLowerCase())}">
+      <summary><span class="comp-num">${num}</span>
+        <span class="comp-title"><strong>${esc(name)}</strong><span>${esc(summary)}</span></span>
+        <span class="dots" aria-hidden="true"><span class="dot" data-dot="self"></span><span class="dot peer" data-dot="peer"></span></span>
+        <span class="chev" aria-hidden="true"></span></summary>
+      <div class="comp-body">
+        <h4>Key behaviours</h4>
+        <ul>${behaviours.map(b => `<li>${esc(b)}</li>`).join('')}</ul>
+        <div class="rate">
+          <div class="rate-row self"><fieldset><legend>How I see myself</legend><div class="seg">${seg('self')}</div></fieldset></div>
+          <div class="rate-row peer"><fieldset><legend>How a peer sees me</legend><div class="seg">${seg('peer')}</div></fieldset></div>
+        </div>
+      </div>
+    </details>`;
+  };
+  root.innerHTML = CATS.map(cat => {
+    const groups = cat.groups.map(g => `<section class="group" aria-label="${esc(g.letter + '. ' + g.name)}">
+      <h4 class="group-title"><span class="group-letter">${g.letter}</span>${esc(g.name)}</h4>
+      <div class="group-items">${g.items.map(renderComp).join('')}</div>
+    </section>`).join('');
+    return `<details class="cat" data-cat="${cat.id}" style="--c:${cat.c};--bg:${cat.bg}">
+      <summary><span class="cat-icon" aria-hidden="true">${cat.icon}</span>
+        <span class="cat-text"><h3>${cat.name}</h3><p>${cat.desc}</p></span>
+        <span class="cat-count">${cat.groups.length} clusters &middot; ${cat.count} competencies</span><span class="chev" aria-hidden="true"></span></summary>
+      <div class="cat-body">${groups}</div>
+    </details>`;
+  }).join('');
+
+  const all = list => Array.from(document.querySelectorAll(list));
+
+  function paint() {
+    all('.seg button').forEach(b => {
+      const on = (state[b.dataset.id] || {})[b.dataset.who] === b.dataset.v;
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    all('details.comp').forEach(d => {
+      const r = state[d.dataset.id] || {};
+      ['self', 'peer'].forEach(w => {
+        const dot = d.querySelector(`[data-dot="${w}"]`);
+        dot.className = 'dot' + (w === 'peer' ? ' peer' : '') + (r[w] ? ' self-' + r[w] : '');
+      });
+    });
+  }
+
+  document.addEventListener('click', e => {
+    const b = e.target.closest('.seg button');
+    if (!b) return;
+    const r = state[b.dataset.id] = state[b.dataset.id] || {};
+    if (r[b.dataset.who] === b.dataset.v) delete r[b.dataset.who]; else r[b.dataset.who] = b.dataset.v;
+    save(); paint();
+    if (!document.getElementById('results').hidden) renderResults();
+  });
+
+  document.getElementById('expand-all').onclick = () => all('details.cat, details.comp').forEach(d => { if (!d.hidden) d.open = true; });
+  document.getElementById('collapse-all').onclick = () => all('details.cat, details.comp').forEach(d => d.open = false);
+
+  document.getElementById('search').addEventListener('input', e => {
+    const q = e.target.value.trim().toLowerCase();
+    all('details.comp').forEach(d => { d.hidden = !!q && !d.dataset.search.includes(q); });
+    all('section.group').forEach(g => { g.hidden = g.querySelectorAll('details.comp:not([hidden])').length === 0; });
+    all('details.cat').forEach(c => {
+      const any = c.querySelectorAll('details.comp:not([hidden])').length > 0;
+      c.hidden = !any;
+      if (q && any) c.open = true;
+    });
+  });
+
+  const nameOf = id => { for (const c of CATS) for (const i of c.items) if (slug(i[0]) === id) return i[0]; return id; };
+
+  function renderResults() {
+    const ids = Object.keys(state).filter(k => state[k] && (state[k].self || state[k].peer));
+    const box = document.getElementById('result-cols');
+    const rank = { strength: 2, dev: 1, gap: 0 };
+    const withSelf = ids.filter(k => state[k].self);
+    const both = ids.filter(k => state[k].self && state[k].peer);
+    const li = arr => arr.length ? '<ul>' + arr.map(x => `<li>${esc(x)}</li>`).join('') + '</ul>' : '<p style="margin:0;font-size:14px;color:#52606d">None yet.</p>';
+
+    const strengths = withSelf.filter(k => state[k].self === 'strength').map(nameOf);
+    const focus = withSelf.filter(k => state[k].self === 'gap').map(nameOf);
+    const blind = both.filter(k => rank[state[k].self] > rank[state[k].peer]).map(k => `${nameOf(k)} (you: ${LABEL[state[k].self]}, peer: ${LABEL[state[k].peer]})`);
+    const hidden = both.filter(k => rank[state[k].self] < rank[state[k].peer]).map(k => `${nameOf(k)} (you: ${LABEL[state[k].self]}, peer: ${LABEL[state[k].peer]})`);
+    const aligned = both.filter(k => state[k].self === state[k].peer).length;
+
+    document.getElementById('results-intro').textContent = ids.length
+      ? `${withSelf.length} self-ratings and ${ids.filter(k => state[k].peer).length} peer ratings recorded. ${both.length ? aligned + ' of ' + both.length + ' compared competencies are aligned.' : 'Add peer ratings to compare perceptions.'}`
+      : 'Rate some competencies above to see your summary.';
+
+    box.innerHTML = `
+      <div class="result-box hidden-s"><h4>🌟 Strengths you rate</h4>${li(strengths)}</div>
+      <div class="result-box focus"><h4>🎯 Your focus areas</h4>${li(focus)}</div>
+      <div class="result-box blind"><h4>👁 Possible blind spots</h4><p style="margin:0 0 6px;font-size:13px;color:#52606d">You rate yourself higher than a peer does.</p>${li(blind)}</div>
+      <div class="result-box hidden-s"><h4>💎 Hidden strengths</h4><p style="margin:0 0 6px;font-size:13px;color:#52606d">A peer rates you higher than you rate yourself.</p>${li(hidden)}</div>`;
+  }
+
+  document.getElementById('show-results').onclick = () => {
+    const r = document.getElementById('results');
+    r.hidden = false; renderResults();
+    r.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+  document.getElementById('reset').onclick = () => {
+    if (confirm('Clear all of your ratings on this device?')) { state = {}; save(); paint(); renderResults(); }
+  };
+  document.getElementById('print').onclick = () => { all('details').forEach(d => d.open = true); window.print(); };
+
+  paint();
+})();
+</script>
+
+</body>
+</html>
