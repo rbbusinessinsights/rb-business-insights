@@ -167,9 +167,22 @@
     .footer-content a { color: #9ff3f0; text-decoration: none; }
 
     @media print {
-      .navbar, .toolbar, .cta-section, footer, .back-link { display: none; }
-      details > * { display: block; }
+      body > *:not(#print-summary) { display: none !important; }
+      #print-summary { display: block !important; padding: 0; color: #111; font-size: 12pt; }
     }
+    #print-summary { display: none; max-width: 800px; margin: 0 auto; font-family: inherit; }
+    #print-summary h1 { font-size: 22pt; color: #062b55; margin: 0 0 2pt; }
+    #print-summary .ps-sub { color: #52606d; font-size: 10pt; margin: 0 0 12pt; border-bottom: 2px solid #d4a017; padding-bottom: 8pt; }
+    #print-summary .ps-block { border: 1.5pt solid #ccc; border-left-width: 6pt; border-radius: 6pt; padding: 8pt 12pt; margin-bottom: 10pt; break-inside: avoid; }
+    #print-summary .ps-block h2 { font-size: 14pt; margin: 0 0 6pt; color: #062b55; }
+    #print-summary .ps-block ul { margin: 0; padding-left: 16pt; columns: 2; column-gap: 24pt; font-size: 11pt; }
+    #print-summary .ps-block li { margin-bottom: 2pt; break-inside: avoid; }
+    #print-summary .ps-s { border-left-color: #2f9e44; } #print-summary .ps-d { border-left-color: #f59f00; } #print-summary .ps-g { border-left-color: #e03131; }
+    #print-summary .ps-notes { break-inside: avoid; }
+    #print-summary .ps-notes h2 { font-size: 13pt; color: #062b55; margin: 12pt 0 4pt; }
+    #print-summary .ps-line { border-bottom: 1px solid #999; height: 20pt; }
+    #print-summary .ps-fine { font-size: 8pt; color: #52606d; margin-top: 12pt; }
+    @media print { @page { margin: 14mm; } * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
 
     @media (max-width: 768px) {
       .nav-toggle { display: flex; }
@@ -330,6 +343,8 @@
     <p style="margin-top: 30px; font-size: 14px; color: #9ff3f0;">&copy; 2026 RB Business Insights. All rights reserved.</p>
   </div>
 </footer>
+
+<div id="print-summary" aria-hidden="true"></div>
 
 <script>
 (function () {
@@ -542,7 +557,21 @@
   document.getElementById('reset').onclick = () => {
     if (confirm('Clear all of your ratings on this device?')) { state = {}; save(); paint(); renderResults(); }
   };
-  document.getElementById('print').onclick = () => { all('details').forEach(d => d.open = true); window.print(); };
+  document.getElementById('print').onclick = () => {
+    const names = s => Object.keys(state).filter(k => state[k] && state[k].self === s).map(nameOf);
+    const list = a => a.length ? '<ul>' + a.map(x => `<li>${esc(x)}</li>`).join('') + '</ul>' : '<p style="margin:0">None selected.</p>';
+    const lines = n => '<div class="ps-line"></div>'.repeat(n);
+    document.getElementById('print-summary').innerHTML = `
+      <h1>My Leadership Competencies Reflection</h1>
+      <p class="ps-sub">RB Business Insights &middot; ${new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+      <div class="ps-block ps-s"><h2>🌟 Strengths</h2>${list(names('strength'))}</div>
+      <div class="ps-block ps-d"><h2>🌱 Developing</h2>${list(names('dev'))}</div>
+      <div class="ps-block ps-g"><h2>🎯 Gaps</h2>${list(names('gap'))}</div>
+      <div class="ps-notes"><h2>Where I will focus next</h2>${lines(4)}
+      <h2>Notes from comparing with peer feedback</h2>${lines(4)}</div>
+      <p class="ps-fine">Based on the Korn Ferry Leadership Architect&reg; competencies. Korn Ferry and Leadership Architect are trademarks of Korn Ferry, which owns all IP in the framework. RB Business Insights is not affiliated with or endorsed by Korn Ferry. This is a reflection aid, not a psychometric assessment, and should not be used for selection or performance decisions.</p>`;
+    window.print();
+  };
 
   paint();
 })();
