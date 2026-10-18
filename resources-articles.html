@@ -217,6 +217,18 @@
       margin-top: 30px;
     }
 
+    .pinned { display: flex; align-items: center; gap: 24px; background: linear-gradient(135deg, #062b55, #0b7285); color: white; border-radius: 16px; padding: 32px 34px; margin-bottom: 40px; box-shadow: 0 8px 24px rgba(6,43,85,0.25); border: 2px solid #d4a017; }
+    .pinned-text { flex: 1; }
+    .pinned-badge { display: inline-block; background: #d4a017; color: white; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; padding: 6px 12px; border-radius: 20px; margin-bottom: 12px; }
+    .pinned h2 { color: white; margin: 0 0 10px; font-size: 28px; }
+    .pinned p { margin: 0 0 18px; opacity: .95; font-size: 16px; }
+    .pinned-actions { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+    .pinned-btn { display: inline-flex; align-items: center; background: #d4a017; color: white; text-decoration: none; font-weight: 700; padding: 12px 24px; border-radius: 8px; min-height: 44px; }
+    .pinned-btn:hover { background: #c89510; }
+    .pinned-link { color: #9ff3f0; font-weight: 700; }
+    .pinned-icon { font-size: 72px; flex-shrink: 0; }
+    @media (max-width: 700px) { .pinned { padding: 24px 20px; } .pinned-icon { display: none; } .pinned h2 { font-size: 24px; } }
+
     .article-card {
       background: white;
       border-radius: 12px;
@@ -607,6 +619,19 @@
 </header>
 
 <section>
+  <div class="pinned">
+    <div class="pinned-text">
+      <span class="pinned-badge">📌 Pinned resource</span>
+      <h2>Leadership Competencies Explorer</h2>
+      <p>An interactive guide to the 38 Korn Ferry Leadership Architect competencies. Develop management capability, identify where gaps may exist, and use the printable peer sheet to compare how colleagues see your strengths with your own perception.</p>
+      <div class="pinned-actions">
+        <a href="resource-leadership-competencies.html" class="pinned-btn">Open the Explorer</a>
+        <a href="resource-leadership-competencies-peer-sheet.html" class="pinned-link">Printable peer sheet</a>
+      </div>
+    </div>
+    <div class="pinned-icon" aria-hidden="true">🧭</div>
+  </div>
+
   <h2>Latest Articles</h2>
   <p class="intro">
     Practical insights and perspectives from our consultancy on helping organisations create stronger cultures, better leadership and improved employee engagement.
@@ -710,25 +735,6 @@
         </p>
         <div class="article-links">
           <a href="article-leadership-accountability.html" class="article-link">Read Article</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Resource: Leadership Competencies Explorer -->
-    <div class="article-card strategy">
-      <div class="article-card-content">
-        <span class="article-category leadership">Leadership</span>
-        <span class="article-category">Resource</span>
-        <h3>Leadership Competencies Explorer: Reflect, Spot Gaps and Compare Perceptions</h3>
-        <div class="article-meta">
-          <span>By Richard Budd</span>
-          <span>Interactive resource</span>
-        </div>
-        <p class="article-excerpt">
-          An interactive guide to the Korn Ferry Leadership Architect competencies. Use it to develop management capability, identify where gaps may exist and compare your own view of your strengths with how peers see you.
-        </p>
-        <div class="article-links">
-          <a href="resource-leadership-competencies.html" class="article-link">Open Resource</a>
         </div>
       </div>
     </div>
