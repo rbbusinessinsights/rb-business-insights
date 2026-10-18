@@ -257,21 +257,22 @@
       <div class="use-card peer">
         <div class="icon" aria-hidden="true">🪞</div>
         <h3>Peer-to-peer leadership reflection</h3>
-        <p>Ask colleagues who work closely with you to rate you using the same competencies, then compare how they see your strengths with your own perception.</p>
+        <p>Ask colleagues who work closely with you to complete the printable feedback sheet, then compare how they see your strengths with your own perception.</p>
         <ul>
           <li>Discover strengths you under-estimate</li>
           <li>Uncover blind spots you may not see</li>
           <li>Turn comparison into an open, honest conversation</li>
         </ul>
+        <p style="margin:14px 0 0"><a class="btn primary" href="resource-leadership-competencies-peer-sheet.html" target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex;align-items:center;color:white">Open the printable peer sheet</a></p>
       </div>
     </div>
 
     <h2 class="section-title" style="font-size:22px;margin-top:36px">A simple way to work through it</h2>
     <div class="steps">
       <div class="step"><strong>Explore</strong><span>Open each category and read the key behaviours that sit behind each competency.</span></div>
-      <div class="step"><strong>Reflect</strong><span>Rate yourself: strength, developing or gap. Go with your first instinct.</span></div>
-      <div class="step"><strong>Invite peers</strong><span>Ask 3&ndash;5 trusted colleagues to do the same about you, on their own copy.</span></div>
-      <div class="step"><strong>Compare</strong><span>Enter their view and see where perceptions match, and where they differ.</span></div>
+      <div class="step"><strong>Reflect</strong><span>Rate yourself: 12 strengths, 14 developing and 12 gaps. Go with your first instinct.</span></div>
+      <div class="step"><strong>Invite peers</strong><span>Print the peer sheet and ask 3&ndash;5 trusted colleagues to complete it about you, offline.</span></div>
+      <div class="step"><strong>Compare</strong><span>Lay their sheets next to your own summary and look at where perceptions match, and where they differ.</span></div>
       <div class="step"><strong>Act</strong><span>Choose two or three priorities and agree practical next steps.</span></div>
     </div>
     <div class="callout"><strong>Tip for peer reflection:</strong> agree the ground rules first. Feedback should focus on observable behaviours, be given to help rather than judge, and be received with curiosity. The biggest insights often come from the differences, not the agreement.</div>
@@ -288,12 +289,11 @@
       <button class="btn primary" id="show-results" type="button">View my reflection summary</button>
     </div>
     <div class="quota">
-      <p class="quota-lead"><strong>Make it a real choice.</strong> Across all 38 competencies, select exactly <strong>12 Strengths</strong>, <strong>14 Developing</strong> and <strong>12 Gaps</strong>. Limits force you to prioritise, rather than rating everything as &ldquo;fine&rdquo;. The same limits apply to a peer rating you.</p>
+      <p class="quota-lead"><strong>Make it a real choice.</strong> Across all 38 competencies, select exactly <strong>12 Strengths</strong>, <strong>14 Developing</strong> and <strong>12 Gaps</strong>. Limits force you to prioritise, rather than rating everything as &ldquo;fine&rdquo;.</p>
       <div class="quota-row"><span class="quota-who">Me</span><div class="quota-chips" id="quota-self"></div></div>
-      <div class="quota-row peer"><span class="quota-who">Peer</span><div class="quota-chips" id="quota-peer"></div></div>
       <p class="quota-msg" id="quota-msg" role="status" aria-live="polite"></p>
     </div>
-    <div class="legend" aria-hidden="true"><span class="s">Strength</span><span class="d">Developing</span><span class="g">Gap</span><span style="color:#7b2cbf">&#9711; Ring = peer view added</span></div>
+    <div class="legend" aria-hidden="true"><span class="s">Strength</span><span class="d">Developing</span><span class="g">Gap</span></div>
 
     <div id="categories"></div>
     <noscript><p>Please enable JavaScript to use the interactive competency explorer.</p></noscript>
@@ -436,14 +436,13 @@
     return `<details class="comp" data-id="${id}" data-search="${esc((name + ' ' + summary + ' ' + behaviours.join(' ')).toLowerCase())}">
       <summary><span class="comp-num">${num}</span>
         <span class="comp-title"><strong>${esc(name)}</strong><span>${esc(summary)}</span></span>
-        <span class="dots" aria-hidden="true"><span class="dot" data-dot="self"></span><span class="dot peer" data-dot="peer"></span></span>
+        <span class="dots" aria-hidden="true"><span class="dot" data-dot="self"></span></span>
         <span class="chev" aria-hidden="true"></span></summary>
       <div class="comp-body">
         <h4>Key behaviours</h4>
         <ul>${behaviours.map(b => `<li>${esc(b)}</li>`).join('')}</ul>
         <div class="rate">
           <div class="rate-row self"><fieldset><legend>How I see myself</legend><div class="seg">${seg('self')}</div></fieldset></div>
-          <div class="rate-row peer"><fieldset><legend>How a peer sees me</legend><div class="seg">${seg('peer')}</div></fieldset></div>
         </div>
       </div>
     </details>`;
@@ -474,20 +473,14 @@
       b.classList.toggle('full', full);
       b.setAttribute('aria-disabled', full ? 'true' : 'false');
     });
-    ['self', 'peer'].forEach(w => {
-      const el = document.getElementById('quota-' + w);
-      let done = 0;
-      el.innerHTML = ['strength', 'dev', 'gap'].map(v => {
-        const c = countOf(w, v); done += c;
-        return `<span class="q ${v}${c >= LIMITS[v] ? ' met' : ''}"><b>${c}/${LIMITS[v]}</b> ${LABEL[v]}</span>`;
-      }).join('') + (done === 38 ? '<span class="q done">✔ Complete</span>' : '');
-    });
+    let done = 0;
+    document.getElementById('quota-self').innerHTML = ['strength', 'dev', 'gap'].map(v => {
+      const c = countOf('self', v); done += c;
+      return `<span class="q ${v}${c >= LIMITS[v] ? ' met' : ''}"><b>${c}/${LIMITS[v]}</b> ${LABEL[v]}</span>`;
+    }).join('') + (done === 38 ? '<span class="q done">✔ Complete</span>' : '');
     all('details.comp').forEach(d => {
       const r = state[d.dataset.id] || {};
-      ['self', 'peer'].forEach(w => {
-        const dot = d.querySelector(`[data-dot="${w}"]`);
-        dot.className = 'dot' + (w === 'peer' ? ' peer' : '') + (r[w] ? ' self-' + r[w] : '');
-      });
+      d.querySelector('[data-dot="self"]').className = 'dot' + (r.self ? ' self-' + r.self : '');
     });
   }
 
@@ -523,28 +516,22 @@
   const nameOf = id => { for (const c of CATS) for (const i of c.items) if (slug(i[0]) === id) return i[0]; return id; };
 
   function renderResults() {
-    const ids = Object.keys(state).filter(k => state[k] && (state[k].self || state[k].peer));
     const box = document.getElementById('result-cols');
-    const rank = { strength: 2, dev: 1, gap: 0 };
-    const withSelf = ids.filter(k => state[k].self);
-    const both = ids.filter(k => state[k].self && state[k].peer);
+    const withSelf = Object.keys(state).filter(k => state[k] && state[k].self);
     const li = arr => arr.length ? '<ul>' + arr.map(x => `<li>${esc(x)}</li>`).join('') + '</ul>' : '<p style="margin:0;font-size:14px;color:#52606d">None yet.</p>';
 
     const strengths = withSelf.filter(k => state[k].self === 'strength').map(nameOf);
     const focus = withSelf.filter(k => state[k].self === 'gap').map(nameOf);
-    const blind = both.filter(k => rank[state[k].self] > rank[state[k].peer]).map(k => `${nameOf(k)} (you: ${LABEL[state[k].self]}, peer: ${LABEL[state[k].peer]})`);
-    const hidden = both.filter(k => rank[state[k].self] < rank[state[k].peer]).map(k => `${nameOf(k)} (you: ${LABEL[state[k].self]}, peer: ${LABEL[state[k].peer]})`);
-    const aligned = both.filter(k => state[k].self === state[k].peer).length;
+    const developing = withSelf.filter(k => state[k].self === 'dev').map(nameOf);
 
-    document.getElementById('results-intro').textContent = ids.length
-      ? `${withSelf.length} self-ratings and ${ids.filter(k => state[k].peer).length} peer ratings recorded. ${both.length ? aligned + ' of ' + both.length + ' compared competencies are aligned.' : 'Add peer ratings to compare perceptions.'}`
+    document.getElementById('results-intro').textContent = withSelf.length
+      ? `${withSelf.length} of 38 competencies rated. Compare this with the printable peer feedback sheets your colleagues complete.`
       : 'Rate some competencies above to see your summary.';
 
     box.innerHTML = `
-      <div class="result-box hidden-s"><h4>🌟 Strengths you rate</h4>${li(strengths)}</div>
-      <div class="result-box focus"><h4>🎯 Your focus areas</h4>${li(focus)}</div>
-      <div class="result-box blind"><h4>👁 Possible blind spots</h4><p style="margin:0 0 6px;font-size:13px;color:#52606d">You rate yourself higher than a peer does.</p>${li(blind)}</div>
-      <div class="result-box hidden-s"><h4>💎 Hidden strengths</h4><p style="margin:0 0 6px;font-size:13px;color:#52606d">A peer rates you higher than you rate yourself.</p>${li(hidden)}</div>`;
+      <div class="result-box hidden-s"><h4>🌟 Your strengths</h4>${li(strengths)}</div>
+      <div class="result-box blind"><h4>🌱 Developing</h4>${li(developing)}</div>
+      <div class="result-box focus"><h4>🎯 Your gaps</h4>${li(focus)}</div>`;
   }
 
   document.getElementById('show-results').onclick = () => {
