@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.rb-businessinsights.co.uk/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -38,21 +38,27 @@
   </url>
   <url>
     <loc>https://www.rb-businessinsights.co.uk/about-rb-business-insights.html</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.rb-businessinsights.co.uk/meet-the-team.html</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.rb-businessinsights.co.uk/resources-articles.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.rb-businessinsights.co.uk/richard-budd-investors-in-people-awards-2026.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.rb-businessinsights.co.uk/article-employee-customer-experience.html</loc>

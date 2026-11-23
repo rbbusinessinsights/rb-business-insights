@@ -1,0 +1,47 @@
+.award-feature {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 4vw, 36px);
+  margin: 28px 0;
+  padding: clamp(20px, 3vw, 32px);
+  border: 1px solid #d9e4ed;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(16, 40, 56, 0.08);
+}
+
+.award-feature img {
+  display: block;
+  width: min(200px, 100%);
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+.award-feature h2,
+.award-feature h3,
+.award-feature h4 {
+  margin: 0 0 10px;
+  color: #062b55;
+}
+
+.award-feature p {
+  margin: 0 0 12px;
+  color: #28424c;
+}
+
+.award-feature a {
+  color: #0b7285;
+  font-weight: 700;
+}
+
+.award-feature.compact img {
+  width: min(160px, 100%);
+}
+
+@media (max-width: 600px) {
+  .award-feature {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
